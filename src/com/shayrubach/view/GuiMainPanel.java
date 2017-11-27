@@ -54,13 +54,18 @@ public class GuiMainPanel {
     private JEditorPane editorPane5;
     private JEditorPane editorPane6;
     private JEditorPane editorPane7;
-    private JLabel label3;
     private JLabel label4;
     private JLabel label5;
     private JLabel label6;
     private JLabel label7;
-    private JLabel label1;
+    private JLabel label9;
     private JLabel label2;
+    private JLabel label3;
+    private JLabel label1;
+    private JEditorPane editorPane8;
+    private JLabel label8;
+    private JComboBox cbAdditionalInfo;
+    private JLabel label10;
 
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
@@ -92,7 +97,7 @@ public class GuiMainPanel {
 
     private void initTables() {
         final String[] tbProjColumns = {"Name","Area","Description","Customers","Development Tools","Date Started","Milestones","ID"};
-        final String[] tbEngColumns = {"First Name","Last Name","Projects","Phone","Age","Address","ID"};
+        final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Age","Address","ID"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
 
@@ -128,7 +133,6 @@ public class GuiMainPanel {
         cbChooseEntityType.addItem("PROJECTS");
         cbChooseEntityType.addItem("ENGINEERS");
         cbChooseEntityType.addItem("AREAS");
-
 
     }
 
