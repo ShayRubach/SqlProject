@@ -64,8 +64,34 @@ public class GuiMainPanel {
     private JLabel label1;
     private JEditorPane editorPane8;
     private JLabel label8;
-    private JComboBox cbAdditionalInfo;
+    private JComboBox cbAdditiona;
     private JLabel label10;
+    private JEditorPane edProMilestone;
+    private JComboBox jcbChooseProject;
+    private JComboBox comboBox2;
+    private JComboBox comboBox3;
+    private JComboBox jcbChooseStep;
+    private JComboBox comboBox5;
+    private JEditorPane edProRate;
+    private JEditorPane edProDesc;
+    private JEditorPane edProName;
+    private JEditorPane edProTools;
+    private JEditorPane edProDate;
+    private JEditorPane editorPane10;
+    private JEditorPane editorPane16;
+    private JEditorPane editorPane19;
+    private JEditorPane editorPane11;
+    private JEditorPane editorPane12;
+    private JEditorPane editorPane13;
+    private JEditorPane editorPane14;
+    private JEditorPane editorPane20;
+    private JEditorPane editorPane21;
+    private JEditorPane editorPane22;
+    private JEditorPane editorPane23;
+    private JEditorPane edProMoney;
+    private JComboBox jcbChooseMilestone;
+    private JComboBox comboBox1;
+    private JButton addProjectButton;
 
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
