@@ -432,6 +432,7 @@ public class GuiMainPanel {
 
         switch (MODE) {
             case E_NEW:
+                jcbChooseStep.setSelectedIndex(2);
                 jcbChooseMilestone.setSelectedIndex(2);
                 jcbChooseMilestone.setEnabled(false);
 
@@ -592,5 +593,463 @@ public class GuiMainPanel {
         this.tableMonitor = tableMonitor;
     }
 
+    public JFrame getMainFrame() {
+        return mainFrame;
+    }
 
+    public void setMainFrame(JFrame mainFrame) {
+        this.mainFrame = mainFrame;
+    }
+
+    public JButton getButtonEditAreas() {
+        return buttonEditAreas;
+    }
+
+    public void setButtonEditAreas(JButton buttonEditAreas) {
+        this.buttonEditAreas = buttonEditAreas;
+    }
+
+    public JButton getButtonEditEng() {
+        return buttonEditEng;
+    }
+
+    public void setButtonEditEng(JButton buttonEditEng) {
+        this.buttonEditEng = buttonEditEng;
+    }
+
+    public JButton getButtonEditProject() {
+        return buttonEditProject;
+    }
+
+    public void setButtonEditProject(JButton buttonEditProject) {
+        this.buttonEditProject = buttonEditProject;
+    }
+
+    public JScrollPane getTabMonitor() {
+        return tabMonitor;
+    }
+
+    public void setTabMonitor(JScrollPane tabMonitor) {
+        this.tabMonitor = tabMonitor;
+    }
+
+    public JScrollPane getJspProj() {
+        return jspProj;
+    }
+
+    public void setJspProj(JScrollPane jspProj) {
+        this.jspProj = jspProj;
+    }
+
+    public JScrollPane getJspArea() {
+        return jspArea;
+    }
+
+    public void setJspArea(JScrollPane jspArea) {
+        this.jspArea = jspArea;
+    }
+
+    public JScrollPane getJspEng() {
+        return jspEng;
+    }
+
+    public void setJspEng(JScrollPane jspEng) {
+        this.jspEng = jspEng;
+    }
+
+    public JScrollPane getJspTopProj() {
+        return jspTopProj;
+    }
+
+    public void setJspTopProj(JScrollPane jspTopProj) {
+        this.jspTopProj = jspTopProj;
+    }
+
+    public JScrollPane getJspTopEng() {
+        return jspTopEng;
+    }
+
+    public void setJspTopEng(JScrollPane jspTopEng) {
+        this.jspTopEng = jspTopEng;
+    }
+
+    public JScrollPane getJspMonitor() {
+        return jspMonitor;
+    }
+
+    public void setJspMonitor(JScrollPane jspMonitor) {
+        this.jspMonitor = jspMonitor;
+    }
+
+    public JComboBox getCbChooseEntityType() {
+        return cbChooseEntityType;
+    }
+
+    public void setCbChooseEntityType(JComboBox cbChooseEntityType) {
+        this.cbChooseEntityType = cbChooseEntityType;
+    }
+
+    public JEditorPane getEdProMilestone() {
+        return edProMilestone;
+    }
+
+    public void setEdProMilestone(JEditorPane edProMilestone) {
+        this.edProMilestone = edProMilestone;
+    }
+
+    public JComboBox getJcbChooseProject() {
+        return jcbChooseProject;
+    }
+
+    public void setJcbChooseProject(JComboBox jcbChooseProject) {
+        this.jcbChooseProject = jcbChooseProject;
+    }
+
+    public JComboBox getJcbChooseArea() {
+        return jcbChooseArea;
+    }
+
+    public void setJcbChooseArea(JComboBox jcbChooseArea) {
+        this.jcbChooseArea = jcbChooseArea;
+    }
+
+    public JComboBox getJcbChooseEng() {
+        return jcbChooseEng;
+    }
+
+    public void setJcbChooseEng(JComboBox jcbChooseEng) {
+        this.jcbChooseEng = jcbChooseEng;
+    }
+
+    public JComboBox getJcbChooseStep() {
+        return jcbChooseStep;
+    }
+
+    public void setJcbChooseStep(JComboBox jcbChooseStep) {
+        this.jcbChooseStep = jcbChooseStep;
+    }
+
+    public JComboBox getJcbChooseEngPro() {
+        return jcbChooseEngPro;
+    }
+
+    public void setJcbChooseEngPro(JComboBox jcbChooseEngPro) {
+        this.jcbChooseEngPro = jcbChooseEngPro;
+    }
+
+    public JEditorPane getEdProRate() {
+        return edProRate;
+    }
+
+    public void setEdProRate(JEditorPane edProRate) {
+        this.edProRate = edProRate;
+    }
+
+    public JEditorPane getEdProDesc() {
+        return edProDesc;
+    }
+
+    public void setEdProDesc(JEditorPane edProDesc) {
+        this.edProDesc = edProDesc;
+    }
+
+    public JEditorPane getEdProName() {
+        return edProName;
+    }
+
+    public void setEdProName(JEditorPane edProName) {
+        this.edProName = edProName;
+    }
+
+    public JEditorPane getEdProTools() {
+        return edProTools;
+    }
+
+    public void setEdProTools(JEditorPane edProTools) {
+        this.edProTools = edProTools;
+    }
+
+    public JEditorPane getEdProDate() {
+        return edProDate;
+    }
+
+    public void setEdProDate(JEditorPane edProDate) {
+        this.edProDate = edProDate;
+    }
+
+    public JEditorPane getEditorPane10() {
+        return editorPane10;
+    }
+
+    public void setEditorPane10(JEditorPane editorPane10) {
+        this.editorPane10 = editorPane10;
+    }
+
+    public JEditorPane getEdAreaSpec() {
+        return edAreaSpec;
+    }
+
+    public void setEdAreaSpec(JEditorPane edAreaSpec) {
+        this.edAreaSpec = edAreaSpec;
+    }
+
+    public JEditorPane getEdEngProjects() {
+        return edEngProjects;
+    }
+
+    public void setEdEngProjects(JEditorPane edEngProjects) {
+        this.edEngProjects = edEngProjects;
+    }
+
+    public JEditorPane getEdEngRate() {
+        return edEngRate;
+    }
+
+    public void setEdEngRate(JEditorPane edEngRate) {
+        this.edEngRate = edEngRate;
+    }
+
+    public JEditorPane getEdEngAddress() {
+        return edEngAddress;
+    }
+
+    public void setEdEngAddress(JEditorPane edEngAddress) {
+        this.edEngAddress = edEngAddress;
+    }
+
+    public JEditorPane getEdEngArea() {
+        return edEngArea;
+    }
+
+    public void setEdEngArea(JEditorPane edEngArea) {
+        this.edEngArea = edEngArea;
+    }
+
+    public JEditorPane getEdEngFname() {
+        return edEngFname;
+    }
+
+    public void setEdEngFname(JEditorPane edEngFname) {
+        this.edEngFname = edEngFname;
+    }
+
+    public JEditorPane getEditorPane20() {
+        return editorPane20;
+    }
+
+    public void setEditorPane20(JEditorPane editorPane20) {
+        this.editorPane20 = editorPane20;
+    }
+
+    public JEditorPane getEditorPane21() {
+        return editorPane21;
+    }
+
+    public void setEditorPane21(JEditorPane editorPane21) {
+        this.editorPane21 = editorPane21;
+    }
+
+    public JEditorPane getEdAreaName() {
+        return edAreaName;
+    }
+
+    public void setEdAreaName(JEditorPane edAreaName) {
+        this.edAreaName = edAreaName;
+    }
+
+    public JEditorPane getEdEngLname() {
+        return edEngLname;
+    }
+
+    public void setEdEngLname(JEditorPane edEngLname) {
+        this.edEngLname = edEngLname;
+    }
+
+    public JEditorPane getEdProMoney() {
+        return edProMoney;
+    }
+
+    public void setEdProMoney(JEditorPane edProMoney) {
+        this.edProMoney = edProMoney;
+    }
+
+    public JComboBox getJcbChooseMilestone() {
+        return jcbChooseMilestone;
+    }
+
+    public void setJcbChooseMilestone(JComboBox jcbChooseMilestone) {
+        this.jcbChooseMilestone = jcbChooseMilestone;
+    }
+
+    public JComboBox getJcbEngPhones() {
+        return jcbEngPhones;
+    }
+
+    public void setJcbEngPhones(JComboBox jcbEngPhones) {
+        this.jcbEngPhones = jcbEngPhones;
+    }
+
+    public JButton getAddEngProBtn() {
+        return addEngProBtn;
+    }
+
+    public void setAddEngProBtn(JButton addEngProBtn) {
+        this.addEngProBtn = addEngProBtn;
+    }
+
+    public JPanel getTabEditAll() {
+        return tabEditAll;
+    }
+
+    public void setTabEditAll(JPanel tabEditAll) {
+        this.tabEditAll = tabEditAll;
+    }
+
+    public JRadioButton getModifyProjectRadioButton() {
+        return modifyProjectRadioButton;
+    }
+
+    public void setModifyProjectRadioButton(JRadioButton modifyProjectRadioButton) {
+        this.modifyProjectRadioButton = modifyProjectRadioButton;
+    }
+
+    public JRadioButton getNewProjectRadioButton() {
+        return newProjectRadioButton;
+    }
+
+    public void setNewProjectRadioButton(JRadioButton newProjectRadioButton) {
+        this.newProjectRadioButton = newProjectRadioButton;
+    }
+
+    public JRadioButton getRemoveProjectRadioButton() {
+        return removeProjectRadioButton;
+    }
+
+    public void setRemoveProjectRadioButton(JRadioButton removeProjectRadioButton) {
+        this.removeProjectRadioButton = removeProjectRadioButton;
+    }
+
+    public JRadioButton getRemoveAreaRadioButton() {
+        return removeAreaRadioButton;
+    }
+
+    public void setRemoveAreaRadioButton(JRadioButton removeAreaRadioButton) {
+        this.removeAreaRadioButton = removeAreaRadioButton;
+    }
+
+    public JRadioButton getNewEngineerRadioButton() {
+        return newEngineerRadioButton;
+    }
+
+    public void setNewEngineerRadioButton(JRadioButton newEngineerRadioButton) {
+        this.newEngineerRadioButton = newEngineerRadioButton;
+    }
+
+    public JRadioButton getRemoveEngineerRadioButton() {
+        return removeEngineerRadioButton;
+    }
+
+    public void setRemoveEngineerRadioButton(JRadioButton removeEngineerRadioButton) {
+        this.removeEngineerRadioButton = removeEngineerRadioButton;
+    }
+
+    public JPanel getTabEditPro() {
+        return tabEditPro;
+    }
+
+    public void setTabEditPro(JPanel tabEditPro) {
+        this.tabEditPro = tabEditPro;
+    }
+
+    public JPanel getTabEditArea() {
+        return tabEditArea;
+    }
+
+    public void setTabEditArea(JPanel tabEditArea) {
+        this.tabEditArea = tabEditArea;
+    }
+
+    public JPanel getTabEditEng() {
+        return tabEditEng;
+    }
+
+    public void setTabEditEng(JPanel tabEditEng) {
+        this.tabEditEng = tabEditEng;
+    }
+
+    public JRadioButton getModifyEngineerRadioButton() {
+        return modifyEngineerRadioButton;
+    }
+
+    public void setModifyEngineerRadioButton(JRadioButton modifyEngineerRadioButton) {
+        this.modifyEngineerRadioButton = modifyEngineerRadioButton;
+    }
+
+    public JButton getAddEngPhoneBtn() {
+        return addEngPhoneBtn;
+    }
+
+    public void setAddEngPhoneBtn(JButton addEngPhoneBtn) {
+        this.addEngPhoneBtn = addEngPhoneBtn;
+    }
+
+    public JRadioButton getNewAreaRadioButton() {
+        return newAreaRadioButton;
+    }
+
+    public void setNewAreaRadioButton(JRadioButton newAreaRadioButton) {
+        this.newAreaRadioButton = newAreaRadioButton;
+    }
+
+    public JLabel getLabelAreaId() {
+        return LabelAreaId;
+    }
+
+    public void setLabelAreaId(JLabel labelAreaId) {
+        LabelAreaId = labelAreaId;
+    }
+
+    public JLabel getLabelProId() {
+        return labelProId;
+    }
+
+    public void setLabelProId(JLabel labelProId) {
+        this.labelProId = labelProId;
+    }
+
+    public JLabel getLabelEngId() {
+        return labelEngId;
+    }
+
+    public void setLabelEngId(JLabel labelEngId) {
+        this.labelEngId = labelEngId;
+    }
+
+    public JEditorPane getEdEngDate() {
+        return edEngDate;
+    }
+
+    public void setEdEngDate(JEditorPane edEngDate) {
+        this.edEngDate = edEngDate;
+    }
+
+    public JEditorPane getEdEngAge() {
+        return edEngAge;
+    }
+
+    public void setEdEngAge(JEditorPane edEngAge) {
+        this.edEngAge = edEngAge;
+    }
+
+    public JButton getApplyProButton() {
+        return applyProButton;
+    }
+
+    public void setApplyProButton(JButton applyProButton) {
+        this.applyProButton = applyProButton;
+    }
+
+    public void setControllers(ArrayList<TableController> controllers) {
+        this.controllers = controllers;
+    }
 }

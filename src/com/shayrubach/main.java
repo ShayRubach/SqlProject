@@ -36,38 +36,38 @@ public class main {
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  projects( " +
                     "PRIMARY KEY(project_id)," +
-                    "project_id     INT(4)," +
-                    "date_started   DATE," +
+                    "project_id     VARCHAR(32)," +
+                    "date_started   VARCHAR(32)," +
                     "name           VARCHAR(32)," +
                     "description    VARCHAR(255))");
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  engineers(" +
                     "PRIMARY KEY(eng_id)," +
-                    "eng_id         INT(9)," +
-                    "age            INT(3)," +
+                    "eng_id         VARCHAR(32)," +
+                    "age            VARCHAR(3)," +
                     "first_name     VARCHAR(16)," +
                     "last_name      VARCHAR(16)," +
-                    "birth          DATE )"  );
+                    "birth          VARCHAR(32) )"  );
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  areas(" +
                     "PRIMARY KEY(area_id)," +
-                    "area_id        INT(2)," +
+                    "area_id        VARCHAR(32)," +
                     "name           VARCHAR(32)," +
                     "specialty      VARCHAR(32))" );
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  development_steps(" +
                     "PRIMARY KEY(dev_step_id)," +
-                    "dev_step_id    INT(2)," +
+                    "dev_step_id    VARCHAR(32)," +
                     "name           VARCHAR(32))");
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  projects_to_engineers( " +
-                    "project_id     INT(4)," +
-                    "eng_id         INT(9)," +
-                    "rate           INT(2)," +
+                    "project_id     VARCHAR(32)," +
+                    "eng_id         VARCHAR(32)," +
+                    "rate           VARCHAR(32)," +
                     "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
                     "FOREIGN KEY(eng_id) REFERENCES engineers(eng_id),"+
                     "PRIMARY KEY(eng_id,project_id))");
@@ -75,33 +75,33 @@ public class main {
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  phones( " +
-                    "eng_id         INT(9),"  +
-                    "phone          INT(10)," +
+                    "eng_id         VARCHAR(32),"  +
+                    "phone          VARCHAR(32)," +
                     "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id),"+
                     "PRIMARY KEY(eng_id,phone))");
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  engineer_areas( " +
-                    "eng_id         INT(9)," +
-                    "area_id        INT(2)," +
+                    "eng_id         VARCHAR(32)," +
+                    "area_id        VARCHAR(32)," +
                     "FOREIGN KEY(eng_id) REFERENCES engineers(eng_id),"+
                     "FOREIGN KEY(area_id) REFERENCES areas(area_id),"+
                     "PRIMARY KEY(eng_id,area_id))");
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  milestones( " +
-                    "project_id     INT(4)," +
+                    "project_id     VARCHAR(32)," +
                     "milestone      VARCHAR(128)," +
-                    "due_date       DATE," +
-                    "money_granted  INT," +
+                    "due_date       VARCHAR(32)," +
+                    "money_granted  VARCHAR(32)," +
                     "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
                     "PRIMARY KEY(project_id,milestone))" );
 
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  project_areas( " +
-                    "project_id     INT(4)," +
-                    "area_id        INT(2)," +
+                    "project_id     VARCHAR(32)," +
+                    "area_id        VARCHAR(32)," +
                     "FOREIGN KEY(area_id) REFERENCES areas(area_id),"+
                     "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
                     "PRIMARY KEY(project_id,area_id))");
@@ -109,8 +109,8 @@ public class main {
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  project_dev_steps( " +
-                    "project_id     INT(4)," +
-                    "dev_step_id    INT(2)," +
+                    "project_id     VARCHAR(32)," +
+                    "dev_step_id    VARCHAR(32)," +
                     "dev_tools      VARCHAR(1024)," +
                     "FOREIGN KEY(dev_step_id) REFERENCES development_steps(dev_step_id),"+
                     "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+

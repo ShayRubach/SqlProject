@@ -8,18 +8,20 @@ import java.util.Date;
 public class Project extends DatabaseEntity {
 
     private Milestone milestone = null;
-    private Date                dateStarted = null;
+    private String                dateStarted = null;
     private String              description = null;
     private String              name = null;
     private ArrayList<Area>     area = null;
-    private ArrayList<String>   customers = null;
-    private ArrayList<String>   devTools = null;
+    private String              devStep = null;
+
+    private ArrayList<String>   customers = new ArrayList<>();
+    private ArrayList<String>   devTools = new ArrayList<>();
 
     public Project(){
         super();
     }
 
-    public Project(Milestone milestone, Date dateStarted, String description, String name, ArrayList<Area> area, ArrayList<String> customers, ArrayList<String> devTools) {
+    public Project(Milestone milestone, String dateStarted, String description, String name, ArrayList<Area> area, ArrayList<String> customers, ArrayList<String> devTools) {
         this.milestone = milestone;
         this.dateStarted = dateStarted;
         this.description = description;
@@ -27,6 +29,14 @@ public class Project extends DatabaseEntity {
         this.area = area;
         this.customers = customers;
         this.devTools = devTools;
+    }
+
+    public Project(Milestone milestone, String dateStarted, String description, String name, String devStep) {
+        this.milestone = milestone;
+        this.dateStarted = dateStarted;
+        this.description = description;
+        this.name = name;
+        this.devStep = devStep;
     }
 
     public Milestone getMilestone() {
@@ -37,11 +47,11 @@ public class Project extends DatabaseEntity {
         this.milestone = milestone;
     }
 
-    public Date getDateStarted() {
+    public String getDateStarted() {
         return dateStarted;
     }
 
-    public void setDateStarted(Date dateStarted) {
+    public void setDateStarted(String dateStarted) {
         this.dateStarted = dateStarted;
     }
 
@@ -84,4 +94,14 @@ public class Project extends DatabaseEntity {
     public void setDevTools(ArrayList<String> devTools) {
         this.devTools = devTools;
     }
+
+
+    public String getDevStep() {
+        return devStep;
+    }
+
+    public void setDevStep(String devStep) {
+        this.devStep = devStep;
+    }
 }
+

@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf11ac99-19ee-48fd-8535-1a551c253f0b" name="Default" comment="before devision of edit tables">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/AppController.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/AppController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/TableController.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/TableController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/main.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,8 +22,8 @@
       <file leaf-file-name="main.java" pinned="true" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="70" lean-forward="true" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
+            <state relative-caret-position="245">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -33,26 +31,81 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
+      <file leaf-file-name="PreparedStatement.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../MySqlApp/mysql-connector-java-5.1.44-bin.jar!/com/mysql/jdbc/PreparedStatement.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="0">
+              <caret line="940" column="0" lean-forward="false" selection-start-line="940" selection-start-column="0" selection-end-line="940" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="31" column="74" lean-forward="true" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+            <state relative-caret-position="583">
+              <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="415" column="0" lean-forward="false" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
               <folding>
-                <element signature="e#1497#1498#0" expanded="true" />
-                <element signature="e#1525#1526#0" expanded="true" />
-                <element signature="e#1577#1578#0" expanded="true" />
-                <element signature="e#1605#1606#0" expanded="true" />
+                <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="e#4605#4657#0" expanded="false" />
+                <element signature="e#4973#5032#0" expanded="false" />
+                <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="class#5538:5827" expanded="false" />
+                <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+                <element signature="class#5880:6312" expanded="false" />
+                <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+                <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="e#6464#6516#0" expanded="false" />
+                <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="class#9876:10297" expanded="false" />
+                <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+                <element signature="e#9987#10013#0" expanded="false" />
+                <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="class#10630:10981" expanded="false" />
+                <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+                <element signature="class#11038:11390" expanded="false" />
+                <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+                <element signature="class#11450:11801" expanded="false" />
+                <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+                <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="class#12015:12249" expanded="false" />
+                <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+                <element signature="class#12305:12587" expanded="false" />
+                <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+                <element signature="class#12806:13302" expanded="false" />
+                <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+                <element signature="class#13913:14410" expanded="false" />
+                <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+                <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="class#16062:16686" expanded="false" />
+                <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+                <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -61,14 +114,63 @@
       <file leaf-file-name="TableController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="73" column="88" lean-forward="false" selection-start-line="73" selection-start-column="88" selection-end-line="73" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1074#1075#0" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
+                <element signature="e#2940#2941#0" expanded="true" />
+                <element signature="e#2966#2967#0" expanded="true" />
+                <element signature="e#3010#3011#0" expanded="true" />
+                <element signature="e#3040#3041#0" expanded="true" />
+                <element signature="e#3081#3082#0" expanded="true" />
+                <element signature="e#3114#3115#0" expanded="true" />
+                <element signature="e#3170#3171#0" expanded="true" />
+                <element signature="e#3214#3215#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Milestone.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+              <folding>
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#648#649#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#760#761#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+              <folding>
+                <element signature="method#Project#1;class#Project#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -111,7 +213,9 @@
       <find>reset</find>
       <find>initButt</find>
       <find>TODO</find>
+      <find>newPro</find>
       <find>addEnt</find>
+      <find>randStrong</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/view</dir>
@@ -136,14 +240,16 @@
         <option value="$PROJECT_DIR$/src/com/ShayRubach/main.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/MasterController.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/IController.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainEditPanel.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainEditPanel.form" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/main.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/main.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
       </list>
     </option>
   </component>
@@ -412,12 +518,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29713425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46455505" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15793358" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17564575" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -441,26 +547,66 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -491,38 +637,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="29" lean-forward="false" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="44" lean-forward="false" selection-start-line="90" selection-start-column="44" selection-end-line="90" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -553,7 +718,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
           <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -576,7 +791,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
           <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -599,7 +864,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -622,7 +937,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -643,7 +1008,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1500">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,7 +1099,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
           <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -715,7 +1180,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
           <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -748,13 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/DatabaseEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -764,53 +1272,173 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainEditPanel.form" />
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainEditPanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="70" lean-forward="true" selection-start-line="17" selection-start-column="70" selection-end-line="17" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/other/Milestone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        <state relative-caret-position="435">
+          <caret line="30" column="39" lean-forward="false" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+          <folding>
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#648#649#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#844#845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+          <folding>
+            <element signature="method#Project#1;class#Project#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="109">
+          <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../MySqlApp/mysql-connector-java-5.1.44-bin.jar!/com/mysql/jdbc/PreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="940" column="0" lean-forward="false" selection-start-line="940" selection-start-column="0" selection-end-line="940" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../MySqlApp/mysql-connector-java-5.1.44-bin.jar!/com/mysql/jdbc/MysqlIO.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="2772" column="0" lean-forward="false" selection-start-line="2772" selection-start-column="0" selection-end-line="2772" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" column="74" lean-forward="true" selection-start-line="31" selection-start-column="74" selection-end-line="31" selection-end-column="74" />
+        <state relative-caret-position="583">
+          <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="415" column="0" lean-forward="false" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
           <folding>
-            <element signature="e#1497#1498#0" expanded="true" />
-            <element signature="e#1525#1526#0" expanded="true" />
-            <element signature="e#1577#1578#0" expanded="true" />
-            <element signature="e#1605#1606#0" expanded="true" />
+            <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEditFields#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setComponentStates#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#4605#4657#0" expanded="false" />
+            <element signature="e#4973#5032#0" expanded="false" />
+            <element signature="method#initCBoxes#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initEngCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#5538:5827" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5538:5827" expanded="false" />
+            <element signature="class#5880:6312" expanded="false" />
+            <element signature="method#actionPerformed#0;class#5880:6312" expanded="false" />
+            <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="e#6464#6516#0" expanded="false" />
+            <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#initButtons#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#9876:10297" expanded="false" />
+            <element signature="method#stateChanged#0;class#9876:10297" expanded="false" />
+            <element signature="e#9987#10013#0" expanded="false" />
+            <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#10630:10981" expanded="false" />
+            <element signature="method#actionPerformed#0;class#10630:10981" expanded="false" />
+            <element signature="class#11038:11390" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11038:11390" expanded="false" />
+            <element signature="class#11450:11801" expanded="false" />
+            <element signature="method#actionPerformed#0;class#11450:11801" expanded="false" />
+            <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#12015:12249" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12015:12249" expanded="false" />
+            <element signature="class#12305:12587" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12305:12587" expanded="false" />
+            <element signature="class#12806:13302" expanded="false" />
+            <element signature="method#actionPerformed#0;class#12806:13302" expanded="false" />
+            <element signature="class#13913:14410" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13913:14410" expanded="false" />
+            <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="class#16062:16686" expanded="false" />
+            <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveAreaRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setNewEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setRemoveEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
+            <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/TableController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="73" column="88" lean-forward="false" selection-start-line="73" selection-start-column="88" selection-end-line="73" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2940#2941#0" expanded="true" />
+            <element signature="e#2966#2967#0" expanded="true" />
+            <element signature="e#3010#3011#0" expanded="true" />
+            <element signature="e#3040#3041#0" expanded="true" />
+            <element signature="e#3081#3082#0" expanded="true" />
+            <element signature="e#3114#3115#0" expanded="true" />
+            <element signature="e#3170#3171#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

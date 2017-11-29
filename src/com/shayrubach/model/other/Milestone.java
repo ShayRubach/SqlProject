@@ -4,22 +4,39 @@ import java.util.Date;
 import java.util.Map;
 
 public class Milestone {
-    public final static String[] MILESTONE_LIST = {"Design","Development","Maintenance"};
-    public Map.Entry<String,Double> milestone = null;
-    public Date dueDate;
 
-    public Milestone(Map.Entry<String, Double> milestone, Date dueDate) {
-        //TODO: check if ms date exceeds due date?
-        this.milestone = milestone;
+    private String name = null;
+    private String moneyGranted = null;
+    private String dueDate;
+
+
+    public Milestone(String name, String moneyGranted, String dueDate) {
+        this.name = name;
+        this.moneyGranted = moneyGranted;
         this.dueDate = dueDate;
     }
 
-
-    @Override
-    public String toString() {
-        return      "Milestone: "       + milestone.getKey()
-                + ", Money granted: "   + milestone.getValue().toString()
-                + ", Due date: "        + dueDate.toString();
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMoneyGranted() {
+        return moneyGranted;
+    }
+
+    public void setMoneyGranted(String moneyGranted) {
+        this.moneyGranted = moneyGranted;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
 }
