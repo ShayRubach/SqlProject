@@ -1,11 +1,14 @@
 package com.shayrubach.controller.gui;
 
+import com.shayrubach.view.GuiMainPanel;
+
 import javax.swing.*;
 
 public class TableController {
 
     private JTable table;
     private String tableName;
+    private GuiMainPanel gui;
 
     public TableController(){
 
@@ -36,4 +39,27 @@ public class TableController {
         this.tableName = tableName;
     }
 
+    public void addEntity(int ENTITY) {
+
+        switch(ENTITY){
+            case GuiMainPanel.PROJECT_ENTITY:
+
+                break;
+            case GuiMainPanel.AREA_ENTITY:
+
+                break;
+            case GuiMainPanel.ENGINEER_ENTITY:
+
+                break;
+
+        }
+    }
+
+    public GuiMainPanel getGui() {
+        return gui;
+    }
+
+    public void setGui(GuiMainPanel gui) {
+        this.gui = gui;
+    }
 }

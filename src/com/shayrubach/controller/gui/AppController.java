@@ -24,6 +24,9 @@ public class AppController implements IController {
         controllers.add(new TableController(gui.getTableMonitor(),"MONITOR"));
         controllers.add(new TableController(gui.getTableTopProj(),"TOP_PROJECTS"));
         controllers.add(new TableController(gui.getTableTopEng(),"TOP_ENGINEERS"));
+
+        for(TableController tc : controllers)
+            tc.setGui(gui);
     }
 
     /* binds all controller references in gui to their actual controllers.
