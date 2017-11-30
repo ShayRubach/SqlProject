@@ -21,7 +21,9 @@ public abstract class DatabaseEntity {
 
     @SavedInLocalTextFile
     private String generateUUID() {
-        return UUID.randomUUID().toString();
+        String uuid = UUID.randomUUID().toString();
+        uuid.replace("-","");
+        return uuid.substring(0,8);
     }
 
 

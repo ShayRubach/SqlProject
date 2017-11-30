@@ -101,6 +101,14 @@ public class GuiMainPanel {
     private JEditorPane edEngDate;
     private JEditorPane edEngAge;
     private JButton applyProButton;
+    private JEditorPane edProMsDueDate;
+
+    private DefaultTableModel tbProjModel;
+    private DefaultTableModel tbEngModel;
+    private DefaultTableModel tbAreaModel;
+    private DefaultTableModel tbTopProjModel;
+    private DefaultTableModel tbTopEngModel;
+    private DefaultTableModel tbMonitorModel;
 
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
@@ -255,12 +263,12 @@ public class GuiMainPanel {
         tableMonitor.setBackground(new Color(255,255,255));
 
 
-        DefaultTableModel tbProjModel = new DefaultTableModel(null,tbProjColumns);
-        DefaultTableModel tbEngModel = new DefaultTableModel(null,tbEngColumns);
-        DefaultTableModel tbAreaModel = new DefaultTableModel(null,tbAreaColumns);
-        DefaultTableModel tbTopProjModel = new DefaultTableModel(null,tbProjColumns);
-        DefaultTableModel tbTopEngModel = new DefaultTableModel(null,tbEngColumns);
-        DefaultTableModel tbMonitorModel = new DefaultTableModel(null,tbMonitorColumns);
+        tbProjModel = new DefaultTableModel(null,tbProjColumns);
+        tbEngModel = new DefaultTableModel(null,tbEngColumns);
+        tbAreaModel = new DefaultTableModel(null,tbAreaColumns);
+        tbTopProjModel = new DefaultTableModel(null,tbProjColumns);
+        tbTopEngModel = new DefaultTableModel(null,tbEngColumns);
+        tbMonitorModel = new DefaultTableModel(null,tbMonitorColumns);
 
 
         tableProjects.setModel(tbProjModel);
@@ -271,6 +279,8 @@ public class GuiMainPanel {
         tableTopProj.setModel(tbTopProjModel);
         tableTopEng.setModel(tbTopEngModel);
 
+        //TODO: RELOAD ALL DB EVERYTIME WE START THE APP
+        //getControllers().get(0).loadDB();
     }
 
     private void initButtons() {
@@ -373,6 +383,8 @@ public class GuiMainPanel {
                 jcbChooseProject.setEnabled(true);
                 enableProFields(E_MODIFY);
                 edProRate.setEnabled(false);
+
+                //TODO: fetchProjectsFromDB();
             }
         });
 
@@ -395,6 +407,7 @@ public class GuiMainPanel {
         removeProjectRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 setComponentStates(E_RESET,tabEditPro);
                 removeProjectRadioButton.setSelected(true);
                 modifyProjectRadioButton.setSelected(false);
@@ -404,6 +417,7 @@ public class GuiMainPanel {
                 enableProFields(E_REMOVE);
                 edProRate.setEnabled(false);
 
+
             }
         });
 
@@ -411,7 +425,6 @@ public class GuiMainPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO: call controller.update or something to create new Entity from fields with these conditions below
-
 
                 controllers.get(0).addEntity(PROJECT_ENTITY);
                 if(modifyProjectRadioButton.isSelected()){}
@@ -1051,5 +1064,61 @@ public class GuiMainPanel {
 
     public void setControllers(ArrayList<TableController> controllers) {
         this.controllers = controllers;
+    }
+
+    public DefaultTableModel getTbProjModel() {
+        return tbProjModel;
+    }
+
+    public void setTbProjModel(DefaultTableModel tbProjModel) {
+        this.tbProjModel = tbProjModel;
+    }
+
+    public DefaultTableModel getTbEngModel() {
+        return tbEngModel;
+    }
+
+    public void setTbEngModel(DefaultTableModel tbEngModel) {
+        this.tbEngModel = tbEngModel;
+    }
+
+    public DefaultTableModel getTbAreaModel() {
+        return tbAreaModel;
+    }
+
+    public void setTbAreaModel(DefaultTableModel tbAreaModel) {
+        this.tbAreaModel = tbAreaModel;
+    }
+
+    public DefaultTableModel getTbTopProjModel() {
+        return tbTopProjModel;
+    }
+
+    public void setTbTopProjModel(DefaultTableModel tbTopProjModel) {
+        this.tbTopProjModel = tbTopProjModel;
+    }
+
+    public DefaultTableModel getTbTopEngModel() {
+        return tbTopEngModel;
+    }
+
+    public void setTbTopEngModel(DefaultTableModel tbTopEngModel) {
+        this.tbTopEngModel = tbTopEngModel;
+    }
+
+    public DefaultTableModel getTbMonitorModel() {
+        return tbMonitorModel;
+    }
+
+    public void setTbMonitorModel(DefaultTableModel tbMonitorModel) {
+        this.tbMonitorModel = tbMonitorModel;
+    }
+
+    public JEditorPane getEdProMsDueDate() {
+        return edProMsDueDate;
+    }
+
+    public void setEdProMsDueDate(JEditorPane edProMsDueDate) {
+        this.edProMsDueDate = edProMsDueDate;
     }
 }

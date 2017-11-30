@@ -7,8 +7,8 @@ import java.util.Date;
 
 public class Project extends DatabaseEntity {
 
-    private Milestone milestone = null;
-    private String                dateStarted = null;
+    private Milestone           milestone = null;
+    private String              dateStarted = null;
     private String              description = null;
     private String              name = null;
     private ArrayList<Area>     area = null;
@@ -32,6 +32,7 @@ public class Project extends DatabaseEntity {
     }
 
     public Project(Milestone milestone, String dateStarted, String description, String name, String devStep) {
+        super();
         this.milestone = milestone;
         this.dateStarted = dateStarted;
         this.description = description;
