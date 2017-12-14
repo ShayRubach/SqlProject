@@ -1,5 +1,6 @@
 package com.shayrubach.controller.gui;
 
+import com.shayrubach.controller.IController;
 import com.shayrubach.model.QueryHolder;
 import com.shayrubach.model.entities.Project;
 import com.shayrubach.model.other.Milestone;
@@ -9,10 +10,12 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.UUID;
 
-public class TableController {
+public class TableController implements IController {
 
     private JTable table;
     private String tableName;
@@ -60,24 +63,32 @@ public class TableController {
             case GuiMainPanel.PROJECT_ENTITY:
                 Project p = new Project(
                         //TODO: FIX MILESTONE SHIT FUCK HERE, ADD DUE DATE IN TABLES ATTR
-                        new Milestone(getGui().getEdProMilestone().toString(),
-                                getGui().getEdProMoney().toString(),
-                                getGui().getEdProMsDueDate().toString()),
+                        new Milestone(getGui().getEdProMilestone().getText().toString(),
+                                getGui().getEdProMoney().getText().toString(),
+                                getGui().getEdProMsDueDate().getText().toString()),
                         getGui().getEdProDate().getText().toString(),
                         getGui().getEdProDesc().getText().toString(),
                         getGui().getEdProName().getText().toString(),
                         getGui().getJcbChooseStep().toString());
+                        p.setCustomers(getGui().getEdProCust().getText().toString());
+                        p.setDevTools(getGui().getEdProTools().getText().toString());
+
 
                 //upload to db
                 try {
-                    PreparedStatement stmt = connection.prepareStatement(QueryHolder.QUERY_NEW_PROJECT);
-                    stmt.setString(1,p.getId().toString());
-                    stmt.setString(2,p.getDateStarted().toString());
-                    stmt.setString(3,p.getName().toString());
-                    stmt.setString(4,p.getDescription().toString());
+                    ArrayList<PreparedStatement> pstmt = new ArrayList<>();
+
+                    pstmt.add(connection.prepareStatement(QueryHolder.QUERY_NEW_PROJECT));
+                    pstmt.get(pstmt.size()-1).setString(1,p.getId().toString());
+                    pstmt.get(pstmt.size()-1).setString(2,p.getDateStarted().toString());
+                    pstmt.get(pstmt.size()-1).setString(3,p.getName().toString());
+                    pstmt.get(pstmt.size()-1).setString(4,p.getDescription().toString());
 
                     //TODO: get the due date and put inside the appropriate class in db and local
-                    stmt.executeUpdate();
+
+                    //execute all statements
+                    for (PreparedStatement pst : pstmt) pst.executeUpdate();
+
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -102,12 +113,27 @@ public class TableController {
     }
 
     private void addProToTable(Project p) {
+        //TODO: GET ALL MISSING PROPERTIES HERE!!
+
         getGui().getTbProjModel().addRow(new Object[] {
-                p.getId(),
-                p.getDateStarted().toString(),
                 p.getName().toString(),
-                p.getDescription().toString()
+                "AREA GOES HERE",
+                p.getDescription(),
+                p.getCustomers(),
+                p.getDevTools(),
+                p.getDateStarted(),
+                //p.getMilestone().getName(),
+                null,
+                p.getId()
         });
+        //TODO: FIX THIS COMBO BOX INSIDE COLUMN
+        JComboBox cb = new JComboBox();
+        cb.addItem("test");
+        cb.addItem("test2");
+        cb.addItem("test3");
+
+        getGui().getTableProjects().getColumnModel().getColumn(6).setCellEditor(new DefaultCellEditor(cb));
+
     }
 
 //    private String randString(int i) {
@@ -148,7 +174,36 @@ public class TableController {
         this.tableName = tableName;
     }
 
-    public void loadDB() {
+    @Override
+    public void loadDb() throws SQLException {
         //TODO: implememt load db
+        ArrayList<PreparedStatement> pss = new ArrayList<>();
+        ArrayList<ResultSet> rss = new ArrayList<>();
+
+        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECTS));
+        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREAS));
+        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS));
+
+        ResultSet rs = pss.get(0).executeQuery();
+
+        //TODO: build a row in form of a string array and send it to fill func (get all required db fields)
+
+        //  replace null with the real properites!!!
+
+        while(rs.next()){
+
+            String[] formedProjectRow = {
+                    rs.getString(3),    //name
+                    "  ",                           //area
+                    rs.getString(4),    //desc
+                    "  ",                           //customers
+                    "  ",                           //dev tools
+                    rs.getString(2),    //date started
+                    "  ",                           //milestones
+                    rs.getString(1)     //id
+            };
+            getGui().fillProjectTable(formedProjectRow);
+        }
     }
+
 }

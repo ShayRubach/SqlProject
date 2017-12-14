@@ -5,6 +5,7 @@ import com.shayrubach.view.GuiMainPanel;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class AppController implements IController {
@@ -16,12 +17,17 @@ public class AppController implements IController {
     String URL = "jdbc:mysql://localhost:3306/softwarecompany?createDatabaseIfNotExist=true" ;
     Connection connection = null;
 
-    public AppController(GuiMainPanel gui) {
+    public AppController(GuiMainPanel gui) throws SQLException {
         connect();
         setGui(gui);
         initControllers();
         bind();
+        loadDb();
+    }
 
+    public void loadDb() throws SQLException {
+        for(TableController c : controllers)
+            if(c != null) c.loadDb();
     }
 
     private void connect() {
@@ -38,11 +44,12 @@ public class AppController implements IController {
     /* init all controllers with their appropriate table and mention its name */
     private void initControllers() {
         controllers.add(new TableController(gui.getTableProjects(),"PROJECTS"));
-        controllers.add(new TableController(gui.getTableAreas(),"ARES"));
-        controllers.add(new TableController(gui.getTableEng(),"ENGINEERS"));
-        controllers.add(new TableController(gui.getTableMonitor(),"MONITOR"));
-        controllers.add(new TableController(gui.getTableTopProj(),"TOP_PROJECTS"));
-        controllers.add(new TableController(gui.getTableTopEng(),"TOP_ENGINEERS"));
+        //TODO: change Ctrlrs to be explicit ctrls ProjectCtrl, EngCtrl etc...
+        //controllers.add(new TableController(gui.getTableAreas(),"ARES"));
+        //controllers.add(new TableController(gui.getTableEng(),"ENGINEERS"));
+        //controllers.add(new TableController(gui.getTableMonitor(),"MONITOR"));
+        //controllers.add(new TableController(gui.getTableTopProj(),"TOP_PROJECTS"));
+        //controllers.add(new TableController(gui.getTableTopEng(),"TOP_ENGINEERS"));
 
         for(TableController tc : controllers){
             tc.setGui(gui);
@@ -61,12 +68,10 @@ public class AppController implements IController {
     }
 
 
-    @Override
     public boolean connectDb(String dbName) {
         return false;
     }
 
-    @Override
     public boolean dissconnectDb() {
         return false;
     }

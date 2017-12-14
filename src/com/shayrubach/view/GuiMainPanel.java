@@ -102,6 +102,7 @@ public class GuiMainPanel {
     private JEditorPane edEngAge;
     private JButton applyProButton;
     private JEditorPane edProMsDueDate;
+    private JEditorPane edProCust;
 
     private DefaultTableModel tbProjModel;
     private DefaultTableModel tbEngModel;
@@ -488,6 +489,7 @@ public class GuiMainPanel {
                     edProName.setText("Project_X");
                     edProDesc.setText("this project is bound to investigate the X letter");
                     edProDate.setText("24.10.2017");
+                    edProCust.setText("James Dean");
                     edProTools.setText("Github,VisualStudio,VMWare,JIRA");
                     edProMilestone.setText("finish the design in 14 days from kick off");
                     edProMoney.setText("12000");
@@ -1120,5 +1122,17 @@ public class GuiMainPanel {
 
     public void setEdProMsDueDate(JEditorPane edProMsDueDate) {
         this.edProMsDueDate = edProMsDueDate;
+    }
+
+    public JEditorPane getEdProCust() {
+        return edProCust;
+    }
+
+    public void setEdProCust(JEditorPane edProCust) {
+        this.edProCust = edProCust;
+    }
+
+    public void fillProjectTable(String[] formedProjectRow) {
+        getTbProjModel().addRow(formedProjectRow);
     }
 }

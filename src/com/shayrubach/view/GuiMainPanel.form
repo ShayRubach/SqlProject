@@ -179,7 +179,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <grid id="4db0a" binding="tabEditPro" layout-manager="GridLayoutManager" row-count="16" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="4db0a" binding="tabEditPro" layout-manager="GridLayoutManager" row-count="17" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -199,7 +199,7 @@
                   </component>
                   <component id="68620" class="javax.swing.JEditorPane" binding="edProMilestone">
                     <constraints>
-                      <grid row="11" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                      <grid row="12" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="5"/>
                       </grid>
                     </constraints>
@@ -219,7 +219,7 @@
                   </component>
                   <component id="4c0b8" class="javax.swing.JEditorPane" binding="edProRate">
                     <constraints>
-                      <grid row="10" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                      <grid row="11" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="5"/>
                       </grid>
                     </constraints>
@@ -245,7 +245,7 @@
                   </component>
                   <component id="f8e9f" class="javax.swing.JEditorPane" binding="edProTools">
                     <constraints>
-                      <grid row="9" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                      <grid row="10" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="5"/>
                       </grid>
                     </constraints>
@@ -263,7 +263,7 @@
                   </component>
                   <vspacer id="50be9">
                     <constraints>
-                      <grid row="15" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="3" indent="1" use-parent-layout="false">
+                      <grid row="16" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="1" anchor="0" fill="3" indent="1" use-parent-layout="false">
                         <minimum-size width="0" height="0"/>
                         <preferred-size width="-1" height="400"/>
                       </grid>
@@ -311,7 +311,7 @@
                   </component>
                   <component id="ea191" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="53" height="17"/>
                       </grid>
                     </constraints>
@@ -321,7 +321,7 @@
                   </component>
                   <component id="6ef76" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="53" height="17"/>
                       </grid>
                     </constraints>
@@ -331,7 +331,7 @@
                   </component>
                   <component id="62192" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="53" height="17"/>
                       </grid>
                     </constraints>
@@ -341,7 +341,7 @@
                   </component>
                   <component id="9f8dc" class="javax.swing.JEditorPane" binding="edProMoney">
                     <constraints>
-                      <grid row="12" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                      <grid row="13" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="5"/>
                       </grid>
                     </constraints>
@@ -349,7 +349,7 @@
                   </component>
                   <component id="f29d0" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="53" height="17"/>
                       </grid>
                     </constraints>
@@ -417,7 +417,7 @@
                   </component>
                   <component id="e611d" class="javax.swing.JButton" binding="applyProButton">
                     <constraints>
-                      <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                      <grid row="15" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <text value="Apply"/>
@@ -425,7 +425,7 @@
                   </component>
                   <component id="e16f3" class="javax.swing.JEditorPane" binding="edProMsDueDate">
                     <constraints>
-                      <grid row="13" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                      <grid row="14" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                         <preferred-size width="50" height="5"/>
                       </grid>
                     </constraints>
@@ -433,12 +433,30 @@
                   </component>
                   <component id="ed8be" class="javax.swing.JLabel">
                     <constraints>
-                      <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                      <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                         <preferred-size width="53" height="17"/>
                       </grid>
                     </constraints>
                     <properties>
                       <text value="Due Date"/>
+                    </properties>
+                  </component>
+                  <component id="69984" class="javax.swing.JEditorPane" binding="edProCust">
+                    <constraints>
+                      <grid row="9" column="1" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                        <preferred-size width="50" height="5"/>
+                      </grid>
+                    </constraints>
+                    <properties/>
+                  </component>
+                  <component id="f008c" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                        <preferred-size width="53" height="17"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <text value="Customers"/>
                     </properties>
                   </component>
                 </children>

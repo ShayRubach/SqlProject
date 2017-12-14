@@ -14,14 +14,14 @@ public class Project extends DatabaseEntity {
     private ArrayList<Area>     area = null;
     private String              devStep = null;
 
-    private ArrayList<String>   customers = new ArrayList<>();
-    private ArrayList<String>   devTools = new ArrayList<>();
+    private String   customers;
+    private String   devTools;
 
     public Project(){
         super();
     }
 
-    public Project(Milestone milestone, String dateStarted, String description, String name, ArrayList<Area> area, ArrayList<String> customers, ArrayList<String> devTools) {
+    public Project(Milestone milestone, String dateStarted, String description, String name, ArrayList<Area> area, String customers, String devTools) {
         this.milestone = milestone;
         this.dateStarted = dateStarted;
         this.description = description;
@@ -80,19 +80,19 @@ public class Project extends DatabaseEntity {
         this.area = area;
     }
 
-    public ArrayList<String> getCustomers() {
+    public String getCustomers() {
         return customers;
     }
 
-    public void setCustomers(ArrayList<String> customers) {
+    public void setCustomers(String customers) {
         this.customers = customers;
     }
 
-    public ArrayList<String> getDevTools() {
+    public String getDevTools() {
         return devTools;
     }
 
-    public void setDevTools(ArrayList<String> devTools) {
+    public void setDevTools(String devTools) {
         this.devTools = devTools;
     }
 
