@@ -1,7 +1,7 @@
 package com.shayrubach.view;
 
 
-import com.shayrubach.controller.gui.TableController;
+import com.shayrubach.controller.gui.tablectrls.TableController;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -103,6 +104,10 @@ public class GuiMainPanel {
     private JButton applyProButton;
     private JEditorPane edProMsDueDate;
     private JEditorPane edProCust;
+    private JComboBox jcbChooseProArea;
+    private JPanel tabUpcomingMilestones;
+    private JPanel tabDevSteps;
+
 
     private DefaultTableModel tbProjModel;
     private DefaultTableModel tbEngModel;
@@ -201,6 +206,8 @@ public class GuiMainPanel {
         //send controller to fetch all project names from DB
         // add all projects to CB
 
+        jcbChooseProArea = jcbChooseArea;
+
         jcbChooseStep.addItem("-- choose Development Step --");
         jcbChooseStep.addItem(" ");
         jcbChooseStep.addItem("Design and Architecture");
@@ -236,7 +243,7 @@ public class GuiMainPanel {
         mainFrame.setSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize()));
         mainFrame.setContentPane(this.getPanelMain());
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        changeTheme();
+        //changeTheme();
         mainFrame.setVisible(true);
 
     }
@@ -255,6 +262,9 @@ public class GuiMainPanel {
         final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Age","Address","ID"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
+        final String[] tbMilestonesColumns = {"Date","TimeStamp"};
+        final String[] tbDevStepsColumns = {"Description","TimeStamp"};
+
 
         tableProjects.setBackground(new Color(255,255,255));
         tableEng.setBackground(new Color(255,255,255));
@@ -398,6 +408,7 @@ public class GuiMainPanel {
                 removeProjectRadioButton.setSelected(false);
 
                 jcbChooseProject.setEnabled(false);
+                jcbChooseProArea.setEnabled(true);
 
                 enableProFields(E_NEW);
                 edProRate.setEnabled(false);
@@ -427,7 +438,11 @@ public class GuiMainPanel {
             public void actionPerformed(ActionEvent e) {
                 //TODO: call controller.update or something to create new Entity from fields with these conditions below
 
-                controllers.get(0).addEntity(PROJECT_ENTITY);
+                try {
+                    controllers.get(0).addEntity(PROJECT_ENTITY);
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
                 if(modifyProjectRadioButton.isSelected()){}
                 if(newProjectRadioButton.isSelected()){}
                 if(removeProjectRadioButton.isSelected()){}
@@ -1132,7 +1147,17 @@ public class GuiMainPanel {
         this.edProCust = edProCust;
     }
 
+    public JComboBox getJcbChooseProArea() {
+        return jcbChooseProArea;
+    }
+
+    public void setJcbChooseProArea(JComboBox jcbChooseProArea) {
+        this.jcbChooseProArea = jcbChooseProArea;
+    }
     public void fillProjectTable(String[] formedProjectRow) {
         getTbProjModel().addRow(formedProjectRow);
     }
+
+
+
 }

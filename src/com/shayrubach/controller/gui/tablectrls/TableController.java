@@ -1,7 +1,8 @@
-package com.shayrubach.controller.gui;
+package com.shayrubach.controller.gui.tablectrls;
 
 import com.shayrubach.controller.IController;
 import com.shayrubach.model.QueryHolder;
+import com.shayrubach.model.entities.Area;
 import com.shayrubach.model.entities.Project;
 import com.shayrubach.model.other.Milestone;
 import com.shayrubach.view.GuiMainPanel;
@@ -57,10 +58,25 @@ public class TableController implements IController {
         }
     }
 
-    public void addEntity(int ENTITY) {
+    public void addEntity(int ENTITY) throws SQLException {
         //TODO: implement all cases of add/modify/remove entities
         switch(ENTITY){
             case GuiMainPanel.PROJECT_ENTITY:
+
+                String areaName = getGui().getJcbChooseProArea().getSelectedItem().toString();
+                String areaSpecialty=null;
+
+                PreparedStatement ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_AREA_BY_NAME);
+                ps.setString(1,areaName);
+
+                ResultSet rs = ps.executeQuery();
+                //TODO: get the area from db and add it to proj table
+//                areaSpecialty = rs.getString(2);
+//
+//
+//                System.out.println(areaName + " , " + areaSpecialty);
+
+
                 Project p = new Project(
                         //TODO: FIX MILESTONE SHIT FUCK HERE, ADD DUE DATE IN TABLES ATTR
                         new Milestone(getGui().getEdProMilestone().getText().toString(),
@@ -70,6 +86,8 @@ public class TableController implements IController {
                         getGui().getEdProDesc().getText().toString(),
                         getGui().getEdProName().getText().toString(),
                         getGui().getJcbChooseStep().toString());
+
+                        p.setArea(new Area(areaName,areaSpecialty));
                         p.setCustomers(getGui().getEdProCust().getText().toString());
                         p.setDevTools(getGui().getEdProTools().getText().toString());
 
@@ -104,6 +122,9 @@ public class TableController implements IController {
                 break;
             case GuiMainPanel.AREA_ENTITY:
 
+//                Area a = new Area(getGui().getEdAreaName().getText(),getGui().getEdAreaSpec().getText());
+//                PreparedStatement ps = getConnection().prepareStatement(QueryHolder.QUERY_NEW_AREA);
+
                 break;
             case GuiMainPanel.ENGINEER_ENTITY:
 
@@ -135,12 +156,6 @@ public class TableController implements IController {
         getGui().getTableProjects().getColumnModel().getColumn(6).setCellEditor(new DefaultCellEditor(cb));
 
     }
-
-//    private String randString(int i) {
-//        String uuid = UUID.randomUUID().toString();
-//        uuid.replace("-","");
-//        return uuid.substring(0,i);
-//    }
 
     public GuiMainPanel getGui() {
         return gui;
@@ -181,10 +196,25 @@ public class TableController implements IController {
         ArrayList<ResultSet> rss = new ArrayList<>();
 
         pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECTS));
-        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREAS));
-        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS));
+        //pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_AREAS_BY_PROJECT));
+        //pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_MILESTONE_BY_PROJECT));
+        //pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_DEV_TOOLS_BY_PROJECT));
+
+
+
+//        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREAS));
+//        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS));
 
         ResultSet rs = pss.get(0).executeQuery();
+
+        //add static milestone for testings
+//        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_NEW_MILESTONE));
+//        pss.get(1).setString(1,"8c410e38");
+//        pss.get(1).setString(2,"milestone example");
+//        pss.get(1).setString(3,"5112018");
+//        pss.get(1).setString(4,"56000");
+//        pss.get(1).executeUpdate();
+
 
         //TODO: build a row in form of a string array and send it to fill func (get all required db fields)
 

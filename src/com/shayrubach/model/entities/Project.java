@@ -11,7 +11,7 @@ public class Project extends DatabaseEntity {
     private String              dateStarted = null;
     private String              description = null;
     private String              name = null;
-    private ArrayList<Area>     area = null;
+    private Area                area = null;
     private String              devStep = null;
 
     private String   customers;
@@ -21,7 +21,7 @@ public class Project extends DatabaseEntity {
         super();
     }
 
-    public Project(Milestone milestone, String dateStarted, String description, String name, ArrayList<Area> area, String customers, String devTools) {
+    public Project(Milestone milestone, String dateStarted, String description, String name, Area area, String customers, String devTools) {
         this.milestone = milestone;
         this.dateStarted = dateStarted;
         this.description = description;
@@ -72,11 +72,11 @@ public class Project extends DatabaseEntity {
         this.name = name;
     }
 
-    public ArrayList<Area> getArea() {
+    public Area getArea() {
         return area;
     }
 
-    public void setArea(ArrayList<Area> area) {
+    public void setArea(Area area) {
         this.area = area;
     }
 

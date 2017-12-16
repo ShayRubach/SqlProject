@@ -1,6 +1,7 @@
 package com.shayrubach.controller.gui;
 
 import com.shayrubach.controller.IController;
+import com.shayrubach.controller.gui.tablectrls.TableController;
 import com.shayrubach.view.GuiMainPanel;
 
 import java.sql.Connection;
@@ -45,8 +46,8 @@ public class AppController implements IController {
     private void initControllers() {
         controllers.add(new TableController(gui.getTableProjects(),"PROJECTS"));
         //TODO: change Ctrlrs to be explicit ctrls ProjectCtrl, EngCtrl etc...
-        //controllers.add(new TableController(gui.getTableAreas(),"ARES"));
-        //controllers.add(new TableController(gui.getTableEng(),"ENGINEERS"));
+        //controllers.add(new ACtrl(gui.getTableAreas(),"ARES"));
+        //controllers.add(new ECtrl(gui.getTableEng(),"ENGINEERS"));
         //controllers.add(new TableController(gui.getTableMonitor(),"MONITOR"));
         //controllers.add(new TableController(gui.getTableTopProj(),"TOP_PROJECTS"));
         //controllers.add(new TableController(gui.getTableTopEng(),"TOP_ENGINEERS"));
