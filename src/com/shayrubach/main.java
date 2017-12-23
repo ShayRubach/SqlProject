@@ -56,7 +56,7 @@ public class main {
                         "PRIMARY KEY(area_id)," +
                         "area_id        VARCHAR(32)," +
                         "name           VARCHAR(32)," +
-                        "specialty      VARCHAR(32))" );
+                        "specialty      VARCHAR(256))" );
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  development_steps(" +

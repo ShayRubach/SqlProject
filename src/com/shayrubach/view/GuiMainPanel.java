@@ -2,19 +2,16 @@ package com.shayrubach.view;
 
 
 import com.shayrubach.controller.gui.tablectrls.TableController;
-
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+
 
 public class GuiMainPanel {
 
@@ -22,7 +19,7 @@ public class GuiMainPanel {
     private static final int E_MODIFY   = 1 ;
     private static final int E_REMOVE   = -1 ;
     private static final int E_NEW      = 2;
-    private static final int EDIT_TAB   = 6 ;
+
     public static final int PROJECT_ENTITY = 0;
     public static final int AREA_ENTITY = 1;
     public static final int ENGINEER_ENTITY = 2;
@@ -107,6 +104,18 @@ public class GuiMainPanel {
     private JComboBox jcbChooseProArea;
     private JPanel tabUpcomingMilestones;
     private JPanel tabDevSteps;
+    private JTable tableUpcomingMilestones;
+    private JTable tableDevSteps;
+    private JButton applyAreaButton;
+    private JComboBox jcbProjNewArea;
+    private JComboBox jcbNewArea;
+    private JButton addNewAreaButton;
+    private JRadioButton addNewAreaRadioButton;
+    private JPanel tabGroups;
+    private JScrollPane jspGroup;
+    private JTable tableGroups;
+    private JComboBox jcbGroupPro;
+    private JComboBox jcbGroupArea;
 
 
     private DefaultTableModel tbProjModel;
@@ -115,6 +124,10 @@ public class GuiMainPanel {
     private DefaultTableModel tbTopProjModel;
     private DefaultTableModel tbTopEngModel;
     private DefaultTableModel tbMonitorModel;
+    private DefaultTableModel tbMilestoneModel;
+    private DefaultTableModel tbDevStepsModel;
+    private DefaultTableModel tbGroupModel;
+
 
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
@@ -122,9 +135,24 @@ public class GuiMainPanel {
     public GuiMainPanel() {
         initMainFrame();
         initTables();
-        initButtons();
+        initJsps();
         initCBoxes();
         initEditFields();
+        initTabs();
+    }
+
+    private void initJsps() {
+        //jspProj = new JScrollPane(tableProjects, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        tableProjects.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableAreas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableEng.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableTopProj.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableTopEng.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableDevSteps.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableUpcomingMilestones.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableMonitor.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+
     }
 
     private void initEditFields() {
@@ -161,12 +189,45 @@ public class GuiMainPanel {
         initProCB();
         initAreaCB();
         initEngCB();
+        initGroupCB();
+    }
+
+    private void initGroupCB() {
+        jcbGroupPro.addItem("-- select Project --");
+        jcbGroupPro.addItem("");
+
+        jcbGroupArea.addItem("-- select Area --");
+        jcbGroupArea.addItem("");
+
+
+//        jcbGroupPro.addItemListener(new ItemListener() {
+//            @Override
+//            public void itemStateChanged(ItemEvent e) {
+//                try {
+//                    controllers.get(0).fillGroupAreaCB();
+//                } catch (SQLException e1) {
+//                    e1.printStackTrace();
+//                }
+//            }
+//        });
+
+        jcbGroupPro.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(jcbGroupPro.getSelectedIndex() < 2)
+                    return;
+                try {
+                    controllers.get(0).fillGroupAreaCB();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+
     }
 
     private void initEngCB() {
         initEngCBText();
-
-
     }
 
     private void initAreaCB() {
@@ -213,7 +274,8 @@ public class GuiMainPanel {
         jcbChooseStep.addItem("Design and Architecture");
         jcbChooseStep.addItem("Development and Implementation");
         jcbChooseStep.addItem("Deliver Final Product");
-
+        jcbNewArea.addItem("-- choose Area --");
+        jcbNewArea.addItem(" ");
 
         jcbChooseMilestone.addItem("-- choose/add Milestone --");
         jcbChooseMilestone.addItem(" ");
@@ -258,13 +320,13 @@ public class GuiMainPanel {
     }
 
     private void initTables() {
-        final String[] tbProjColumns = {"Name","Area","Description","Customers","Development Tools","Date Started","Milestones","ID"};
+        final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","Milestones","ID"};
         final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Age","Address","ID"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
-        final String[] tbMilestonesColumns = {"Date","TimeStamp"};
-        final String[] tbDevStepsColumns = {"Description","TimeStamp"};
-
+        final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted"};
+        final String[] tbDevStepsColumns = {"State","Projects","Tools"};
+        final String[] tbGroupColumns = {"Engineer Name"};
 
         tableProjects.setBackground(new Color(255,255,255));
         tableEng.setBackground(new Color(255,255,255));
@@ -272,6 +334,9 @@ public class GuiMainPanel {
         tableTopProj.setBackground(new Color(255,255,255));
         tableTopEng.setBackground(new Color(255,255,255));
         tableMonitor.setBackground(new Color(255,255,255));
+        tableUpcomingMilestones.setBackground(new Color(255,255,255));
+        tableDevSteps.setBackground(new Color(255,255,255));
+        tableGroups.setBackground(new Color(255,255,255));
 
 
         tbProjModel = new DefaultTableModel(null,tbProjColumns);
@@ -280,7 +345,9 @@ public class GuiMainPanel {
         tbTopProjModel = new DefaultTableModel(null,tbProjColumns);
         tbTopEngModel = new DefaultTableModel(null,tbEngColumns);
         tbMonitorModel = new DefaultTableModel(null,tbMonitorColumns);
-
+        tbMilestoneModel = new DefaultTableModel(null,tbMilestonesColumns);
+        tbDevStepsModel = new DefaultTableModel(null,tbDevStepsColumns);
+        tbGroupModel = new DefaultTableModel(null,tbGroupColumns);
 
         tableProjects.setModel(tbProjModel);
         tableAreas.setModel(tbAreaModel);
@@ -289,28 +356,41 @@ public class GuiMainPanel {
 
         tableTopProj.setModel(tbTopProjModel);
         tableTopEng.setModel(tbTopEngModel);
+        tableUpcomingMilestones.setModel(tbMilestoneModel);
+        tableDevSteps.setModel(tbDevStepsModel);
+        tableGroups.setModel(tbGroupModel);
 
         //TODO: RELOAD ALL DB EVERYTIME WE START THE APP
         //getControllers().get(0).loadDB();
     }
 
-    private void initButtons() {
+    private void applyFixedColumnsWidth(JTable table,int size) {
+        int i = 0;
+        while (i < table.getColumnModel().getColumnCount()){
+            table.getColumnModel().getColumn(i).setMaxWidth(size);
+            table.getColumnModel().getColumn(i).setPreferredWidth(size);
+        }
+
+    }
+
+    private void initTabs() {
         setEditListeners();
 
-        tabbedPane.addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                //TODO: IMPLEMENT UPDATE()
-//                if(tabbedPane.getSelectedIndex() != EDIT_TAB){
-//                    //update all changed in tabs
-//                    for(TableController c : controllers){
-//                        c.update();
+
+//        tabbedPane.addChangeListener(new ChangeListener() {
+//            @Override
+//            public void stateChanged(ChangeEvent e) {
+//                //TODO: IMPLEMENT UPDATE()
+//                if(tabbedPane.getSelectedIndex() == TAB_STATE.TAB_GROUPS.val){
+//                    try {
+//                        controllers.get(0).fillGroupCBX();
+//                    } catch (SQLException e1) {
+//                        e1.printStackTrace();
 //                    }
 //                }
-
-
-            }
-        });
+//
+//            }
+//        });
     }
 
     private void setEditListeners() {
@@ -359,13 +439,18 @@ public class GuiMainPanel {
 
     private void setEditArea() {
         //TODO: RESET ALL FIELDS (Clear texts inside JEditText, back to 0 index on CBs..) WHEN SWAPPING BETWEEN RADIOS!!
+        applyAreaButton.setEnabled(true);
 
         newAreaRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 newAreaRadioButton.setSelected(true);
                 removeAreaRadioButton.setSelected(false);
-
+                jcbChooseArea.setEnabled(false);
+                edAreaName.setEditable(true);
+                edAreaName.setEnabled(true);
+                edAreaSpec.setEditable(true);
+                edAreaSpec.setEnabled(true);
             }
         });
 
@@ -374,8 +459,26 @@ public class GuiMainPanel {
             public void actionPerformed(ActionEvent e) {
                 removeAreaRadioButton.setSelected(true);
                 newAreaRadioButton.setSelected(false);
-
                 jcbChooseArea.setEnabled(true);
+                getEdAreaName().setText("");
+                getEdAreaSpec().setText("");
+            }
+        });
+
+        applyAreaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    if(newAreaRadioButton.isSelected()){
+                        controllers.get(0).addEntity(AREA_ENTITY);
+                    }
+                    if(removeAreaRadioButton.isSelected()){
+                        //TODO: add area_remove
+                    }
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+
             }
         });
     }
@@ -433,19 +536,56 @@ public class GuiMainPanel {
             }
         });
 
+        addNewAreaRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                removeProjectRadioButton.setSelected(false);
+                modifyProjectRadioButton.setSelected(false);
+                newProjectRadioButton.setSelected(false);
+
+                jcbChooseProject.setEnabled(true);
+                jcbNewArea.setEnabled(true);
+
+                try {
+                    controllers.get(0).getAvailableAreas();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+
+        addNewAreaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    controllers.get(0).addNewAreaToProject();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
+
+
         applyProButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TODO: call controller.update or something to create new Entity from fields with these conditions below
 
                 try {
-                    controllers.get(0).addEntity(PROJECT_ENTITY);
+                    if(newProjectRadioButton.isSelected()){
+                        controllers.get(0).addEntity(PROJECT_ENTITY);
+                    }
+                    if(modifyProjectRadioButton.isSelected()){
+                        //TODO: add project_modify
+                    }
+                    if(removeProjectRadioButton.isSelected()){
+                        //TODO: add project_remove
+                    }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
                 }
-                if(modifyProjectRadioButton.isSelected()){}
-                if(newProjectRadioButton.isSelected()){}
-                if(removeProjectRadioButton.isSelected()){}
+
+
             }
         });
 
@@ -1154,10 +1294,55 @@ public class GuiMainPanel {
     public void setJcbChooseProArea(JComboBox jcbChooseProArea) {
         this.jcbChooseProArea = jcbChooseProArea;
     }
+    public JButton getApplyAreaButton() {
+        return applyAreaButton;
+    }
+
     public void fillProjectTable(String[] formedProjectRow) {
         getTbProjModel().addRow(formedProjectRow);
+
     }
 
 
+    public void fillAreaTable(String[] formedAreaRow) {
+        getTbAreaModel().addRow(formedAreaRow);
+    }
 
+    public JComboBox getJcbNewArea() {
+        return jcbNewArea;
+    }
+
+    public void updateBoxes() {
+        //update project boxes
+        for (int i = 0; i < tableProjects.getRowCount(); i++) {
+
+        }
+
+        //update area boxes
+        //update eng boxes
+        //update milestone boxes
+        //update phone boxes
+
+
+
+
+
+
+    }
+
+    public JPanel getTabGroups() {
+        return tabGroups;
+    }
+
+    public JTable getTableGroups() {
+        return tableGroups;
+    }
+
+    public JComboBox getJcbGroupPro() {
+        return jcbGroupPro;
+    }
+
+    public JComboBox getJcbGroupArea() {
+        return jcbGroupArea;
+    }
 }
