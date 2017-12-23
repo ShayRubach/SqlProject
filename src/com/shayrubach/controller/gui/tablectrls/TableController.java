@@ -312,43 +312,26 @@ public class TableController implements IController {
     public void addNewAreaToProject() throws SQLException {
         PreparedStatement ps;
         ResultSet rs;
-
         String projectName,areaName, areaId = null, projectId = null;
-        final int PRO_ID_COLUMN_INDEX = 6;
-        final int AREA_ID_COLUMN_INDEX = 2;
-        final int NAME_COLUMN_INDEX = 0;
+
 
         //get project name off the fields
         projectName = getGui().getJcbChooseProject().getSelectedItem().toString();
         areaName = getGui().getJcbNewArea().getSelectedItem().toString();
-
-        //get project id by name from db
-//        ps = getConnection().prepareStatement(QueryHolder.GET_PROJECT_ID_BY_NAME);
-//        rs = ps.executeQuery();
-//        while(rs.next())
-//            projectId = rs.getString(1);
-//
-//
-//        //get area id by name from db
-//        ps = getConnection().prepareStatement(QueryHolder.GET_AREA_ID_BY_NAME);
-//        rs = ps.executeQuery();
-//        while(rs.next())
-//            projectId = rs.getString(1);
 
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_PROJECT_AND_AREA_IDS_BY_NAME);
         ps.setString(1,projectName);
         ps.setString(2,areaName);
         rs = ps.executeQuery();
 
+        rs.next();
         projectId = rs.getString(1);
         areaId = rs.getString(2);
 
-
-//        //TODO: fix this - add area to project
-//        ps = getConnection().prepareStatement(QueryHolder.QUERY_ADD_AREA_TO_PROJECT);
-//        ps.setString(1,projectId);
-//        ps.setString(2,areaId);
-//        ps.executeUpdate();
+        ps = getConnection().prepareStatement(QueryHolder.QUERY_ADD_AREA_TO_PROJECT);
+        ps.setString(1,projectId);
+        ps.setString(2,areaId);
+        ps.executeUpdate();
 
     }
 

@@ -47,7 +47,7 @@ public class QueryHolder {
 
     @NestedQuery
     public static final String QUERY_GET_PROJECT_AND_AREA_IDS_BY_NAME =
-            "SELECT areas.area_id,projects.project_id " +
+            "SELECT projects.project_id,areas.area_id " +
                     "FROM areas " +
                         "JOIN projects " +
                         "ON projects.name=? " +
