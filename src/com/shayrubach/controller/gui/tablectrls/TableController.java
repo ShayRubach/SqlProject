@@ -7,6 +7,7 @@ import com.shayrubach.model.entities.Project;
 import com.shayrubach.model.other.Milestone;
 import com.shayrubach.view.GuiMainPanel;
 
+import javax.management.Query;
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,17 +36,36 @@ public class TableController implements IController {
         //
     }
 
-    public void removeEntity(int ENTITY){
-
+    public void removeEntity(int ENTITY) throws SQLException {
+        PreparedStatement ps;
+        ResultSet rs;
+        String projectId;
+        final int ID_COLUMN_INDEX = 6;
         switch (ENTITY){
             case GuiMainPanel.PROJECT_ENTITY:
-                try {
-                    PreparedStatement stmt = connection.prepareStatement(QueryHolder.QUERY_REMOVE_PROJECT);
-                    stmt.setString(0,getGui().getLabelProId().getText().toString());
-                    stmt.executeUpdate();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                ps = connection.prepareStatement(QueryHolder.QUERY_PROJECT_ID_BY_NAME);
+                ps.setString(1,getGui().getJcbChooseProject().getSelectedItem().toString());
+                rs = ps.executeQuery();
+                rs.next();
+                projectId = rs.getString(1);
+
+                ps = connection.prepareStatement(QueryHolder.QUERY_REMOVE_PROJECT);
+
+                //rs is the project Id:
+                ps.setString(1,projectId);
+                ps.executeUpdate();
+
+                getGui().getJcbChooseProject().setSelectedIndex(0);
+
+                //TODO: remove project from gui at Projects/Engineers/Milestones/Dev Steps
+//                for (int i = 0 ; i < getGui().getTbProjModel().getRowCount();++i ){
+//                    if(getGui().getTbProjModel().getValueAt(i,ID_COLUMN_INDEX).equals(projectId)){
+//                        getGui().getTbProjModel().removeRow(i);
+//                    }
+//                }
+//
+                loadDbProjects(ps,rs);
+
                 break;
             case GuiMainPanel.AREA_ENTITY:
 
@@ -280,7 +300,7 @@ public class TableController implements IController {
 
             String[] formedProjectRow = {
                     rs.getString(3),    //name
-                    "  ",                           //area
+                    " ",                            //area
                     rs.getString(4),    //desc
                     rs.getString(5),    //customers
                     rs.getString(6),    //dev tools
@@ -288,9 +308,18 @@ public class TableController implements IController {
                     "  ",                           //milestones
                     rs.getString(1)     //id
             };
+
+
+            for(String s : formedProjectRow) System.out.print(s + " , ");
+            System.out.println(" ");
             getGui().fillProjectTable(formedProjectRow);
 
-            //update boxes
+                //update boxes
+//            getGui().getJcbChooseProject().removeAllItems();
+//            getGui().getJcbChooseEngPro().removeAllItems();
+//            getGui().getJcbGroupPro().removeAllItems();
+
+
             getGui().getJcbChooseProject().addItem(rs.getString(3));
             getGui().getJcbChooseEngPro().addItem(rs.getString(3));
             getGui().getJcbGroupPro().addItem(rs.getString(3));
@@ -298,7 +327,7 @@ public class TableController implements IController {
     }
 
     public void getAvailableAreas() throws SQLException {
-
+        //TODO: fix this to only show unacquired areas.
         PreparedStatement ps;
         ResultSet rs;
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREA_NAMES);

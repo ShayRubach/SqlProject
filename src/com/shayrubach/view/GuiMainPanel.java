@@ -241,8 +241,10 @@ public class GuiMainPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //if a specific project was chosen
-                if(jcbChooseProject.getSelectedIndex() > 1)
+                if (jcbChooseProject.getSelectedIndex() > 1) {
                     jcbChooseMilestone.setEnabled(true);
+                }
+
             }
         });
 
@@ -578,8 +580,8 @@ public class GuiMainPanel {
                     if(modifyProjectRadioButton.isSelected()){
                         //TODO: add project_modify
                     }
-                    if(removeProjectRadioButton.isSelected()){
-                        //TODO: add project_remove
+                    if(removeProjectRadioButton.isSelected() && jcbChooseProject.getSelectedIndex() > 1){
+                        controllers.get(0).removeEntity(PROJECT_ENTITY);
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();

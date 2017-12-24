@@ -2,6 +2,7 @@ package com.shayrubach.controller.gui;
 
 import com.shayrubach.controller.IController;
 import com.shayrubach.controller.gui.tablectrls.TableController;
+import com.shayrubach.model.QueryHolder;
 import com.shayrubach.view.GuiMainPanel;
 
 import java.sql.Connection;
@@ -70,24 +71,19 @@ public class AppController implements IController {
                         "project_id     VARCHAR(32)," +
                         "eng_id         VARCHAR(32)," +
                         "rate           VARCHAR(32)," +
-                        "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
-                        "FOREIGN KEY(eng_id) REFERENCES engineers(eng_id),"+
+                        "FOREIGN KEY(project_id) REFERENCES projects(project_id) ON DELETE CASCADE,"+
+                        "FOREIGN KEY(eng_id) REFERENCES engineers(eng_id) ON DELETE CASCADE,"+
                         "PRIMARY KEY(eng_id,project_id))");
 
 
-        queries.add(
-                "CREATE TABLE IF NOT EXISTS  phones( " +
-                        "eng_id         VARCHAR(32),"  +
-                        "phone          VARCHAR(32)," +
-                        "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id),"+
-                        "PRIMARY KEY(eng_id,phone))");
+        queries.add(QueryHolder.TABLE_CREATE_PHONES);
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  engineer_areas( " +
                         "eng_id         VARCHAR(32)," +
                         "area_id        VARCHAR(32)," +
-                        "FOREIGN KEY(eng_id) REFERENCES engineers(eng_id),"+
-                        "FOREIGN KEY(area_id) REFERENCES areas(area_id),"+
+                        "FOREIGN KEY(eng_id) REFERENCES engineers(eng_id) ON DELETE CASCADE,"+
+                        "FOREIGN KEY(area_id) REFERENCES areas(area_id) ON DELETE CASCADE,"+
                         "PRIMARY KEY(eng_id,area_id))");
 
         queries.add(
@@ -96,7 +92,7 @@ public class AppController implements IController {
                         "milestone      VARCHAR(128)," +
                         "due_date       VARCHAR(32)," +
                         "money_granted  VARCHAR(32)," +
-                        "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
+                        "FOREIGN KEY(project_id) REFERENCES projects(project_id) ON DELETE CASCADE,"+
                         "PRIMARY KEY(project_id,milestone))" );
 
 
@@ -104,8 +100,8 @@ public class AppController implements IController {
                 "CREATE TABLE IF NOT EXISTS  project_areas( " +
                         "project_id     VARCHAR(32)," +
                         "area_id        VARCHAR(32)," +
-                        "FOREIGN KEY(area_id) REFERENCES areas(area_id),"+
-                        "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
+                        "FOREIGN KEY(area_id) REFERENCES areas(area_id) ON DELETE CASCADE,"+
+                        "FOREIGN KEY(project_id) REFERENCES projects(project_id) ON DELETE CASCADE,"+
                         "PRIMARY KEY(project_id,area_id))");
 
 
@@ -114,9 +110,12 @@ public class AppController implements IController {
                         "project_id     VARCHAR(32)," +
                         "dev_step_id    VARCHAR(32)," +
                         "dev_tools      VARCHAR(1024)," +
-                        "FOREIGN KEY(dev_step_id) REFERENCES development_steps(dev_step_id),"+
-                        "FOREIGN KEY(project_id) REFERENCES projects(project_id),"+
+                        "FOREIGN KEY(dev_step_id) REFERENCES development_steps(dev_step_id) ON DELETE CASCADE,"+
+                        "FOREIGN KEY(project_id) REFERENCES projects(project_id) ON DELETE CASCADE,"+
                         "PRIMARY KEY(project_id,dev_step_id))");
+
+        //add triggers:
+        //queries.add(QueryHolder.TRIGGER_BEFORE_DELETE_PROJECT);
 
 
         try {

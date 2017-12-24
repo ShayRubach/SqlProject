@@ -1,7 +1,6 @@
 package com.shayrubach.model;
 
-import com.shayrubach.annotations.BadLogic;
-import com.shayrubach.annotations.NestedQuery;
+import com.shayrubach.annotations.*;
 
 public class QueryHolder {
     public static final String QUERY_NEW_PROJECT =
@@ -37,28 +36,13 @@ public class QueryHolder {
     public static final String QUERY_GET_ALL_PROJECT_NAMES =
             "SELECT name FROM projects;";
 
-    @NestedQuery
-    public static final String QUERY_GET_ALL_PROJECT_AREAS =
-            "SELECT areas.name,areas.area_id " +
-            "FROM areas " +
-                "INNER JOIN project_areas " +
-                "ON areas.area_id = project_areas.area_id " +
-                "AND project_areas.project_id =?;";
-
-    @NestedQuery
-    public static final String QUERY_GET_PROJECT_AND_AREA_IDS_BY_NAME =
-            "SELECT projects.project_id,areas.area_id " +
-                    "FROM areas " +
-                        "JOIN projects " +
-                        "ON projects.name=? " +
-                        "WHERE areas.name=?;";
 
     public static final String QUERY_MODIFY_PROJECT =
             "";
 
     public static final String QUERY_REMOVE_PROJECT =
-            "DELETE FROM projects" +
-            "WHERE project_id='?'   ";
+            "DELETE FROM projects " +
+            "WHERE project_id=?;";
 
     public static final String QUERY_GET_ALL_PROJECTS =
             "SELECT * FROM projects;";
@@ -82,20 +66,26 @@ public class QueryHolder {
                     "VALUES(?,?);";
 
 
+    @SQLTrigger
+    @NestedQuery
+    public static final String TRIGGER_BEFORE_DELETE_PROJECT =
+            "DELIMITER $$ " +
+            "CREATE TRIGGER before_delete_projects " +
+                    "BEFORE DELETE ON projects " +
+                    "FOR EACH ROW " +
+                    "BEGIN " +
+                        "DELETE FROM " +
+                            "project_areas," +
+                            "projects_to_engineers," +
+                            "project_dev_steps " +
+                        "WHERE project_id=old.project_id " +
+                    "END $$ " +
+                    "DELIMITER ;";
+
     @BadLogic
     @NestedQuery
-    public static final String GET_AVAILABLE_AREAS_BY_PROJECT_NAME =
+    public static final String QUERY_GET_AVAILABLE_AREAS_BY_PROJECT_NAME =
             "SELECT area_id,project_id FROM areas,projects WHERE project_id=? AND name NOT IN (SELECT  ";
-
-    public static final String GET_PROJECT_ID_BY_NAME =
-            "SELECT project_id " +
-                    "FROM projects " +
-                    "WHERE name=?;";
-
-    public static final String GET_AREA_ID_BY_NAME =
-            "SELECT area_id,name " +
-                    "FROM areas" +
-                    "WHERE name=?;";
 
     @NestedQuery
     public static final String QUERY_GET_MILESTONE_BY_PROJECT =
@@ -104,16 +94,33 @@ public class QueryHolder {
                     "FROM projects "+
                     "WHERE project_id=?);";
 
-/*
-    SELECT 	project_id,milestone
-    FROM 	milestones
-    WHERE 	project_id=(SELECT project_id
-    FROM projects
-    WHERE project_id='8c410e38');
-*/
+    @CorrelatedSubquery
+    @NestedQuery
+    public static final String QUERY_GET_ALL_PROJECT_AREAS =
+            "SELECT areas.name,areas.area_id " +
+                    "FROM areas " +
+                    "INNER JOIN project_areas " +
+                    "ON areas.area_id = project_areas.area_id " +
+                    "AND project_areas.project_id =?;";
+
+    @CorrelatedSubquery
+    @NestedQuery
+    public static final String QUERY_GET_PROJECT_AND_AREA_IDS_BY_NAME =
+            "SELECT projects.project_id,areas.area_id " +
+                    "FROM areas " +
+                    "JOIN projects " +
+                    "ON projects.name=? " +
+                    "WHERE areas.name=?;";
 
 
 
+    @TableCreation
+    public static final String TABLE_CREATE_PHONES =
+            "CREATE TABLE IF NOT EXISTS  phones( " +
+                    "eng_id         VARCHAR(32),"  +
+                    "phone          VARCHAR(32)," +
+                    "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id),"+
+                    "PRIMARY KEY(eng_id,phone))";
 
 
 
