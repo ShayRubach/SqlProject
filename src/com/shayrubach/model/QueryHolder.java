@@ -99,18 +99,18 @@ public class QueryHolder {
     public static final String QUERY_GET_ALL_PROJECT_AREAS =
             "SELECT areas.name,areas.area_id " +
                     "FROM areas " +
-                    "INNER JOIN project_areas " +
-                    "ON areas.area_id = project_areas.area_id " +
-                    "AND project_areas.project_id =?;";
+                        "INNER JOIN project_areas " +
+                        "ON areas.area_id = project_areas.area_id " +
+                        "AND project_areas.project_id =?;";
 
     @CorrelatedSubquery
     @NestedQuery
     public static final String QUERY_GET_PROJECT_AND_AREA_IDS_BY_NAME =
             "SELECT projects.project_id,areas.area_id " +
                     "FROM areas " +
-                    "JOIN projects " +
-                    "ON projects.name=? " +
-                    "WHERE areas.name=?;";
+                        "JOIN projects " +
+                        "ON projects.name=? " +
+                        "WHERE areas.name=?;";
 
 
 

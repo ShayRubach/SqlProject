@@ -183,7 +183,7 @@ public class TableController implements IController {
         cb.addItem("test3");
         cb.setSelectedIndex(0);
 
-        getGui().getTableProjects().getColumnModel().getColumn(6).setCellEditor(new DefaultCellEditor(cb));
+        getGui().getTableProjects().getColumnModel().getColumn(5).setCellEditor(new DefaultCellEditor(cb));
 
 
     }
@@ -300,7 +300,6 @@ public class TableController implements IController {
 
             String[] formedProjectRow = {
                     rs.getString(3),    //name
-                    " ",                            //area
                     rs.getString(4),    //desc
                     rs.getString(5),    //customers
                     rs.getString(6),    //dev tools
@@ -314,7 +313,7 @@ public class TableController implements IController {
             System.out.println(" ");
             getGui().fillProjectTable(formedProjectRow);
 
-                //update boxes
+            //update boxes
 //            getGui().getJcbChooseProject().removeAllItems();
 //            getGui().getJcbChooseEngPro().removeAllItems();
 //            getGui().getJcbGroupPro().removeAllItems();
