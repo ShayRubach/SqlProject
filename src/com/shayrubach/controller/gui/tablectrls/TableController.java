@@ -4,11 +4,10 @@ import com.shayrubach.controller.IController;
 import com.shayrubach.model.QueryHolder;
 import com.shayrubach.model.entities.Area;
 import com.shayrubach.model.entities.Project;
-import com.shayrubach.model.other.Milestone;
 import com.shayrubach.view.GuiMainPanel;
 
-import javax.management.Query;
 import javax.swing.*;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,9 +37,9 @@ public class TableController implements IController {
 
     public void removeEntity(int ENTITY) throws SQLException {
         PreparedStatement ps;
-        ResultSet rs;
+        ResultSet rs=null;
         String projectId;
-        final int ID_COLUMN_INDEX = 6;
+        final int ID_COLUMN_INDEX = 5;
         switch (ENTITY){
             case GuiMainPanel.PROJECT_ENTITY:
                 ps = connection.prepareStatement(QueryHolder.QUERY_PROJECT_ID_BY_NAME);
@@ -56,22 +55,28 @@ public class TableController implements IController {
                 ps.executeUpdate();
 
                 getGui().getJcbChooseProject().setSelectedIndex(0);
-
-                //TODO: remove project from gui at Projects/Engineers/Milestones/Dev Steps
-//                for (int i = 0 ; i < getGui().getTbProjModel().getRowCount();++i ){
-//                    if(getGui().getTbProjModel().getValueAt(i,ID_COLUMN_INDEX).equals(projectId)){
-//                        getGui().getTbProjModel().removeRow(i);
-//                    }
-//                }
-//
                 loadDbProjects(ps,rs);
 
                 break;
             case GuiMainPanel.AREA_ENTITY:
+                //TODO: ADD A TRANSACTION TO CHECK IF ID EXISTS, IF NOT, ROLLBACK!
+                String areaId = getGui().getAreaIdByName(getGui().getJcbChooseArea().getSelectedItem().toString());
+                if(areaId == null){
+                    return;
+                }
+                ps = connection.prepareStatement(QueryHolder.QUERY_REMOVE_AREA);
+                ps.setString(1,areaId);
+                ps.executeUpdate();
+                getGui().getJcbChooseArea().setSelectedIndex(0);
+                loadDbAreas(ps,rs);
 
                 break;
             case GuiMainPanel.ENGINEER_ENTITY:
 
+//                String engId = getGui().getEngIdByName(getGui().getJcbChooseArea().getSelectedItem().toString());
+//                ps = connection.prepareStatement(QueryHolder.QUERY_GET_AREA_BY_ID);
+//                ps.setString(1,engId);
+//                ps.executeUpdate();
                 break;
         }
     }
@@ -79,34 +84,24 @@ public class TableController implements IController {
     public void addEntity(int ENTITY) throws SQLException {
         //TODO: implement all cases of add/modify/remove entities
         PreparedStatement ps;
+        ResultSet rs = null;
         switch(ENTITY){
             case GuiMainPanel.PROJECT_ENTITY:
 
                 String areaName = getGui().getJcbChooseProArea().getSelectedItem().toString();
-                String areaSpecialty=null;
 
                 ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_AREA_BY_NAME);
                 ps.setString(1,areaName);
 
-                ResultSet rs = ps.executeQuery();
-                //TODO: get the area from db and add it to proj table
-//                areaSpecialty = rs.getString(2);
-//
-//
-//                System.out.println(areaName + " , " + areaSpecialty);
+                rs = ps.executeQuery();
 
-
+                //TODO: FIX MILESTONE SHIT FUCK HERE, ADD DUE DATE IN TABLES ATTR
                 Project p = new Project(
-                        //TODO: FIX MILESTONE SHIT FUCK HERE, ADD DUE DATE IN TABLES ATTR
-                        new Milestone(getGui().getEdProMilestone().getText().toString(),
-                                getGui().getEdProMoney().getText().toString(),
-                                getGui().getEdProMsDueDate().getText().toString()),
                         getGui().getEdProDate().getText().toString(),
                         getGui().getEdProDesc().getText().toString(),
                         getGui().getEdProName().getText().toString(),
                         getGui().getJcbChooseStep().toString());
 
-//                        p.setArea(new Area(areaName,areaSpecialty));
                         p.setCustomers(getGui().getEdProCust().getText().toString());
                         p.setDevTools(getGui().getEdProTools().getText().toString());
 
@@ -141,7 +136,6 @@ public class TableController implements IController {
 
                 break;
             case GuiMainPanel.AREA_ENTITY:
-
                 Area a = new Area(getGui().getEdAreaName().getText(),getGui().getEdAreaSpec().getText());
                 ps = getConnection().prepareStatement(QueryHolder.QUERY_NEW_AREA);
                 ps.setString(1,a.getId());
@@ -149,11 +143,14 @@ public class TableController implements IController {
                 ps.setString(3,a.getSpecialty());
                 ps.executeUpdate();
 
-                addAreaToTable(a);
+                //addAreaToTable(a);
                 getGui().getEdAreaName().setText("");
                 getGui().getEdAreaSpec().setText("");
 
+                getGui().resetJcbItems(getGui().getJcbChooseArea(),"Area");
+                getGui().resetJcbItems(getGui().getJcbGroupArea(),"Area");
 
+                loadDbAreas(ps,rs);
                 break;
             case GuiMainPanel.ENGINEER_ENTITY:
 
@@ -172,18 +169,16 @@ public class TableController implements IController {
                 p.getCustomers(),
                 p.getDevTools(),
                 p.getDateStarted(),
-                //p.getMilestone().getName(),
-                null,
                 p.getId()
         });
-        //TODO: FIX THIS COMBO BOX INSIDE COLUMN
-        JComboBox cb = new JComboBox();
-        cb.addItem("test");
-        cb.addItem("test2");
-        cb.addItem("test3");
-        cb.setSelectedIndex(0);
-
-        getGui().getTableProjects().getColumnModel().getColumn(5).setCellEditor(new DefaultCellEditor(cb));
+//        //TODO: FIX THIS COMBO BOX INSIDE COLUMN
+//        JComboBox cb = new JComboBox();
+//        cb.addItem("test");
+//        cb.addItem("test2");
+//        cb.addItem("test3");
+//        cb.setSelectedIndex(0);
+//
+//        getGui().getTableProjects().getColumnModel().getColumn(5).setCellEditor(new DefaultCellEditor(cb));
 
 
     }
@@ -195,7 +190,6 @@ public class TableController implements IController {
                 a.getSpecialty(),
                 a.getId()
         });
-
 
     }
     public GuiMainPanel getGui() {
@@ -264,17 +258,23 @@ public class TableController implements IController {
     private void loadDbAreas(PreparedStatement ps, ResultSet rs) throws SQLException  {
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREAS);
         rs = ps.executeQuery();
+        getGui().resetJcbItems(getGui().getJcbChooseArea(),"Area");
+        getGui().resetJcbItems(getGui().getJcbGroupArea(),"Area");
+        for(int i=0; i < getGui().getTbAreaModel().getRowCount();++i){
+            getGui().getTbAreaModel().removeRow(i);
+        }
+
         while(rs.next()){
             String[] formedAreaRow = {
                     rs.getString(2),     //name
                     rs.getString(3),     //spec
                     rs.getString(1)      //id
             };
-            getGui().fillAreaTable(formedAreaRow);
 
+
+            getGui().fillAreaTable(formedAreaRow);
             getGui().getJcbChooseArea().addItem(rs.getString(2));
             getGui().getJcbGroupArea().addItem(rs.getString(2));
-
 
         }
     }
@@ -283,18 +283,9 @@ public class TableController implements IController {
         ps = this.getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECTS);
         rs = ps.executeQuery();
 
-        //add static milestone for testings
-//        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_NEW_MILESTONE));
-//        pss.get(1).setString(1,"8c410e38");
-//        pss.get(1).setString(2,"milestone example");
-//        pss.get(1).setString(3,"5112018");
-//        pss.get(1).setString(4,"56000");
-//        pss.get(1).executeUpdate();
-
-
-        //TODO: build a row in form of a string array and send it to fill func (get all required db fields)
-
-        //  replace null with the real properites!!!
+        for(int i=0; i < getGui().getTbProjModel().getRowCount();++i){
+            getGui().getTbAreaModel().removeRow(i);
+        }
 
         while(rs.next()){
 
@@ -304,19 +295,10 @@ public class TableController implements IController {
                     rs.getString(5),    //customers
                     rs.getString(6),    //dev tools
                     rs.getString(2),    //date started
-                    "  ",                           //milestones
                     rs.getString(1)     //id
             };
-
-
-            for(String s : formedProjectRow) System.out.print(s + " , ");
-            System.out.println(" ");
+            
             getGui().fillProjectTable(formedProjectRow);
-
-            //update boxes
-//            getGui().getJcbChooseProject().removeAllItems();
-//            getGui().getJcbChooseEngPro().removeAllItems();
-//            getGui().getJcbGroupPro().removeAllItems();
 
 
             getGui().getJcbChooseProject().addItem(rs.getString(3));
@@ -326,13 +308,29 @@ public class TableController implements IController {
     }
 
     public void getAvailableAreas() throws SQLException {
-        //TODO: fix this to only show unacquired areas.
+        //TODO: fix this to only show the selected project's specific areas.
         PreparedStatement ps;
         ResultSet rs;
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREA_NAMES);
         rs = ps.executeQuery();
         while(rs.next()){
             getGui().getJcbNewArea().addItem(rs.getString(1));
+        }
+
+    }
+
+    public void getProjectAreas() throws SQLException {
+        //TODO: fix this to only show the selected project's specific areas.
+        getGui().resetJcbItems(getGui().getJcbGroupArea(),"Area");
+
+        PreparedStatement ps;
+        ResultSet rs;
+        ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_AREAS_OF_PROJET_BY_NAME);
+        ps.setString(1,getGui().getJcbGroupPro().getSelectedItem().toString());
+
+        rs = ps.executeQuery();
+        while(rs.next()){
+            getGui().getJcbGroupArea().addItem(rs.getString(1));
         }
 
     }
@@ -394,14 +392,11 @@ public class TableController implements IController {
 
 //      proc the first item
         rs.next();
-        System.out.println("rs: " + rs.getString(1));
+
 
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECT_AREAS);
         ps.setString(1,rs.getString(1));
         rs = ps.executeQuery();
-
-//        while(rs.next())
-//            System.out.println("pro: " + rs.getString(1));
 
         while(rs.next())
             getGui().getJcbGroupArea().addItem(rs.getString(1));

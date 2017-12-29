@@ -19,11 +19,7 @@ public class main {
             e.printStackTrace();
         }
 
-        //foo();
     }
-
-
-
 
     public static void foo(){
         String DRIVER = "com.mysql.jdbc.Driver" ;
@@ -128,47 +124,6 @@ public class main {
             //execute all queries
             for (PreparedStatement ps : statements)
                 ps.executeUpdate();
-
-
-
-            /* get values from db START */
-            // assuming your connection is already initialized to your db.
-
-            //example 1:
-            //======================================================================================
-            String value = null;
-            int i = 1 ;
-            PreparedStatement stmt = connection.prepareStatement(
-                    "SELECT name " +
-                            "FROM projects" );
-            ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
-                System.out.println((String)rs.getString(i));
-            }
-
-            //======================================================================================
-
-
-
-
-            //exmaple 2:
-            //======================================================================================
-            i = 1;
-            PreparedStatement stmt2 = connection.prepareStatement(
-                    "SELECT name " +
-                            "FROM projects " +
-                            "WHERE project_id=?" );
-
-            stmt2.setString(1,"986f185f");
-            ResultSet rs2 = stmt2.executeQuery();
-            while(rs2.next()){
-                System.out.println((String)rs2.getString(i));
-            }
-            System.out.println(value);
-
-            //======================================================================================
-
-            /* get values from db END */
 
 
             if(connection != null)

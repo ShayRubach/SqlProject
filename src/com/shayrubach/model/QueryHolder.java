@@ -13,6 +13,7 @@ public class QueryHolder {
                     "tools)" +
                     "VALUES (?,?,?,?,?,?);";
 
+    //TODO: add transaction here to check if area name exists already? if so . rollback.
     public static final String QUERY_NEW_AREA =
             "INSERT INTO areas(" +
                     "area_id," +
@@ -60,10 +61,21 @@ public class QueryHolder {
     public static final String QUERY_GET_ALL_AREA_NAMES =
             "SELECT name FROM areas";
 
+
     public static final String QUERY_ADD_AREA_TO_PROJECT =
             "INSERT IGNORE INTO project_areas " +
                     "(project_id,area_id) " +
                     "VALUES(?,?);";
+    public static final String QUERY_REMOVE_AREA =
+            "DELETE FROM areas " +
+                    "WHERE area_id=?;";
+
+    @NestedQuery
+    @CorrelatedSubquery
+    public static final String QUERY_GET_AREAS_OF_PROJET_BY_NAME =
+            "SELECT name FROM areas WHERE area_id IN " +
+                    "(SELECT area_id FROM project_areas WHERE project_id IN " +
+                    "(SELECT project_id FROM projects WHERE name=?));";
 
 
     @SQLTrigger

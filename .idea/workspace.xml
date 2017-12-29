@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf11ac99-19ee-48fd-8535-1a551c253f0b" name="Default" comment="before devision of edit tables">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/model/entities/Project.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/model/entities/Project.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/main.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,48 +21,49 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5607477">
+    <splitter split-orientation="horizontal" split-proportion="0.7213254">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="main.java" pinned="true" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-                  <folding>
-                    <element signature="method#foo#0;class#main#0" expanded="false" />
-                    <element signature="e#5146#5208#0" expanded="false" />
-                    <element signature="e#5709#5797#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AppController.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1230">
-                  <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="34" />
+                <state relative-caret-position="266">
+                  <caret line="125" column="35" lean-forward="false" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
                   <folding />
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="GuiMainPanel.form" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
-              <provider selected="true" editor-type-id="ui-designer">
-                <state />
               </provider>
             </entry>
           </file>
           <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+                <state relative-caret-position="135">
+                  <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
+                    <element signature="e#38675#38676#0" expanded="true" />
+                    <element signature="e#38729#38730#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ActionListener.java" pinned="false" current-in-tab="false">
+            <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/event/ActionListener.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="298">
+                  <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="382">
+                  <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -63,28 +71,8 @@
           <file leaf-file-name="TableController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="358">
-                  <caret line="185" column="64" lean-forward="false" selection-start-line="185" selection-start-column="64" selection-end-line="185" selection-end-column="64" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SQLTrigger.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/com/shayrubach/annotations/SQLTrigger.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                <state relative-caret-position="99">
+                  <caret line="299" column="12" lean-forward="false" selection-start-line="299" selection-start-column="12" selection-end-line="299" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -93,12 +81,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1095">
-                  <caret line="103" column="55" lean-forward="true" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="56" />
+                <state relative-caret-position="297">
+                  <caret line="68" column="48" lean-forward="false" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -118,36 +106,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GroupPro</find>
-      <find>ItemList</find>
-      <find>loadDbAre</find>
-      <find>fillGroupAreaCB</find>
-      <find>ItemListe</find>
-      <find>addNewArea</find>
-      <find>getAva</find>
-      <find>QUERY_ADD_AREA_TO_PROJECT</find>
-      <find>ADD_AREA</find>
-      <find>jcbNewArea</find>
-      <find>addAction</find>
-      <find>arearadio</find>
-      <find>QueryH</find>
-      <find>nested</find>
-      <find>removeProjectRadio</find>
-      <find>QUERY_REMOVE</find>
-      <find>removeProj</find>
-      <find>jcbChoosePro</find>
-      <find>applyProButt</find>
-      <find>ps.setString</find>
-      <find>rs.getString</find>
-      <find>loadDb</find>
+      <find>removeEn</find>
+      <find>getAreaID</find>
+      <find>addArea</find>
+      <find>addEnti</find>
+      <find>new_are</find>
+      <find>addItem</find>
+      <find>fil</find>
+      <find>removeEnti</find>
       <find>removeEnt</find>
-      <find>setup</find>
-      <find>setUp</find>
-      <find>setU</find>
+      <find>addEntit</find>
+      <find>fill</find>
+      <find>fillAreaTa</find>
+      <find>jcbGroup</find>
+      <find>jcbGroupArea</find>
+      <find>initCB</find>
+      <find>reset</find>
+      <find>QUERY_GET_ALL_AREA_NAMES</find>
+      <find>getAvailableAreas</find>
+      <find>Group</find>
+      <find>GroupArea</find>
+      <find>getProject</find>
+      <find>setEditArea</find>
       <find>removeEntity</find>
-      <find>loadDbP</find>
-      <find>loadDbPr</find>
-      <find>T</find>
+      <find>forming</find>
+      <find>removing id</find>
+      <find>removing</find>
+      <find>loadDb</find>
+      <find>s:</find>
+      <find>System.out.println</find>
+      <find>println</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/view</dir>
@@ -180,13 +168,13 @@
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/ACtrl.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/PCtrl.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/ECtrl.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/annotations/NestedQuery.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/main.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/main.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
       </list>
     </option>
@@ -234,6 +222,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -317,10 +308,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -485,7 +473,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -519,28 +507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="17" column="62" lean-forward="false" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="63" />
-          <folding>
-            <element signature="method#foo#0;class#main#0" expanded="false" />
-            <element signature="e#5146#5208#0" expanded="false" />
-            <element signature="e#5709#5797#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
@@ -550,11 +516,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#foo#0;class#main#0" expanded="false" />
-            <element signature="e#5146#5208#0" expanded="false" />
-            <element signature="e#5709#5797#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -564,6 +526,8 @@
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#38675#38676#0" expanded="true" />
+            <element signature="e#38729#38730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,6 +551,8 @@
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#38675#38676#0" expanded="true" />
+            <element signature="e#38729#38730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -595,11 +561,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding>
-            <element signature="method#foo#0;class#main#0" expanded="false" />
-            <element signature="e#5146#5208#0" expanded="false" />
-            <element signature="e#5709#5797#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -620,11 +582,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding>
-            <element signature="method#foo#0;class#main#0" expanded="false" />
-            <element signature="e#5146#5208#0" expanded="false" />
-            <element signature="e#5709#5797#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -634,6 +592,8 @@
           <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#38675#38676#0" expanded="true" />
+            <element signature="e#38729#38730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -655,11 +615,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding>
-            <element signature="method#foo#0;class#main#0" expanded="false" />
-            <element signature="e#5146#5208#0" expanded="false" />
-            <element signature="e#5709#5797#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,6 +625,8 @@
           <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#38675#38676#0" expanded="true" />
+            <element signature="e#38729#38730#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -784,25 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Area.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/annotations/SQLTrigger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,18 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <element signature="method#foo#0;class#main#0" expanded="false" />
-            <element signature="e#5146#5208#0" expanded="false" />
-            <element signature="e#5709#5797#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/annotations/TableCreation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -855,28 +786,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/annotations/SQLTrigger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/event/ItemListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/awt/event/ActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="70" column="31" lean-forward="false" selection-start-line="70" selection-start-column="31" selection-end-line="70" selection-end-column="31" />
+        <state relative-caret-position="297">
+          <caret line="68" column="48" lean-forward="false" selection-start-line="68" selection-start-column="48" selection-end-line="68" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="184" column="0" lean-forward="false" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#38675#38676#0" expanded="true" />
+            <element signature="e#38729#38730#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="125" column="35" lean-forward="false" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="185" column="64" lean-forward="false" selection-start-line="185" selection-start-column="64" selection-end-line="185" selection-end-column="64" />
+        <state relative-caret-position="99">
+          <caret line="299" column="12" lean-forward="false" selection-start-line="299" selection-start-column="12" selection-end-line="299" selection-end-column="12" />
           <folding />
         </state>
       </provider>

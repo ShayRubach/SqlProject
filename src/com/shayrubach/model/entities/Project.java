@@ -7,7 +7,6 @@ import java.util.Date;
 
 public class Project extends DatabaseEntity {
 
-    private Milestone           milestone = null;
     private String              dateStarted = null;
     private String              description = null;
     private String              name = null;
@@ -21,8 +20,7 @@ public class Project extends DatabaseEntity {
         super();
     }
 
-    public Project(Milestone milestone, String dateStarted, String description, String name, Area area, String customers, String devTools) {
-        this.milestone = milestone;
+    public Project(String dateStarted, String description, String name, Area area, String customers, String devTools) {
         this.dateStarted = dateStarted;
         this.description = description;
         this.name = name;
@@ -31,21 +29,12 @@ public class Project extends DatabaseEntity {
         this.devTools = devTools;
     }
 
-    public Project(Milestone milestone, String dateStarted, String description, String name, String devStep) {
+    public Project(String dateStarted, String description, String name, String devStep) {
         super();
-        this.milestone = milestone;
         this.dateStarted = dateStarted;
         this.description = description;
         this.name = name;
         this.devStep = devStep;
-    }
-
-    public Milestone getMilestone() {
-        return milestone;
-    }
-
-    public void setMilestone(Milestone milestone) {
-        this.milestone = milestone;
     }
 
     public String getDateStarted() {

@@ -192,36 +192,35 @@ public class GuiMainPanel {
         initGroupCB();
     }
 
+    public void resetJcbItems(JComboBox cb, String entity){
+        cb.removeAllItems();
+        cb.addItem("-- select "+entity+ " --");
+        cb.addItem("");
+    }
+
+
+
     private void initGroupCB() {
-        jcbGroupPro.addItem("-- select Project --");
-        jcbGroupPro.addItem("");
+        jcbGroupPro.setEnabled(true);
+        jcbGroupArea.setEnabled(false);
 
-        jcbGroupArea.addItem("-- select Area --");
-        jcbGroupArea.addItem("");
+        resetJcbItems(jcbGroupPro,"Project");
+        resetJcbItems(jcbGroupArea,"Area");
 
 
-//        jcbGroupPro.addItemListener(new ItemListener() {
-//            @Override
-//            public void itemStateChanged(ItemEvent e) {
-//                try {
-//                    controllers.get(0).fillGroupAreaCB();
-//                } catch (SQLException e1) {
-//                    e1.printStackTrace();
-//                }
-//            }
-//        });
-
-        jcbGroupPro.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(jcbGroupPro.getSelectedIndex() < 2)
-                    return;
-                try {
-                    controllers.get(0).fillGroupAreaCB();
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
+        jcbGroupPro.addActionListener(e -> {
+            jcbGroupArea.setEnabled(false);
+            if(jcbGroupPro.getSelectedIndex() < 2){
+                return;
             }
+            jcbGroupArea.setEnabled(true);
+            try {
+                getControllers().get(0).getProjectAreas();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+
+
         });
 
     }
@@ -322,7 +321,7 @@ public class GuiMainPanel {
     }
 
     private void initTables() {
-        final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","Milestones","ID"};
+        final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID"};
         final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Age","Address","ID"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
@@ -475,7 +474,7 @@ public class GuiMainPanel {
                         controllers.get(0).addEntity(AREA_ENTITY);
                     }
                     if(removeAreaRadioButton.isSelected()){
-                        //TODO: add area_remove
+                        controllers.get(0).removeEntity(AREA_ENTITY);
                     }
                 } catch (SQLException e1) {
                     e1.printStackTrace();
@@ -1326,10 +1325,6 @@ public class GuiMainPanel {
         //update phone boxes
 
 
-
-
-
-
     }
 
     public JPanel getTabGroups() {
@@ -1346,5 +1341,18 @@ public class GuiMainPanel {
 
     public JComboBox getJcbGroupArea() {
         return jcbGroupArea;
+    }
+
+    public String getAreaIdByName(String s) {
+        int ID_COLUMN_INDEX = 2;
+        int NAME_COLUMN_INDEX = 0;
+        int rowCount = getTableAreas().getRowCount();
+
+        for (int i = 0 ; i < rowCount; ++i) {
+            if(getTbAreaModel().getValueAt(i,NAME_COLUMN_INDEX).toString().equals(s)) {
+                return getTbAreaModel().getValueAt(i,ID_COLUMN_INDEX).toString();
+            }
+        }
+        return null;
     }
 }
