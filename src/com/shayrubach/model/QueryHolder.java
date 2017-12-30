@@ -106,6 +106,14 @@ public class QueryHolder {
             "DELETE FROM areas " +
                     "WHERE area_id=?;";
 
+    @NestedQuery
+    @CorrelatedSubquery
+    public static final String GET_ENG_AREA =
+            "SELECT name FROM areas " +
+                    "WHERE area_id IN " +
+                    "(SELECT area_id FROM engineer_areas " +
+                    "WHERE eng_id=?);";
+
     public static final String QUERY_UPDATE_PROJECT_RATE =
             "UPDATE projects_to_engineers " +
                     "SET rate=? " +
@@ -166,7 +174,6 @@ public class QueryHolder {
                         "JOIN projects " +
                         "ON projects.name=? " +
                         "WHERE areas.name=?;";
-
 
 
     @TableCreation

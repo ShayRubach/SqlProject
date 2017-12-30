@@ -361,7 +361,7 @@ public class GuiMainPanel {
 
     private void initTables() {
         final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID","Rate"};
-        final String[] tbEngColumns = {"First Name","Last Name","Birth","Age","Address","ID"};
+        final String[] tbEngColumns = {"First Name","Last Name","Birth","Age","Address","ID","Area"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
         final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted"};

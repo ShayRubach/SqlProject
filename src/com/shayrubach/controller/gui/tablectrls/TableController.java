@@ -286,11 +286,13 @@ public class TableController implements IController {
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS);
         rs = ps.executeQuery();
         getGui().resetJcbItems(getGui().getJcbChooseEng(), "Engineer");
-
         getGui().getTbEngModel().setNumRows(0);
 
         while (rs.next()) {
-
+            PreparedStatement ps2 = connection.prepareStatement(QueryHolder.GET_ENG_AREA);
+            ps2.setString(1,rs.getString(1));
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
 
             Object[] formedAreaRow = {
                     rs.getString(3),     //first name
@@ -298,7 +300,8 @@ public class TableController implements IController {
                     rs.getString(6),      //birth date
                     rs.getString(2),      //age
                     rs.getString(5),      //address
-                    rs.getString(1)      //id
+                    rs.getString(1),      //id
+                    rs2.getString(1),   //area
             };
 
             getGui().fillEngTable(formedAreaRow);
