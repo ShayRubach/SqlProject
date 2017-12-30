@@ -117,7 +117,7 @@ public class TableController implements IController {
                     pstmt.get(pstmt.size()-1).setString(5,p.getCustomers().toString());
                     pstmt.get(pstmt.size()-1).setString(6,p.getDevTools().toString());
 
-                    //TODO: get the due date and put inside the appropriate class in db and local
+                    pstmt.add(connection.prepareStatement(QueryHolder.QUERY_NEW_MILESTONE));
 
                     //execute all statements
                     for (PreparedStatement pst : pstmt) pst.executeUpdate();
@@ -497,6 +497,7 @@ public class TableController implements IController {
                 getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
                 getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
         );
+
 
         PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_GET_AVAILABLE_PROJECTS_BY_ENG_ID);
         ps.setString(1,engineerId);

@@ -254,8 +254,6 @@ public class GuiMainPanel {
         initEngCBText();
 
 
-
-
         jcbChooseEng.addActionListener(e -> {
             if(rateProjectRadioButton.isSelected()){
                 resetJcbItems(jcbEngRateProj,"Project to rate");
@@ -521,7 +519,7 @@ public class GuiMainPanel {
                     e1.printStackTrace();
                 }
             }
-
+            unselectEngRadioButtons();
         });
 
         rateButtonEng.addActionListener(e -> {
@@ -533,12 +531,15 @@ public class GuiMainPanel {
                     e1.printStackTrace();
                 }
             }
+            unselectEngRadioButtons();
         });
         modifyEngineerRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 jcbEngSelectArea.setEnabled(false);modifyEngineerRadioButton.setSelected(true);
                 newEngineerRadioButton.setSelected(false);
+
+
                 removeEngineerRadioButton.setSelected(false);
                 addPhoneNoRadioButton.setSelected(false);
                 addProjectRadioButton.setSelected(false);
@@ -609,6 +610,7 @@ public class GuiMainPanel {
 
 
         rateProjectRadioButton.addActionListener(e -> {
+
             jcbChooseEng.setSelectedIndex(0);
             jcbEngRateValue.setSelectedIndex(0);
             jcbChooseEng.setEnabled(true);
@@ -616,6 +618,8 @@ public class GuiMainPanel {
             jcbEngRateProj.setEnabled(true);
             resetJcbItems(jcbEngRateValue,"Rate (1 - 10 )");
             resetJcbItems(jcbEngRateProj,"Project to rate");
+            unselectEngRadioButtons();
+            rateProjectRadioButton.setSelected(true);
         });
 
         jcbEngRateProj.addActionListener(e -> {
@@ -626,12 +630,19 @@ public class GuiMainPanel {
 
         });
 
-        rateButtonEng.addActionListener(e -> {
-           //TODO: perform rate and upate db and calculations on top projects & projects table
-        });
-
+        //TODO:AA
         addPhoneNoRadioButton.addActionListener(e -> {
+            unselectEngRadioButtons();
+            addPhoneNoRadioButton.setSelected(true);
         });
+    }
+
+    private void unselectEngRadioButtons() {
+        for(Component c : tabEditEng.getComponents()){
+            if(c instanceof JRadioButton)
+                ((JRadioButton) c).setSelected(false);
+        }
+
     }
 
     private void setEditArea() {
