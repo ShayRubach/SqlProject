@@ -47,6 +47,10 @@ public class QueryHolder {
     public static final String QUERY_GET_ALL_PROJECT_NAMES =
             "SELECT name FROM projects;";
 
+    public static final String QUERY_NEW_PHONE_TO_ENG =
+            "INSERT IGNORE INTO phones " +
+                    "(eng_id,phone) " +
+                    "VALUES(?,?);";
 
     public static final String QUERY_MODIFY_PROJECT =
             "";
@@ -93,6 +97,10 @@ public class QueryHolder {
             "INSERT IGNORE INTO engineer_areas " +
                     "(eng_id,area_id) " +
                     "VALUES(?,?);";
+
+    public static final String QUERY_REMOVE_ENGINEER =
+            "DELETE FROM engineers " +
+                    "WHERE eng_id=?;";
 
     public static final String QUERY_REMOVE_AREA =
             "DELETE FROM areas " +
@@ -166,7 +174,7 @@ public class QueryHolder {
             "CREATE TABLE IF NOT EXISTS  phones( " +
                     "eng_id         VARCHAR(32),"  +
                     "phone          VARCHAR(32)," +
-                    "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id),"+
+                    "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id) ON DELETE CASCADE,"+
                     "PRIMARY KEY(eng_id,phone))";
 
 

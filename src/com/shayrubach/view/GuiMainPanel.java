@@ -519,6 +519,23 @@ public class GuiMainPanel {
                     e1.printStackTrace();
                 }
             }
+
+            if(addPhoneNoRadioButton.isSelected()){
+                try {
+                    getControllers().get(0).addNewPhoneNoToEng();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+
+            if(removeEngineerRadioButton.isSelected()){
+                try {
+                    getControllers().get(0).removeEntity(ENGINEER_ENTITY);
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+
             unselectEngRadioButtons();
         });
 
@@ -634,6 +651,9 @@ public class GuiMainPanel {
         addPhoneNoRadioButton.addActionListener(e -> {
             unselectEngRadioButtons();
             addPhoneNoRadioButton.setSelected(true);
+            jcbChooseEng.setEnabled(true);
+            edEngPhone.setEditable(true);
+            edEngPhone.setEnabled(true);
         });
     }
 
@@ -1626,5 +1646,9 @@ public class GuiMainPanel {
     }
     public JComboBox getJcbEngRateValue(){
         return jcbEngRateValue;
+    }
+
+    public JEditorPane getEdEngPhone() {
+        return edEngPhone;
     }
 }

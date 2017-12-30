@@ -72,11 +72,19 @@ public class TableController implements IController {
 
                 break;
             case GuiMainPanel.ENGINEER_ENTITY:
+                String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                        getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                        getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+                );
 
-//                String engId = getGui().getEngIdByName(getGui().getJcbChooseArea().getSelectedItem().toString());
-//                ps = connection.prepareStatement(QueryHolder.QUERY_GET_AREA_BY_ID);
-//                ps.setString(1,engId);
-//                ps.executeUpdate();
+                System.out.println(engineerId);
+                ps = connection.prepareStatement(QueryHolder.QUERY_REMOVE_ENGINEER);
+                ps.setString(1,engineerId);
+                ps.executeUpdate();
+
+                getGui().getJcbChooseEng().setSelectedIndex(0);
+                loadDbEngineers(ps,rs);
+
                 break;
         }
     }
@@ -304,6 +312,8 @@ public class TableController implements IController {
 
             getGui().getJcbChooseEng().addItem(fullName);
             getGui().getJcbGroupEngProName().addItem(fullName);
+
+            //TODO: load all phones!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
     }
 
@@ -519,12 +529,27 @@ public class TableController implements IController {
         String rate = getGui().getJcbEngRateValue().getSelectedItem().toString();
         PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_UPDATE_PROJECT_RATE);
 
-        System.out.println(rate + "," + proId + "," + engineerId);
-
         ps.setString(1,rate);
         ps.setString(2,proId);
         ps.setString(3,engineerId);
         ps.executeUpdate();
+
+    }
+
+    public void addNewPhoneNoToEng() throws SQLException {
+        String phoneNo = getGui().getEdEngPhone().getText();
+        String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+        );
+
+        PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_NEW_PHONE_TO_ENG);
+        ps.setString(1,engineerId);
+        ps.setString(2,phoneNo);
+
+        ps.executeUpdate();
+
+
 
     }
 }
