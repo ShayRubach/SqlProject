@@ -221,7 +221,7 @@
               </scrollpane>
             </children>
           </grid>
-          <grid id="e72d8" binding="tabGroups" layout-manager="GridLayoutManager" row-count="3" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="e72d8" binding="tabGroups" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Groups"/>
@@ -233,12 +233,12 @@
             <children>
               <scrollpane id="a918a" binding="jspGroup">
                 <constraints>
-                  <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                  <grid row="2" column="1" row-span="1" col-span="4" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="64422" class="javax.swing.JTable" binding="tableGroups">
+                  <component id="64422" class="javax.swing.JTable" binding="tableGroupsPro">
                     <constraints/>
                     <properties>
                       <foreground color="-12828863"/>
@@ -248,23 +248,15 @@
               </scrollpane>
               <component id="2e822" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Project"/>
                 </properties>
               </component>
-              <component id="4bf8" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Engineer List"/>
-                </properties>
-              </component>
               <component id="ee32" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
                   <text value="Area"/>
@@ -272,7 +264,7 @@
               </component>
               <component id="32a82" class="javax.swing.JComboBox" binding="jcbGroupPro">
                 <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="500" height="-1"/>
                   </grid>
                 </constraints>
@@ -280,11 +272,62 @@
               </component>
               <component id="df1db" class="javax.swing.JComboBox" binding="jcbGroupArea">
                 <constraints>
-                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                  <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="500" height="-1"/>
                   </grid>
                 </constraints>
                 <properties/>
+              </component>
+              <vspacer id="2dba0">
+                <constraints>
+                  <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <scrollpane id="fd916">
+                <constraints>
+                  <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="9cd56" class="javax.swing.JTable" binding="tableGroupEngPro">
+                    <constraints/>
+                    <properties>
+                      <foreground color="-12828863"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="f0ee7" class="javax.swing.JComboBox" binding="jcbGroupEngProName">
+                <constraints>
+                  <grid row="3" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                    <preferred-size width="500" height="-1"/>
+                  </grid>
+                </constraints>
+                <properties/>
+              </component>
+              <scrollpane id="26ab5">
+                <constraints>
+                  <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="43bc8" class="javax.swing.JTable" binding="tableGroupEngPhones">
+                    <constraints/>
+                    <properties>
+                      <foreground color="-12828863"/>
+                    </properties>
+                  </component>
+                </children>
+              </scrollpane>
+              <component id="2ae36" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Engineer"/>
+                </properties>
               </component>
             </children>
           </grid>

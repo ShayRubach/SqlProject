@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf11ac99-19ee-48fd-8535-1a551c253f0b" name="Default" comment="before devision of edit tables">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$13.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$15.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,8 +20,8 @@
       <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+            <state relative-caret-position="343">
+              <caret line="101" column="12" lean-forward="false" selection-start-line="101" selection-start-column="12" selection-end-line="104" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -59,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
+              <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -75,21 +57,37 @@
       <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="395" column="8" lean-forward="false" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
+            <state relative-caret-position="203">
+              <caret line="772" column="45" lean-forward="false" selection-start-line="772" selection-start-column="45" selection-end-line="772" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5156#5173#0" expanded="true" />
-                <element signature="e#26774#26775#0" expanded="true" />
-                <element signature="e#26860#26861#0" expanded="true" />
-                <element signature="e#43036#43037#0" expanded="true" />
-                <element signature="e#43090#43091#0" expanded="true" />
-                <element signature="e#43141#43142#0" expanded="true" />
-                <element signature="e#43190#43191#0" expanded="true" />
-                <element signature="e#43866#43867#0" expanded="true" />
-                <element signature="e#43905#43906#0" expanded="true" />
-                <element signature="e#44391#44392#0" expanded="true" />
-                <element signature="e#44450#44451#0" expanded="true" />
+                <element signature="e#5385#5402#0" expanded="true" />
+                <element signature="e#29667#29668#0" expanded="true" />
+                <element signature="e#29753#29754#0" expanded="true" />
+                <element signature="e#35441#35442#0" expanded="true" />
+                <element signature="e#35480#35481#0" expanded="true" />
+                <element signature="e#45929#45930#0" expanded="true" />
+                <element signature="e#45983#45984#0" expanded="true" />
+                <element signature="e#46034#46035#0" expanded="true" />
+                <element signature="e#46083#46084#0" expanded="true" />
+                <element signature="e#46608#46609#0" expanded="true" />
+                <element signature="e#46642#46643#0" expanded="true" />
+                <element signature="e#46765#46766#0" expanded="true" />
+                <element signature="e#46804#46805#0" expanded="true" />
+                <element signature="e#47732#47733#0" expanded="true" />
+                <element signature="e#47773#47774#0" expanded="true" />
+                <element signature="e#47816#47817#0" expanded="true" />
+                <element signature="e#47855#47856#0" expanded="true" />
+                <element signature="e#47901#47902#0" expanded="true" />
+                <element signature="e#47943#47944#0" expanded="true" />
+                <element signature="e#47992#47993#0" expanded="true" />
+                <element signature="e#48051#48052#0" expanded="true" />
+                <element signature="e#48095#48096#0" expanded="true" />
+                <element signature="e#48132#48133#0" expanded="true" />
+                <element signature="e#48175#48176#0" expanded="true" />
+                <element signature="e#48212#48213#0" expanded="true" />
+                <element signature="e#48255#48256#0" expanded="true" />
+                <element signature="e#48293#48294#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +96,8 @@
       <file leaf-file-name="TableController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="307" column="53" lean-forward="true" selection-start-line="307" selection-start-column="53" selection-end-line="307" selection-end-column="53" />
+            <state relative-caret-position="180">
+              <caret line="121" column="44" lean-forward="true" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +109,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+              <caret line="32" column="52" lean-forward="false" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
               <folding>
                 <element signature="e#1379#1380#0" expanded="true" />
                 <element signature="e#1406#1407#0" expanded="true" />
@@ -138,36 +136,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setEditEn</find>
-      <find>cleanEdFields</find>
-      <find>Fields</find>
-      <find>cleanEd</find>
-      <find>ENGINEER_ENTITY</find>
-      <find>addProjectRadioButton</find>
-      <find>editEng</find>
-      <find>jcbEng</find>
-      <find>private JComboBox jcbEngPhones;</find>
-      <find>jcbEngPhones</find>
-      <find>removeEngineerRad</find>
-      <find>CREATE T</find>
-      <find>NEW</find>
-      <find>format</find>
-      <find>YYYY</find>
-      <find>currYea</find>
-      <find>ADD_AREA</find>
-      <find>getAreaId</find>
-      <find>QUERY_ADD_AREA_TO_ENG</find>
-      <find>fillArea</find>
-      <find>initTables</find>
-      <find>fillE</find>
-      <find>fillEngTable</find>
-      <find>ComboBox</find>
-      <find>milestone</find>
-      <find>Ce</find>
-      <find>initTable</find>
-      <find>Select</find>
-      <find>resetJcbItems</find>
-      <find>e -&gt;</find>
+      <find>QUERY_NEW_ENG_PROJ</find>
+      <find>addProjectRadio</find>
+      <find>jcb</find>
+      <find>chooseEng</find>
+      <find>jcbChooseEng</find>
+      <find>initC</find>
+      <find>getEng</find>
+      <find>getJcbEngRateProj</find>
+      <find>jcbChooseEng.add</find>
+      <find>rate</find>
+      <find>initCb</find>
+      <find>jcbEngRateProj.add</find>
+      <find>while(</find>
+      <find>while</find>
+      <find>int i =</find>
+      <find>applyBu</find>
+      <find>applyButtonEng.add</find>
+      <find>to rate</find>
+      <find>proId</find>
+      <find>theme</find>
+      <find>rateProject</find>
+      <find>rateProjectRadioButton.add</find>
+      <find>removeEnt</find>
+      <find>initTabs</find>
+      <find>loadD</find>
+      <find>loadDbPro</find>
+      <find>removeEntity</find>
+      <find>jcbGroupPro</find>
+      <find>loadDbProjects</find>
+      <find>addEntity</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/view</dir>
@@ -203,13 +201,13 @@
         <option value="$PROJECT_DIR$/src/com/shayrubach/annotations/NestedQuery.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/main.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/ButtonRenderer.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
       </list>
     </option>
   </component>
@@ -507,7 +505,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -562,17 +560,33 @@
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5156#5173#0" expanded="true" />
-            <element signature="e#26774#26775#0" expanded="true" />
-            <element signature="e#26860#26861#0" expanded="true" />
-            <element signature="e#43036#43037#0" expanded="true" />
-            <element signature="e#43090#43091#0" expanded="true" />
-            <element signature="e#43141#43142#0" expanded="true" />
-            <element signature="e#43190#43191#0" expanded="true" />
-            <element signature="e#43866#43867#0" expanded="true" />
-            <element signature="e#43905#43906#0" expanded="true" />
-            <element signature="e#44391#44392#0" expanded="true" />
-            <element signature="e#44450#44451#0" expanded="true" />
+            <element signature="e#5385#5402#0" expanded="true" />
+            <element signature="e#29667#29668#0" expanded="true" />
+            <element signature="e#29753#29754#0" expanded="true" />
+            <element signature="e#35441#35442#0" expanded="true" />
+            <element signature="e#35480#35481#0" expanded="true" />
+            <element signature="e#45929#45930#0" expanded="true" />
+            <element signature="e#45983#45984#0" expanded="true" />
+            <element signature="e#46034#46035#0" expanded="true" />
+            <element signature="e#46083#46084#0" expanded="true" />
+            <element signature="e#46608#46609#0" expanded="true" />
+            <element signature="e#46642#46643#0" expanded="true" />
+            <element signature="e#46765#46766#0" expanded="true" />
+            <element signature="e#46804#46805#0" expanded="true" />
+            <element signature="e#47732#47733#0" expanded="true" />
+            <element signature="e#47773#47774#0" expanded="true" />
+            <element signature="e#47816#47817#0" expanded="true" />
+            <element signature="e#47855#47856#0" expanded="true" />
+            <element signature="e#47901#47902#0" expanded="true" />
+            <element signature="e#47943#47944#0" expanded="true" />
+            <element signature="e#47992#47993#0" expanded="true" />
+            <element signature="e#48051#48052#0" expanded="true" />
+            <element signature="e#48095#48096#0" expanded="true" />
+            <element signature="e#48132#48133#0" expanded="true" />
+            <element signature="e#48175#48176#0" expanded="true" />
+            <element signature="e#48212#48213#0" expanded="true" />
+            <element signature="e#48255#48256#0" expanded="true" />
+            <element signature="e#48293#48294#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -614,17 +628,33 @@
           <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5156#5173#0" expanded="true" />
-            <element signature="e#26774#26775#0" expanded="true" />
-            <element signature="e#26860#26861#0" expanded="true" />
-            <element signature="e#43036#43037#0" expanded="true" />
-            <element signature="e#43090#43091#0" expanded="true" />
-            <element signature="e#43141#43142#0" expanded="true" />
-            <element signature="e#43190#43191#0" expanded="true" />
-            <element signature="e#43866#43867#0" expanded="true" />
-            <element signature="e#43905#43906#0" expanded="true" />
-            <element signature="e#44391#44392#0" expanded="true" />
-            <element signature="e#44450#44451#0" expanded="true" />
+            <element signature="e#5385#5402#0" expanded="true" />
+            <element signature="e#29667#29668#0" expanded="true" />
+            <element signature="e#29753#29754#0" expanded="true" />
+            <element signature="e#35441#35442#0" expanded="true" />
+            <element signature="e#35480#35481#0" expanded="true" />
+            <element signature="e#45929#45930#0" expanded="true" />
+            <element signature="e#45983#45984#0" expanded="true" />
+            <element signature="e#46034#46035#0" expanded="true" />
+            <element signature="e#46083#46084#0" expanded="true" />
+            <element signature="e#46608#46609#0" expanded="true" />
+            <element signature="e#46642#46643#0" expanded="true" />
+            <element signature="e#46765#46766#0" expanded="true" />
+            <element signature="e#46804#46805#0" expanded="true" />
+            <element signature="e#47732#47733#0" expanded="true" />
+            <element signature="e#47773#47774#0" expanded="true" />
+            <element signature="e#47816#47817#0" expanded="true" />
+            <element signature="e#47855#47856#0" expanded="true" />
+            <element signature="e#47901#47902#0" expanded="true" />
+            <element signature="e#47943#47944#0" expanded="true" />
+            <element signature="e#47992#47993#0" expanded="true" />
+            <element signature="e#48051#48052#0" expanded="true" />
+            <element signature="e#48095#48096#0" expanded="true" />
+            <element signature="e#48132#48133#0" expanded="true" />
+            <element signature="e#48175#48176#0" expanded="true" />
+            <element signature="e#48212#48213#0" expanded="true" />
+            <element signature="e#48255#48256#0" expanded="true" />
+            <element signature="e#48293#48294#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -658,17 +688,33 @@
           <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5156#5173#0" expanded="true" />
-            <element signature="e#26774#26775#0" expanded="true" />
-            <element signature="e#26860#26861#0" expanded="true" />
-            <element signature="e#43036#43037#0" expanded="true" />
-            <element signature="e#43090#43091#0" expanded="true" />
-            <element signature="e#43141#43142#0" expanded="true" />
-            <element signature="e#43190#43191#0" expanded="true" />
-            <element signature="e#43866#43867#0" expanded="true" />
-            <element signature="e#43905#43906#0" expanded="true" />
-            <element signature="e#44391#44392#0" expanded="true" />
-            <element signature="e#44450#44451#0" expanded="true" />
+            <element signature="e#5385#5402#0" expanded="true" />
+            <element signature="e#29667#29668#0" expanded="true" />
+            <element signature="e#29753#29754#0" expanded="true" />
+            <element signature="e#35441#35442#0" expanded="true" />
+            <element signature="e#35480#35481#0" expanded="true" />
+            <element signature="e#45929#45930#0" expanded="true" />
+            <element signature="e#45983#45984#0" expanded="true" />
+            <element signature="e#46034#46035#0" expanded="true" />
+            <element signature="e#46083#46084#0" expanded="true" />
+            <element signature="e#46608#46609#0" expanded="true" />
+            <element signature="e#46642#46643#0" expanded="true" />
+            <element signature="e#46765#46766#0" expanded="true" />
+            <element signature="e#46804#46805#0" expanded="true" />
+            <element signature="e#47732#47733#0" expanded="true" />
+            <element signature="e#47773#47774#0" expanded="true" />
+            <element signature="e#47816#47817#0" expanded="true" />
+            <element signature="e#47855#47856#0" expanded="true" />
+            <element signature="e#47901#47902#0" expanded="true" />
+            <element signature="e#47943#47944#0" expanded="true" />
+            <element signature="e#47992#47993#0" expanded="true" />
+            <element signature="e#48051#48052#0" expanded="true" />
+            <element signature="e#48095#48096#0" expanded="true" />
+            <element signature="e#48132#48133#0" expanded="true" />
+            <element signature="e#48175#48176#0" expanded="true" />
+            <element signature="e#48212#48213#0" expanded="true" />
+            <element signature="e#48255#48256#0" expanded="true" />
+            <element signature="e#48293#48294#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -834,14 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -850,23 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="82" column="35" lean-forward="true" selection-start-line="82" selection-start-column="35" selection-end-line="82" selection-end-column="35" />
+          <caret line="58" column="48" lean-forward="false" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -898,7 +923,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <caret line="32" column="52" lean-forward="false" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
           <folding>
             <element signature="e#1379#1380#0" expanded="true" />
             <element signature="e#1406#1407#0" expanded="true" />
@@ -912,31 +937,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="101" column="12" lean-forward="false" selection-start-line="101" selection-start-column="12" selection-end-line="104" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/entities/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="31" column="19" lean-forward="false" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="395" column="8" lean-forward="false" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
+        <state relative-caret-position="203">
+          <caret line="772" column="45" lean-forward="false" selection-start-line="772" selection-start-column="45" selection-end-line="772" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5156#5173#0" expanded="true" />
-            <element signature="e#26774#26775#0" expanded="true" />
-            <element signature="e#26860#26861#0" expanded="true" />
-            <element signature="e#43036#43037#0" expanded="true" />
-            <element signature="e#43090#43091#0" expanded="true" />
-            <element signature="e#43141#43142#0" expanded="true" />
-            <element signature="e#43190#43191#0" expanded="true" />
-            <element signature="e#43866#43867#0" expanded="true" />
-            <element signature="e#43905#43906#0" expanded="true" />
-            <element signature="e#44391#44392#0" expanded="true" />
-            <element signature="e#44450#44451#0" expanded="true" />
+            <element signature="e#5385#5402#0" expanded="true" />
+            <element signature="e#29667#29668#0" expanded="true" />
+            <element signature="e#29753#29754#0" expanded="true" />
+            <element signature="e#35441#35442#0" expanded="true" />
+            <element signature="e#35480#35481#0" expanded="true" />
+            <element signature="e#45929#45930#0" expanded="true" />
+            <element signature="e#45983#45984#0" expanded="true" />
+            <element signature="e#46034#46035#0" expanded="true" />
+            <element signature="e#46083#46084#0" expanded="true" />
+            <element signature="e#46608#46609#0" expanded="true" />
+            <element signature="e#46642#46643#0" expanded="true" />
+            <element signature="e#46765#46766#0" expanded="true" />
+            <element signature="e#46804#46805#0" expanded="true" />
+            <element signature="e#47732#47733#0" expanded="true" />
+            <element signature="e#47773#47774#0" expanded="true" />
+            <element signature="e#47816#47817#0" expanded="true" />
+            <element signature="e#47855#47856#0" expanded="true" />
+            <element signature="e#47901#47902#0" expanded="true" />
+            <element signature="e#47943#47944#0" expanded="true" />
+            <element signature="e#47992#47993#0" expanded="true" />
+            <element signature="e#48051#48052#0" expanded="true" />
+            <element signature="e#48095#48096#0" expanded="true" />
+            <element signature="e#48132#48133#0" expanded="true" />
+            <element signature="e#48175#48176#0" expanded="true" />
+            <element signature="e#48212#48213#0" expanded="true" />
+            <element signature="e#48255#48256#0" expanded="true" />
+            <element signature="e#48293#48294#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="307" column="53" lean-forward="true" selection-start-line="307" selection-start-column="53" selection-end-line="307" selection-end-column="53" />
+        <state relative-caret-position="180">
+          <caret line="121" column="44" lean-forward="true" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

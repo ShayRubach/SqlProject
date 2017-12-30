@@ -39,7 +39,7 @@ public class TableController implements IController {
         PreparedStatement ps;
         ResultSet rs=null;
         String projectId;
-        final int ID_COLUMN_INDEX = 5;
+
         switch (ENTITY){
             case GuiMainPanel.PROJECT_ENTITY:
                 ps = connection.prepareStatement(QueryHolder.QUERY_PROJECT_ID_BY_NAME);
@@ -95,7 +95,7 @@ public class TableController implements IController {
 
                 rs = ps.executeQuery();
 
-                //TODO: FIX MILESTONE SHIT FUCK HERE, ADD DUE DATE IN TABLES ATTR
+                //TODO: FIX MILESTONE HERE, ADD DUE DATE IN TABLES ATTR
                 Project p = new Project(
                         getGui().getEdProDate().getText().toString(),
                         getGui().getEdProDesc().getText().toString(),
@@ -127,6 +127,9 @@ public class TableController implements IController {
                 }
 
                 getGui().getJcbChooseProject().addItem(p.getName().toString());
+                getGui().getJcbGroupPro().addItem(p.getName().toString());
+                getGui().getJcbEngJoinProj().addItem(p.getName().toString());
+
                 addProToTable(p);
                 //TODO: update the other tables with projects??
 
@@ -195,22 +198,13 @@ public class TableController implements IController {
 
         getGui().getTbProjModel().addRow(new Object[] {
                 p.getName().toString(),
-                "",
                 p.getDescription(),
                 p.getCustomers(),
                 p.getDevTools(),
                 p.getDateStarted(),
-                p.getId()
+                p.getId(),
+                " "
         });
-//        //TODO: FIX THIS COMBO BOX INSIDE COLUMN
-//        JComboBox cb = new JComboBox();
-//        cb.addItem("test");
-//        cb.addItem("test2");
-//        cb.addItem("test3");
-//        cb.setSelectedIndex(0);
-//
-//        getGui().getTableProjects().getColumnModel().getColumn(5).setCellEditor(new DefaultCellEditor(cb));
-
 
     }
 
@@ -277,13 +271,13 @@ public class TableController implements IController {
 
     }
 
-    private void loadDbDevSteps(PreparedStatement ps, ResultSet rs) throws SQLException  {
+    public void loadDbDevSteps(PreparedStatement ps, ResultSet rs) throws SQLException  {
     }
 
-    private void loadDbMilestones(PreparedStatement ps, ResultSet rs) throws SQLException  {
+    public void loadDbMilestones(PreparedStatement ps, ResultSet rs) throws SQLException  {
     }
 
-    private void loadDbEngineers(PreparedStatement ps, ResultSet rs) throws SQLException {
+    public void loadDbEngineers(PreparedStatement ps, ResultSet rs) throws SQLException {
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS);
         rs = ps.executeQuery();
         getGui().resetJcbItems(getGui().getJcbChooseEng(), "Engineer");
@@ -291,31 +285,29 @@ public class TableController implements IController {
             getGui().getTbEngModel().removeRow(i);
         }
 
-
-//        //get projects,rate and phones.
-//        JComboBox cb = new JComboBox();
-//        getGui().getTableEng().getColumn("Projects").setCellEditor(new DefaultCellEditor(cb));
-//        getGui().resetJcbItems(cb,"");
-
         while (rs.next()) {
 
 
             Object[] formedAreaRow = {
                     rs.getString(3),     //first name
                     rs.getString(4),     //last name
-                    "-- Select --",//projects
-                    " - ",//rate
-                    "-- Select --",//projects,//phone
                     rs.getString(6),      //birth date
                     rs.getString(2),      //age
                     rs.getString(5),      //address
                     rs.getString(1)      //id
             };
 
-
             getGui().fillEngTable(formedAreaRow);
-            getGui().getJcbChooseEng().addItem(rs.getString(2));
 
+            //update boxes
+            String fullName = rs.getString(3)+ " " +
+                    rs.getString(4) +
+                    " (ID: " +
+                    rs.getString(1)+
+                    ")";
+
+            getGui().getJcbChooseEng().addItem(fullName);
+            getGui().getJcbGroupEngProName().addItem(fullName);
         }
     }
 
@@ -343,7 +335,7 @@ public class TableController implements IController {
         }
     }
 
-    private void loadDbProjects(PreparedStatement ps, ResultSet rs) throws SQLException {
+    public void loadDbProjects(PreparedStatement ps, ResultSet rs) throws SQLException {
         ps = this.getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECTS);
         rs = ps.executeQuery();
 
@@ -364,8 +356,8 @@ public class TableController implements IController {
 
             getGui().fillProjectTable(formedProjectRow);
 
-
             getGui().getJcbChooseProject().addItem(rs.getString(3));
+            getGui().getJcbEngJoinProj().addItem(rs.getString(3));
             getGui().getJcbGroupPro().addItem(rs.getString(3));
         }
     }
@@ -476,6 +468,65 @@ public class TableController implements IController {
             case GuiMainPanel.AREA_ENTITY:
                 break;
         }
+
+    }
+
+    public void addNewEngineerToProject() throws SQLException {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String projectId,engineerId,rate;
+
+        engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+        );
+
+        rate = "10";
+        projectId = getGui().getProjectIdByName(getGui().getJcbEngJoinProj().getSelectedItem().toString());
+        ps = connection.prepareStatement(QueryHolder.QUERY_NEW_ENG_PROJ);
+        ps.setString(1,projectId);
+        ps.setString(2,engineerId);
+        ps.setString(3,rate);
+        if(projectId == null || engineerId == null) return;
+
+        ps.executeUpdate();
+
+
+    }
+
+    public void getEngProject() throws SQLException {
+        String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+        );
+
+        PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_GET_AVAILABLE_PROJECTS_BY_ENG_ID);
+        ps.setString(1,engineerId);
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()){
+            getGui().getJcbEngRateProj().addItem(rs.getString(1));
+        }
+
+    }
+
+    public void rateAProject() throws SQLException {
+        String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+        );
+
+        String proId = getGui().getProjectIdByName(getGui().getJcbEngRateProj().getSelectedItem().toString());
+        String rate = getGui().getJcbEngRateValue().getSelectedItem().toString();
+        PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_UPDATE_PROJECT_RATE);
+
+        System.out.println(rate + "," + proId + "," + engineerId);
+
+        ps.setString(1,rate);
+        ps.setString(2,proId);
+        ps.setString(3,engineerId);
+        ps.executeUpdate();
 
     }
 }
