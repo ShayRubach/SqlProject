@@ -54,7 +54,7 @@ public class TableController implements IController {
                 ps.setString(1,projectId);
                 ps.executeUpdate();
 
-                getGui().getJcbChooseProject().setSelectedIndex(0);
+                //getGui().getJcbChooseProject().setSelectedIndex(0);
                 loadDbProjects(ps,rs);
 
                 break;
@@ -130,11 +130,8 @@ public class TableController implements IController {
                 getGui().getJcbGroupPro().addItem(p.getName().toString());
                 getGui().getJcbEngJoinProj().addItem(p.getName().toString());
 
-                addProToTable(p);
-                //TODO: update the other tables with projects??
-
-                //TODO: update GUI
-
+                //addProToTable(p);
+                loadDbProjects(ps,rs);
 
 
                 break;
@@ -281,9 +278,8 @@ public class TableController implements IController {
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS);
         rs = ps.executeQuery();
         getGui().resetJcbItems(getGui().getJcbChooseEng(), "Engineer");
-        for (int i = 0; i < getGui().getTbEngModel().getRowCount(); ++i) {
-            getGui().getTbEngModel().removeRow(i);
-        }
+
+        getGui().getTbEngModel().setNumRows(0);
 
         while (rs.next()) {
 
@@ -316,9 +312,8 @@ public class TableController implements IController {
         rs = ps.executeQuery();
         getGui().resetJcbItems(getGui().getJcbChooseArea(),"Area");
         getGui().resetJcbItems(getGui().getJcbGroupArea(),"Area");
-        for(int i=0; i < getGui().getTbAreaModel().getRowCount();++i){
-            getGui().getTbAreaModel().removeRow(i);
-        }
+
+        getGui().getTbAreaModel().setNumRows(0);
 
         while(rs.next()){
             String[] formedAreaRow = {
@@ -339,9 +334,12 @@ public class TableController implements IController {
         ps = this.getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECTS);
         rs = ps.executeQuery();
 
-        for(int i=0; i < getGui().getTbProjModel().getRowCount();++i){
-            getGui().getTbAreaModel().removeRow(i);
-        }
+
+        getGui().resetJcbItems(getGui().getJcbChooseProject(),"Project");
+        getGui().resetJcbItems(getGui().getJcbEngJoinProj(),"Project to join to");
+        getGui().resetJcbItems(getGui().getJcbGroupPro(),"Project");
+
+        getGui().getTbProjModel().setNumRows(0);
 
         while(rs.next()){
 
@@ -355,7 +353,6 @@ public class TableController implements IController {
             };
 
             getGui().fillProjectTable(formedProjectRow);
-
             getGui().getJcbChooseProject().addItem(rs.getString(3));
             getGui().getJcbEngJoinProj().addItem(rs.getString(3));
             getGui().getJcbGroupPro().addItem(rs.getString(3));
