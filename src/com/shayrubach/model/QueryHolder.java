@@ -21,6 +21,16 @@ public class QueryHolder {
                     "specialty) " +
                     "VALUES (?,?,?);";
 
+    public static final String QUERY_NEW_ENGINEER =
+            "INSERT INTO engineers(" +
+                    "eng_id," +
+                    "age," +
+                    "first_name," +
+                    "last_name," +
+                    "address," +
+                    "birth)" +
+                    "VALUES (?,?,?,?,?,?);";
+
     public static final String QUERY_NEW_MILESTONE =
             "INSERT INTO milestones (" +
                     "project_id," +
@@ -66,6 +76,12 @@ public class QueryHolder {
             "INSERT IGNORE INTO project_areas " +
                     "(project_id,area_id) " +
                     "VALUES(?,?);";
+
+    public static final String QUERY_ADD_AREA_TO_ENG =
+            "INSERT IGNORE INTO engineer_areas " +
+                    "(eng_id,area_id) " +
+                    "VALUES(?,?);";
+
     public static final String QUERY_REMOVE_AREA =
             "DELETE FROM areas " +
                     "WHERE area_id=?;";

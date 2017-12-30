@@ -3,6 +3,8 @@ package com.shayrubach.view;
 
 import com.shayrubach.controller.gui.tablectrls.TableController;
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
@@ -74,7 +76,7 @@ public class GuiMainPanel {
     private JEditorPane edEngLname;
     private JEditorPane edProMoney;
     private JComboBox jcbChooseMilestone;
-    private JComboBox jcbEngPhones;
+
     private JButton applyButtonEng;
     private JPanel tabEditAll;
     private JRadioButton modifyProjectRadioButton;
@@ -201,7 +203,7 @@ public class GuiMainPanel {
 
     public void resetJcbItems(JComboBox cb, String entity){
         cb.removeAllItems();
-        cb.addItem("-- select "+entity+ " --");
+        cb.addItem("-- Select "+entity+ " --");
         cb.addItem("");
     }
 
@@ -326,7 +328,7 @@ public class GuiMainPanel {
 
     private void initTables() {
         final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID","Rate"};
-        final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Age","Address","ID"};
+        final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Birth","Age","Address","ID"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
         final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted"};
@@ -365,8 +367,34 @@ public class GuiMainPanel {
         tableDevSteps.setModel(tbDevStepsModel);
         tableGroups.setModel(tbGroupModel);
 
-        //TODO: RELOAD ALL DB EVERYTIME WE START THE APP
-        //getControllers().get(0).loadDB();
+
+        /*
+        tableEng.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if(!e.getValueIsAdjusting()){
+                    JComboBox cb = new JComboBox();
+
+                    System.out.println("row pressed");
+                    //get projects,rate and phones.
+
+                    cb.addActionListener(e1 -> {
+                        if(cb.getSelectedIndex() > 2){
+                            System.out.println("BOOM");
+                        }
+                    });
+
+                    getTableEng().getColumn("Projects").setCellEditor(new DefaultCellEditor(cb));
+                    resetJcbItems(cb,"");
+                    //TODO: GET PROJECT FROM DB REALTED TO THIS ENG
+                    cb.addItem(tableEng.getValueAt(tableEng.getSelectedRow(), 0).toString());
+
+                }
+
+            }
+        });
+        */
+
     }
 
     private void applyFixedColumnsWidth(JTable table,int size) {
@@ -415,15 +443,34 @@ public class GuiMainPanel {
 
     private void setEditEng() {
 
+        applyButtonEng.addActionListener(e -> {
+            jcbEngSelectArea.setEnabled(false);
+            //TODO: CHECK IF THE ENG AREA MATCHES THE PROJECTS AREA!!!!!!!!!!
+
+
+            if(newEngineerRadioButton.isSelected()){
+                try {
+                    System.out.println("adding engineer..");
+                    getControllers().get(0).addEntity(ENGINEER_ENTITY);
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            else if(newEngineerRadioButton.isSelected()){
+                // .... add engineer
+            }
+        });
+
         modifyEngineerRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                modifyEngineerRadioButton.setSelected(true);
+                jcbEngSelectArea.setEnabled(false);modifyEngineerRadioButton.setSelected(true);
                 newEngineerRadioButton.setSelected(false);
                 removeEngineerRadioButton.setSelected(false);
                 addPhoneNoRadioButton.setSelected(false);
                 addProjectRadioButton.setSelected(false);
                 rateProjectRadioButton.setSelected(false);
+                jcbEngSelectArea.setEnabled(false);
                 jcbEngRateValue.setEnabled(false);
                 jcbEngRateProj.setEnabled(false);
                 jcbEngJoinProj.setEnabled(false);
@@ -444,10 +491,17 @@ public class GuiMainPanel {
                 addPhoneNoRadioButton.setSelected(false);
                 addProjectRadioButton.setSelected(false);
                 rateProjectRadioButton.setSelected(false);
+                jcbEngSelectArea.setEnabled(true);
 
                 jcbChooseEng.setEnabled(false);
                 cleanEdFields(tabEditEng);
                 enableEdFields(tabEditEng);
+                try {
+                    resetJcbItems(jcbEngSelectArea,"Area");
+                    getControllers().get(0).getAvailableAreas();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
 
@@ -461,9 +515,38 @@ public class GuiMainPanel {
                 addProjectRadioButton.setSelected(false);
                 rateProjectRadioButton.setSelected(false);
 
+                jcbEngSelectArea.setEnabled(false);
                 jcbChooseEng.setEnabled(true);
                 cleanEdFields(tabEditEng);
             }
+        });
+
+        addProjectRadioButton.addActionListener(e -> {
+            resetJcbItems(jcbEngJoinProj,"Project to join to");
+            jcbEngJoinProj.setEnabled(true);
+        });
+
+
+        rateProjectRadioButton.addActionListener(e -> {
+            jcbChooseEng.setEnabled(true);
+
+            jcbEngRateProj.setEnabled(true);
+            resetJcbItems(jcbEngRateValue,"Rate (1 - 10 )");
+            resetJcbItems(jcbEngRateProj,"Project to rate");
+        });
+
+        jcbEngRateProj.addActionListener(e -> {
+            if(jcbEngRateProj.getSelectedIndex() > 2){
+                jcbEngRateValue.setEnabled(true);
+            }
+
+        });
+
+        rateButtonEng.addActionListener(e -> {
+           //TODO: perform rate and upate db and calculations on top projects & projects table
+        });
+
+        addPhoneNoRadioButton.addActionListener(e -> {
         });
     }
 
@@ -1103,14 +1186,6 @@ public class GuiMainPanel {
         this.jcbChooseMilestone = jcbChooseMilestone;
     }
 
-    public JComboBox getJcbEngPhones() {
-        return jcbEngPhones;
-    }
-
-    public void setJcbEngPhones(JComboBox jcbEngPhones) {
-        this.jcbEngPhones = jcbEngPhones;
-    }
-
     public JButton getApplyButtonEng() {
         return applyButtonEng;
     }
@@ -1350,14 +1425,19 @@ public class GuiMainPanel {
         return applyAreaButton;
     }
 
+
+    //TODO: turn these fill func into 1 with switch
     public void fillProjectTable(String[] formedProjectRow) {
         getTbProjModel().addRow(formedProjectRow);
 
     }
 
-
     public void fillAreaTable(String[] formedAreaRow) {
         getTbAreaModel().addRow(formedAreaRow);
+    }
+
+    public void fillEngTable(Object[] formedRow){
+        getTbEngModel().addRow(formedRow);
     }
 
     public JComboBox getJcbNewArea() {
@@ -1392,6 +1472,10 @@ public class GuiMainPanel {
 
     public JComboBox getJcbGroupArea() {
         return jcbGroupArea;
+    }
+
+    public JComboBox getJcbEngSelectArea() {
+        return jcbEngSelectArea;
     }
 
     public String getAreaIdByName(String s) {

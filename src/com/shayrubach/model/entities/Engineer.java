@@ -16,13 +16,24 @@ public class Engineer extends DatabaseEntity {
         super();
     }
 
-    public Engineer(String firstName, String lastName, String address, String phoneNumber, String birthDate, String area) {
+    public Engineer(String firstName, String lastName, String address, String birthDate, String area) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.phoneNumber = phoneNumber;
         this.birthDate = birthDate;
         this.area = area;
+    }
+
+    @Override
+    public String toString() {
+        return "Engineer{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", birthDate='" + birthDate + '\'' +
+                ", area='" + area + '\'' +
+                ", id='" + id + '\'' +
+                '}';
     }
 
     @Override

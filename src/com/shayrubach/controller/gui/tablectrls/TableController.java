@@ -8,7 +8,6 @@ import com.shayrubach.model.entities.Project;
 import com.shayrubach.view.GuiMainPanel;
 
 import javax.swing.*;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -154,10 +153,41 @@ public class TableController implements IController {
                 loadDbAreas(ps,rs);
                 break;
             case GuiMainPanel.ENGINEER_ENTITY:
-                Engineer eng = new Engineer();
+                Engineer eng = new Engineer(
+                        getGui().getEdEngFname().getText(),
+                        getGui().getEdEngLname().getText(),
+                        getGui().getEdEngAddress().getText(),
+                        getGui().getEdEngDate().getText(),
+                        getGui().getJcbEngSelectArea().getSelectedItem().toString());
+
+
+                System.out.println(formatOutAge(eng.getBirthDate()));
+
+                ps = getConnection().prepareStatement(QueryHolder.QUERY_NEW_ENGINEER);
+                ps.setString(1,eng.getId());    //id
+                ps.setString(2,formatOutAge(eng.getBirthDate()));   //age
+                ps.setString(3,eng.getFirstName());    //fname
+                ps.setString(4,eng.getLastName());    //lname
+                ps.setString(5,eng.getAddress());    //address
+                ps.setString(6,eng.getBirthDate());    //birth
+                ps.executeUpdate();
+
+                PreparedStatement ps2 = getConnection().prepareStatement(QueryHolder.QUERY_ADD_AREA_TO_ENG);
+                ps2.setString(1,eng.getId());
+                ps2.setString(2,getGui().getAreaIdByName(getGui().getJcbEngSelectArea().getSelectedItem().toString()));
+                ps2.executeUpdate();
+
+
+                loadDbEngineers(ps,rs);
                 break;
 
         }
+    }
+
+    private String formatOutAge(String birthDate) {
+        int currYear = 2018;
+        int birthYear = Integer.parseInt(birthDate.substring(birthDate.lastIndexOf(".")+1));
+        return String.valueOf(currYear-birthYear);
     }
 
     private void addProToTable(Project p) {
@@ -253,7 +283,40 @@ public class TableController implements IController {
     private void loadDbMilestones(PreparedStatement ps, ResultSet rs) throws SQLException  {
     }
 
-    private void loadDbEngineers(PreparedStatement ps, ResultSet rs) throws SQLException  {
+    private void loadDbEngineers(PreparedStatement ps, ResultSet rs) throws SQLException {
+        ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS);
+        rs = ps.executeQuery();
+        getGui().resetJcbItems(getGui().getJcbChooseEng(), "Engineer");
+        for (int i = 0; i < getGui().getTbEngModel().getRowCount(); ++i) {
+            getGui().getTbEngModel().removeRow(i);
+        }
+
+
+//        //get projects,rate and phones.
+//        JComboBox cb = new JComboBox();
+//        getGui().getTableEng().getColumn("Projects").setCellEditor(new DefaultCellEditor(cb));
+//        getGui().resetJcbItems(cb,"");
+
+        while (rs.next()) {
+
+
+            Object[] formedAreaRow = {
+                    rs.getString(3),     //first name
+                    rs.getString(4),     //last name
+                    "-- Select --",//projects
+                    " - ",//rate
+                    "-- Select --",//projects,//phone
+                    rs.getString(6),      //birth date
+                    rs.getString(2),      //age
+                    rs.getString(5),      //address
+                    rs.getString(1)      //id
+            };
+
+
+            getGui().fillEngTable(formedAreaRow);
+            getGui().getJcbChooseEng().addItem(rs.getString(2));
+
+        }
     }
 
     private void loadDbAreas(PreparedStatement ps, ResultSet rs) throws SQLException  {
@@ -315,6 +378,7 @@ public class TableController implements IController {
         rs = ps.executeQuery();
         while(rs.next()){
             getGui().getJcbNewArea().addItem(rs.getString(1));
+            getGui().getJcbEngSelectArea().addItem(rs.getString(1));
         }
 
     }

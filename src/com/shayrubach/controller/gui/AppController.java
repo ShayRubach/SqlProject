@@ -58,9 +58,10 @@ public class AppController implements IController {
                 "CREATE TABLE IF NOT EXISTS  engineers(" +
                         "PRIMARY KEY(eng_id)," +
                         "eng_id         VARCHAR(32)," +
-                        "age            VARCHAR(3)," +
+                        "age            VARCHAR(6)," +
                         "first_name     VARCHAR(16)," +
                         "last_name      VARCHAR(16)," +
+                        "address        VARCHAR(128)," +
                         "birth          VARCHAR(32) )"  );
 
         queries.add(
