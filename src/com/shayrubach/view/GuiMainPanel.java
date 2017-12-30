@@ -3,15 +3,12 @@ package com.shayrubach.view;
 
 import com.shayrubach.controller.gui.tablectrls.TableController;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-
 
 public class GuiMainPanel {
 
@@ -23,7 +20,6 @@ public class GuiMainPanel {
     public static final int PROJECT_ENTITY = 0;
     public static final int AREA_ENTITY = 1;
     public static final int ENGINEER_ENTITY = 2;
-
 
     private JFrame      mainFrame       = null;
     private JTabbedPane tabbedPane      = null;
@@ -79,7 +75,7 @@ public class GuiMainPanel {
     private JEditorPane edProMoney;
     private JComboBox jcbChooseMilestone;
     private JComboBox jcbEngPhones;
-    private JButton addEngProBtn;
+    private JButton applyButtonEng;
     private JPanel tabEditAll;
     private JRadioButton modifyProjectRadioButton;
     private JRadioButton newProjectRadioButton;
@@ -116,6 +112,17 @@ public class GuiMainPanel {
     private JTable tableGroups;
     private JComboBox jcbGroupPro;
     private JComboBox jcbGroupArea;
+    private JLabel labelCurrDate;
+    private JLabel labelTotalRevenue;
+    private JRadioButton addProjectRadioButton;
+    private JEditorPane edEngPhone;
+    private JComboBox jcbEngJoinProj;
+    private JRadioButton addPhoneNoRadioButton;
+    private JComboBox jcbEngSelectArea;
+    private JComboBox jcbEngRateProj;
+    private JRadioButton rateProjectRadioButton;
+    private JComboBox jcbEngRateValue;
+    private JButton rateButtonEng;
 
 
     private DefaultTableModel tbProjModel;
@@ -289,11 +296,6 @@ public class GuiMainPanel {
         jcbChooseEng.addItem("-- choose Engineer --");
         jcbChooseEng.addItem(" ");
 
-        jcbChooseEngPro.addItem("-- choose Project --");
-        jcbChooseEngPro.addItem(" ");
-
-        jcbEngPhones.addItem("-- Phone list -- ");
-        jcbEngPhones.addItem("  ");
     }
 
     public void initAreaCBText() {
@@ -314,6 +316,8 @@ public class GuiMainPanel {
     private void changeTheme() {
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -321,7 +325,7 @@ public class GuiMainPanel {
     }
 
     private void initTables() {
-        final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID"};
+        final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID","Rate"};
         final String[] tbEngColumns = {"First Name","Last Name","Projects","Rate","Phone","Age","Address","ID"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
@@ -376,33 +380,40 @@ public class GuiMainPanel {
 
     private void initTabs() {
         setEditListeners();
+        //TODO: IMPLEMENT tab change listener
 
+        tabbedPane.addChangeListener(e -> {
+            switch(tabbedPane.getSelectedIndex()){
 
-//        tabbedPane.addChangeListener(new ChangeListener() {
-//            @Override
-//            public void stateChanged(ChangeEvent e) {
-//                //TODO: IMPLEMENT UPDATE()
-//                if(tabbedPane.getSelectedIndex() == TAB_STATE.TAB_GROUPS.val){
-//                    try {
-//                        controllers.get(0).fillGroupCBX();
-//                    } catch (SQLException e1) {
-//                        e1.printStackTrace();
-//                    }
-//                }
-//
-//            }
-//        });
+                //top projects
+                case 3:
+
+                    break;
+                //top eng
+                case 4:
+
+                    break;
+                //upcoming milestones
+                case 5:
+
+                    break;
+                //dev steps
+                case 6:
+
+                    break;
+
+            }
+
+        });
     }
 
     private void setEditListeners() {
-
         setEditPro();
         setEditArea();
         setEditEng();
     }
 
     private void setEditEng() {
-        //TODO: RESET ALL FIELDS (Clear texts inside JEditText, back to 0 index on CBs..) WHEN SWAPPING BETWEEN RADIOS!!
 
         modifyEngineerRadioButton.addActionListener(new ActionListener() {
             @Override
@@ -410,8 +421,17 @@ public class GuiMainPanel {
                 modifyEngineerRadioButton.setSelected(true);
                 newEngineerRadioButton.setSelected(false);
                 removeEngineerRadioButton.setSelected(false);
+                addPhoneNoRadioButton.setSelected(false);
+                addProjectRadioButton.setSelected(false);
+                rateProjectRadioButton.setSelected(false);
+                jcbEngRateValue.setEnabled(false);
+                jcbEngRateProj.setEnabled(false);
+                jcbEngJoinProj.setEnabled(false);
 
                 jcbChooseEng.setEnabled(true);
+                enableEdFields(tabEditEng);
+                getControllers().get(0).getEntityDetails(ENGINEER_ENTITY,getJcbChooseEng());
+
             }
         });
 
@@ -421,8 +441,13 @@ public class GuiMainPanel {
                 modifyEngineerRadioButton.setSelected(false);
                 newEngineerRadioButton.setSelected(true);
                 removeEngineerRadioButton.setSelected(false);
+                addPhoneNoRadioButton.setSelected(false);
+                addProjectRadioButton.setSelected(false);
+                rateProjectRadioButton.setSelected(false);
 
                 jcbChooseEng.setEnabled(false);
+                cleanEdFields(tabEditEng);
+                enableEdFields(tabEditEng);
             }
         });
 
@@ -432,8 +457,12 @@ public class GuiMainPanel {
                 modifyEngineerRadioButton.setSelected(false);
                 newEngineerRadioButton.setSelected(false);
                 removeEngineerRadioButton.setSelected(true);
+                addPhoneNoRadioButton.setSelected(false);
+                addProjectRadioButton.setSelected(false);
+                rateProjectRadioButton.setSelected(false);
 
                 jcbChooseEng.setEnabled(true);
+                cleanEdFields(tabEditEng);
             }
         });
     }
@@ -606,21 +635,43 @@ public class GuiMainPanel {
                 jcbChooseMilestone.setSelectedIndex(2);
                 jcbChooseMilestone.setEnabled(false);
 
-                setNewProTextHint(E_NEW);
+                setNewProTextHint(E_NEW,tabEditPro);
                 //TODO: call controller.generateId() and set inside labelEngId
 
                 break;
             case E_MODIFY:
-                setNewProTextHint(E_MODIFY);
+
                 break;
             case E_REMOVE:
-                setNewProTextHint(E_REMOVE);
+
                 break;
         }
     }
 
-    private void setNewProTextHint(int MODE) {
-        for(Component ep : tabEditPro.getComponents()) {
+    private void cleanEdFields(JPanel tab) {
+        for (Component ep : tab.getComponents()) {
+            if (ep instanceof JEditorPane) {
+                JEditorPane newEp = (JEditorPane) ep;
+                ((JEditorPane) ep).setText("");
+            }
+        }
+    }
+
+    private void enableEdFields(JPanel tab) {
+        for (Component ep : tab.getComponents()) {
+            if (ep instanceof JEditorPane) {
+                JEditorPane newEp = (JEditorPane) ep;
+                ((JEditorPane) ep).setEnabled(true);
+                ((JEditorPane) ep).setEditable(true);
+
+            }
+        }
+    }
+
+
+
+    private void setNewProTextHint(int MODE,JPanel tab) {
+        for(Component ep : tab.getComponents()) {
 
             if (ep instanceof JEditorPane) {
                 JEditorPane newEp = (JEditorPane) ep;
@@ -641,14 +692,14 @@ public class GuiMainPanel {
                         public void mouseExited(MouseEvent e) {}
                     });
 
-                    edProRate.setText("0");
-                    edProName.setText("Project_X");
-                    edProDesc.setText("this project is bound to investigate the X letter");
+//                    edProRate.setText("0");
+//                    edProName.setText("Project_X");
+//                    edProDesc.setText("this project is bound to investigate the X letter");
                     edProDate.setText("24.10.2017");
-                    edProCust.setText("James Dean");
+                    edProCust.setText("James Dean,Google");
                     edProTools.setText("Github,VisualStudio,VMWare,JIRA");
-                    edProMilestone.setText("finish the design in 14 days from kick off");
-                    edProMoney.setText("12000");
+//                    edProMilestone.setText("finish the design in 14 days from kick off");
+//                    edProMoney.setText("12000");
                 }
             }
         }
@@ -1060,12 +1111,12 @@ public class GuiMainPanel {
         this.jcbEngPhones = jcbEngPhones;
     }
 
-    public JButton getAddEngProBtn() {
-        return addEngProBtn;
+    public JButton getApplyButtonEng() {
+        return applyButtonEng;
     }
 
-    public void setAddEngProBtn(JButton addEngProBtn) {
-        this.addEngProBtn = addEngProBtn;
+    public void setApplyButtonEng(JButton applyButtonEng) {
+        this.applyButtonEng = applyButtonEng;
     }
 
     public JPanel getTabEditAll() {
@@ -1354,5 +1405,13 @@ public class GuiMainPanel {
             }
         }
         return null;
+    }
+
+    public void setLabelCurrDate(String date) {
+        this.labelCurrDate.setText("Date: " + date);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

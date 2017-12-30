@@ -9,10 +9,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class AppController implements IController {
-
+    public String date;
     private GuiMainPanel gui;
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
@@ -26,7 +28,15 @@ public class AppController implements IController {
         setGui(gui);
         initControllers();
         bind();
+        setDate();
         loadDb();
+    }
+
+    private void setDate() {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate localDate = LocalDate.now();
+        date = dtf.format(localDate);
+        getGui().setLabelCurrDate(date);
     }
 
     private void setUpDb() throws SQLException {

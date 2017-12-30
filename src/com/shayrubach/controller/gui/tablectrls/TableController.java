@@ -3,6 +3,7 @@ package com.shayrubach.controller.gui.tablectrls;
 import com.shayrubach.controller.IController;
 import com.shayrubach.model.QueryHolder;
 import com.shayrubach.model.entities.Area;
+import com.shayrubach.model.entities.Engineer;
 import com.shayrubach.model.entities.Project;
 import com.shayrubach.view.GuiMainPanel;
 
@@ -153,7 +154,7 @@ public class TableController implements IController {
                 loadDbAreas(ps,rs);
                 break;
             case GuiMainPanel.ENGINEER_ENTITY:
-
+                Engineer eng = new Engineer();
                 break;
 
         }
@@ -297,12 +298,11 @@ public class TableController implements IController {
                     rs.getString(2),    //date started
                     rs.getString(1)     //id
             };
-            
+
             getGui().fillProjectTable(formedProjectRow);
 
 
             getGui().getJcbChooseProject().addItem(rs.getString(3));
-            getGui().getJcbChooseEngPro().addItem(rs.getString(3));
             getGui().getJcbGroupPro().addItem(rs.getString(3));
         }
     }
@@ -400,5 +400,18 @@ public class TableController implements IController {
 
         while(rs.next())
             getGui().getJcbGroupArea().addItem(rs.getString(1));
+    }
+
+    public void getEntityDetails(int entity, JComboBox jcbChooseEng) {
+        switch (entity){
+            case GuiMainPanel.ENGINEER_ENTITY:
+                //TODO: Get daba from db to show on modified gui entity
+                break;
+            case GuiMainPanel.PROJECT_ENTITY:
+                break;
+            case GuiMainPanel.AREA_ENTITY:
+                break;
+        }
+
     }
 }

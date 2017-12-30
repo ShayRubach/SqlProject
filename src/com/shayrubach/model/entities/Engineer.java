@@ -9,11 +9,20 @@ public class Engineer extends DatabaseEntity {
     private String lastName = null;
     private String address = null;
     private String phoneNumber = null;
-    private String age = null;
-    private ArrayList<Map.Entry<String,Integer>> projects = null;          //pair values of <Project name , Rate (1-10)>
+    private String birthDate = null;
+    private String area = null;
 
     public Engineer(){
         super();
+    }
+
+    public Engineer(String firstName, String lastName, String address, String phoneNumber, String birthDate, String area) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.birthDate = birthDate;
+        this.area = area;
     }
 
     @Override
@@ -24,6 +33,22 @@ public class Engineer extends DatabaseEntity {
         Engineer engineer = (Engineer) o;
 
         return this.id != null ? this.id.equals(engineer.getId()) : engineer.getId() == null;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getFirstName() {
@@ -58,19 +83,5 @@ public class Engineer extends DatabaseEntity {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getAge() {
-        return age;
-    }
 
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public ArrayList<Map.Entry<String, Integer>> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(ArrayList<Map.Entry<String, Integer>> projects) {
-        this.projects = projects;
-    }
 }
