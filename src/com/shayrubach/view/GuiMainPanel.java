@@ -245,8 +245,15 @@ public class GuiMainPanel {
 
 
         jcbGroupEngProName.addActionListener(e -> {
-            if(jcbGroupPro.getSelectedIndex() < 2) return;
-            //load db to tables
+            if(jcbGroupEngProName.getSelectedIndex() < 2){
+                return;
+            }
+                //load db to tables
+            try {
+                getControllers().get(0).getEngProject();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
         });
     }
 
@@ -1646,6 +1653,14 @@ public class GuiMainPanel {
     }
     public JComboBox getJcbEngRateValue(){
         return jcbEngRateValue;
+    }
+
+    public DefaultTableModel getTbGroupEngProModel() {
+        return tbGroupEngProModel;
+    }
+
+    public DefaultTableModel getTbGroupEngPhonesModel() {
+        return tbGroupEngPhonesModel;
     }
 
     public JEditorPane getEdEngPhone() {

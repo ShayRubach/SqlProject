@@ -93,6 +93,11 @@ public class QueryHolder {
                 "(SELECT project_id FROM projects_to_engineers " +
                 "WHERE eng_id=?);";
 
+    public static final String QUERY_GET_PROJ_ID_AND_RATE =
+            "SELECT project_id,rate " +
+                    "FROM projects_to_engineers " +
+                    "WHERE eng_id=?";
+
     public static final String QUERY_ADD_AREA_TO_ENG =
             "INSERT IGNORE INTO engineer_areas " +
                     "(eng_id,area_id) " +
@@ -105,6 +110,20 @@ public class QueryHolder {
     public static final String QUERY_REMOVE_AREA =
             "DELETE FROM areas " +
                     "WHERE area_id=?;";
+
+    public static final String GET_PROJET_RATE =
+            "SELECT rate FROM projects_to_engineers " +
+                    "WHERE project_id=?" +
+                    "AND eng_id=?;";
+
+    public static final String GET_PROJECT_ID =
+            "SELECT project_id FROM projects " +
+                    "WHERE name=?;";
+
+    public static final String QUERY_GET_PROJ_NAME_BY_ID =
+            "SELECT name " +
+                    "FROM projects " +
+                    "WHERE project_id=?;";
 
     @NestedQuery
     @CorrelatedSubquery
@@ -119,6 +138,12 @@ public class QueryHolder {
                     "SET rate=? " +
                     "WHERE project_id=? " +
                     "AND eng_id=?;";
+
+    public static final String QUERY_GET_PROJ_NAME_AND_RATE =
+            "SELECT rate, projects.name " +
+                    "FROM projects_to_engineers,projects " +
+                    "WHERE eng_id=? " +
+                    "AND projects_to_engineers.project_id=projects.project_id";
 
 
     @NestedQuery
@@ -175,7 +200,6 @@ public class QueryHolder {
                         "ON projects.name=? " +
                         "WHERE areas.name=?;";
 
-
     @TableCreation
     public static final String TABLE_CREATE_PHONES =
             "CREATE TABLE IF NOT EXISTS  phones( " +
@@ -185,13 +209,7 @@ public class QueryHolder {
                     "PRIMARY KEY(eng_id,phone))";
 
 
-    public static final String QUERY_GET_ENG_ID_BY_NAME_AND_BIRTH =
-            "SELECT eng_id " +
-                    "FROM engineers " +
-                    "WHERE " +
-                    "first_name=? AND " +
-                    "last_name=? AND " +
-                    "birth=?;";
-
+    public static final String QUERY_GET_PHONES_BY_ENG_ID =
+            "select phone from phones where eng_id=?";
 
 }

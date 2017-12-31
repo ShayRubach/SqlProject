@@ -2,6 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf11ac99-19ee-48fd-8535-1a551c253f0b" name="Default" comment="before devision of edit tables">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/model/QueryHolder.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/model/QueryHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$1.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$10.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$11.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$12.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$13.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$14.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$15.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$2.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$3.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$4.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$5.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$6.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$7.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$8.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$9.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/view/GuiMainPanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
@@ -15,14 +34,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8069395">
+    <splitter split-orientation="horizontal" split-proportion="0.64590746">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="326">
-                  <caret line="184" column="31" lean-forward="false" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+                  <caret line="208" column="31" lean-forward="false" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -58,11 +77,15 @@
           <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="1553" column="28" lean-forward="false" selection-start-line="1553" selection-start-column="16" selection-end-line="1553" selection-end-column="28" />
+                <state relative-caret-position="293">
+                  <caret line="252" column="53" lean-forward="false" selection-start-line="252" selection-start-column="40" selection-end-line="252" selection-end-column="53" />
                   <folding>
-                    <element signature="e#47040#47041#0" expanded="true" />
-                    <element signature="e#47089#47090#0" expanded="true" />
+                    <element signature="e#47249#47250#0" expanded="true" />
+                    <element signature="e#47298#47299#0" expanded="true" />
+                    <element signature="e#49564#49565#0" expanded="true" />
+                    <element signature="e#49605#49606#0" expanded="true" />
+                    <element signature="e#49664#49665#0" expanded="true" />
+                    <element signature="e#49708#49709#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -71,8 +94,8 @@
           <file leaf-file-name="TableController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="297" column="53" lean-forward="true" selection-start-line="297" selection-start-column="53" selection-end-line="297" selection-end-column="53" />
+                <state relative-caret-position="300">
+                  <caret line="556" column="31" lean-forward="true" selection-start-line="556" selection-start-column="31" selection-end-line="556" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#8637#8638#0" expanded="true" />
@@ -113,8 +136,8 @@
           <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="268">
-                  <caret line="114" column="36" lean-forward="false" selection-start-line="114" selection-start-column="36" selection-end-line="114" selection-end-column="36" />
+                <state relative-caret-position="462">
+                  <caret line="212" column="12" lean-forward="false" selection-start-line="212" selection-start-column="12" selection-end-line="212" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
@@ -134,20 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>instance</find>
-      <find>radio</find>
-      <find>jcbChooseEng.add</find>
-      <find>unselec</find>
-      <find>getEngProject</find>
-      <find>applyB</find>
-      <find>applyButtonEng.a</find>
-      <find>case 7:</find>
-      <find>rateProjectRadio</find>
-      <find>rateProjectRadioButton.add</find>
-      <find>rateButt</find>
-      <find>rateButtonEng.add</find>
-      <find>addNewP</find>
-      <find>addPhone</find>
       <find>addPhoneNoRadioButton.add</find>
       <find>loadDbEng</find>
       <find>removeEntity</find>
@@ -164,6 +173,20 @@
       <find>initTables</find>
       <find>fillEng</find>
       <find>fillEngTable</find>
+      <find>jcbGroupEngProName.a</find>
+      <find>GroupModel</find>
+      <find>GroupEngPro</find>
+      <find>JOIN</find>
+      <find>case 7:</find>
+      <find>jcbGroupEngProName.add</find>
+      <find>getProject</find>
+      <find>QUERY_GET_AVAILABLE_PROJECTS_BY_ENG_ID</find>
+      <find>PROJECT_NAME_BY</find>
+      <find>QUERY_GET_PROJ_ID_AND_RATE</find>
+      <find>join</find>
+      <find>PHONES</find>
+      <find>getEngProject</find>
+      <find>addRow</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/view</dir>
@@ -503,7 +526,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32831326" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26928896" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -573,8 +596,12 @@
         <state relative-caret-position="1500">
           <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <element signature="e#47040#47041#0" expanded="true" />
-            <element signature="e#47089#47090#0" expanded="true" />
+            <element signature="e#47249#47250#0" expanded="true" />
+            <element signature="e#47298#47299#0" expanded="true" />
+            <element signature="e#49564#49565#0" expanded="true" />
+            <element signature="e#49605#49606#0" expanded="true" />
+            <element signature="e#49664#49665#0" expanded="true" />
+            <element signature="e#49708#49709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -631,8 +658,12 @@
         <state relative-caret-position="1605">
           <caret line="107" column="0" lean-forward="true" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding>
-            <element signature="e#47040#47041#0" expanded="true" />
-            <element signature="e#47089#47090#0" expanded="true" />
+            <element signature="e#47249#47250#0" expanded="true" />
+            <element signature="e#47298#47299#0" expanded="true" />
+            <element signature="e#49564#49565#0" expanded="true" />
+            <element signature="e#49605#49606#0" expanded="true" />
+            <element signature="e#49664#49665#0" expanded="true" />
+            <element signature="e#49708#49709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -681,8 +712,12 @@
         <state relative-caret-position="2550">
           <caret line="233" column="0" lean-forward="true" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
           <folding>
-            <element signature="e#47040#47041#0" expanded="true" />
-            <element signature="e#47089#47090#0" expanded="true" />
+            <element signature="e#47249#47250#0" expanded="true" />
+            <element signature="e#47298#47299#0" expanded="true" />
+            <element signature="e#49564#49565#0" expanded="true" />
+            <element signature="e#49605#49606#0" expanded="true" />
+            <element signature="e#49664#49665#0" expanded="true" />
+            <element signature="e#49708#49709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -885,11 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -916,27 +946,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="1553" column="28" lean-forward="false" selection-start-line="1553" selection-start-column="16" selection-end-line="1553" selection-end-column="28" />
+        <state relative-caret-position="293">
+          <caret line="252" column="53" lean-forward="false" selection-start-line="252" selection-start-column="40" selection-end-line="252" selection-end-column="53" />
           <folding>
-            <element signature="e#47040#47041#0" expanded="true" />
-            <element signature="e#47089#47090#0" expanded="true" />
+            <element signature="e#47249#47250#0" expanded="true" />
+            <element signature="e#47298#47299#0" expanded="true" />
+            <element signature="e#49564#49565#0" expanded="true" />
+            <element signature="e#49605#49606#0" expanded="true" />
+            <element signature="e#49664#49665#0" expanded="true" />
+            <element signature="e#49708#49709#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
-          <caret line="184" column="31" lean-forward="false" selection-start-line="184" selection-start-column="31" selection-end-line="184" selection-end-column="31" />
+          <caret line="208" column="31" lean-forward="false" selection-start-line="208" selection-start-column="31" selection-end-line="208" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="297" column="53" lean-forward="true" selection-start-line="297" selection-start-column="53" selection-end-line="297" selection-end-column="53" />
+        <state relative-caret-position="300">
+          <caret line="556" column="31" lean-forward="true" selection-start-line="556" selection-start-column="31" selection-end-line="556" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8637#8638#0" expanded="true" />

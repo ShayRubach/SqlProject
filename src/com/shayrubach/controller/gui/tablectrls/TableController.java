@@ -506,18 +506,57 @@ public class TableController implements IController {
     }
 
     public void getEngProject() throws SQLException {
-        String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
-                getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
-                getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+        JComboBox cb = getGui().getJcbChooseEng();
+        PreparedStatement ps,ps2;
+        ResultSet rs,rs2=null;
+        if(getGui().getTabbedPane().getSelectedIndex() == 7){   //group tab
+            cb = getGui().getJcbGroupEngProName();
+            getGui().getTbGroupEngProModel().setNumRows(0);
+
+        }
+        String engineerId = cb.getSelectedItem().toString().substring(
+                cb.getSelectedItem().toString().lastIndexOf(":")+2,
+                cb.getSelectedItem().toString().length()-1
         );
 
+        if(getGui().getTabbedPane().getSelectedIndex() != 7) {   //group tab
+            ps = connection.prepareStatement(QueryHolder.QUERY_GET_AVAILABLE_PROJECTS_BY_ENG_ID);
+            ps.setString(1,engineerId);
+            rs = ps.executeQuery();
+        }
+        else{
+            ps = connection.prepareStatement(QueryHolder.QUERY_GET_PROJ_NAME_AND_RATE);
+            ps.setString(1,engineerId);
+            rs = ps.executeQuery();
 
-        PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_GET_AVAILABLE_PROJECTS_BY_ENG_ID);
-        ps.setString(1,engineerId);
-        ResultSet rs = ps.executeQuery();
+            ps2 = connection.prepareStatement(QueryHolder.QUERY_GET_PHONES_BY_ENG_ID);
+            ps2.setString(1,engineerId);
+            rs2 = ps2.executeQuery();
+        }
+
 
         while (rs.next()){
-            getGui().getJcbEngRateProj().addItem(rs.getString(1));
+            if(getGui().getTabbedPane().getSelectedIndex() != 7){
+                getGui().getJcbEngRateProj().addItem(rs.getString(1));
+            }
+            else{
+                getGui().getTbGroupEngProModel().addRow(new Object[]{
+                        rs.getString(2),
+                        rs.getString(1)
+                });
+            }
+
+        }
+
+        getGui().getTbGroupEngPhonesModel().setNumRows(0);
+
+
+        if(getGui().getTabbedPane().getSelectedIndex() == 7){
+            while (rs2.next()){
+               getGui().getTbGroupEngPhonesModel().addRow(new Object[]{
+               rs2.getString(1)
+               });
+            }
         }
 
     }
