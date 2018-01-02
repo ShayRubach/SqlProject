@@ -13,7 +13,7 @@ public class QueryHolder {
                     "tools)" +
                     "VALUES (?,?,?,?,?,?);";
 
-    //TODO: add transaction here to check if area name exists already? if so . rollback.
+    //TODO 08: add transaction here to check if area name exists already? if so . rollback.
     public static final String QUERY_NEW_AREA =
             "INSERT INTO areas(" +
                     "area_id," +
@@ -200,6 +200,20 @@ public class QueryHolder {
                         "ON projects.name=? " +
                         "WHERE areas.name=?;";
 
+    @CorrelatedSubquery
+    @NestedQuery
+    public static final String QUERY_GET_ENG_BY_PROJ_ID_AND_AREA_ID =
+            "SELECT engineers.first_name,engineers.last_name " +
+                    "FROM engineers " +
+                    "WHERE engineers.eng_id IN " +
+                        "(SELECT engineer_areas.eng_id " +
+                        " FROM engineer_areas " +
+                        " WHERE area_id='?' " +
+                        " AND area_id IN " +
+                            "(SELECT area_id " +
+                            "FROM project_areas " +
+                            "WHERE project_id='?'))";
+
     @TableCreation
     public static final String TABLE_CREATE_PHONES =
             "CREATE TABLE IF NOT EXISTS  phones( " +
@@ -207,6 +221,7 @@ public class QueryHolder {
                     "phone          VARCHAR(32)," +
                     "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id) ON DELETE CASCADE,"+
                     "PRIMARY KEY(eng_id,phone))";
+
 
 
     public static final String QUERY_GET_PHONES_BY_ENG_ID =

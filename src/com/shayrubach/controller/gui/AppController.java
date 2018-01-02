@@ -161,7 +161,6 @@ public class AppController implements IController {
     /* init all controllers with their appropriate table and mention its name */
     private void initControllers() {
         controllers.add(new TableController(gui.getTableProjects(),"PROJECTS"));
-        //TODO: change Ctrlrs to be explicit ctrls ProjectCtrl, EngCtrl etc...
         //controllers.add(new ACtrl(gui.getTableAreas(),"ARES"));
         //controllers.add(new ECtrl(gui.getTableEng(),"ENGINEERS"));
         //controllers.add(new TableController(gui.getTableMonitor(),"MONITOR"));

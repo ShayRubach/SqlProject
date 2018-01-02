@@ -228,17 +228,17 @@ public class GuiMainPanel {
             jcbGroupArea.setEnabled(false);
             if(jcbGroupPro.getSelectedIndex() < 2) return;
             jcbGroupArea.setEnabled(true);
-            try {
-                getControllers().get(0).getProjectAreas();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-
 
         });
 
         jcbGroupArea.addActionListener(e -> {
             if(jcbGroupPro.getSelectedIndex() < 2) return;
+            //TODO 01: Show all engineers in project!
+            try {
+                getControllers().get(0).getProjectEngs();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
 
         });
 
@@ -300,11 +300,9 @@ public class GuiMainPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(jcbChooseMilestone.getSelectedIndex() == 2){
-                    //TODO: enable needed fields + call controller for 'add' logic
                 }
 
                 else if(jcbChooseMilestone.getSelectedIndex() > 4) {
-                    //TODO: set milestone field available
                 }
             }
         });
@@ -436,7 +434,6 @@ public class GuiMainPanel {
 
                     getTableEng().getColumn("Projects").setCellEditor(new DefaultCellEditor(cb));
                     resetJcbItems(cb,"");
-                    //TODO: GET PROJECT FROM DB REALTED TO THIS ENG
                     cb.addItem(tableEng.getValueAt(tableEng.getSelectedRow(), 0).toString());
 
                 }
@@ -458,7 +455,6 @@ public class GuiMainPanel {
 
     private void initTabs() {
         setEditListeners();
-        //TODO: IMPLEMENT tab change listener
 
         tabbedPane.addChangeListener(e -> {
             switch(tabbedPane.getSelectedIndex()){
@@ -507,7 +503,7 @@ public class GuiMainPanel {
 
         applyButtonEng.addActionListener(e -> {
             jcbEngSelectArea.setEnabled(false);
-            //TODO: CHECK IF THE ENG AREA MATCHES THE PROJECTS AREA!!!!!!!!!!
+            //TODO 05: CHECK IF THE ENG AREA MATCHES THE PROJECTS AREA!!!!!!!!!!
 
 
             if(newEngineerRadioButton.isSelected()){
@@ -654,7 +650,6 @@ public class GuiMainPanel {
 
         });
 
-        //TODO:AA
         addPhoneNoRadioButton.addActionListener(e -> {
             unselectEngRadioButtons();
             addPhoneNoRadioButton.setSelected(true);
@@ -673,7 +668,6 @@ public class GuiMainPanel {
     }
 
     private void setEditArea() {
-        //TODO: RESET ALL FIELDS (Clear texts inside JEditText, back to 0 index on CBs..) WHEN SWAPPING BETWEEN RADIOS!!
         applyAreaButton.setEnabled(true);
 
         newAreaRadioButton.addActionListener(new ActionListener() {
@@ -719,7 +713,7 @@ public class GuiMainPanel {
     }
 
     private void setEditPro() {
-        //TODO: RESET ALL FIELDS (Clear texts inside JEditText, back to 0 index on CBs..) WHEN SWAPPING BETWEEN RADIOS!!
+
 
         modifyProjectRadioButton.addActionListener(new ActionListener() {
             @Override
@@ -733,7 +727,6 @@ public class GuiMainPanel {
                 enableProFields(E_MODIFY);
                 edProRate.setEnabled(false);
 
-                //TODO: fetchProjectsFromDB();
             }
         });
 
@@ -804,7 +797,6 @@ public class GuiMainPanel {
         applyProButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //TODO: call controller.update or something to create new Entity from fields with these conditions below
 
                 try {
                     if(newProjectRadioButton.isSelected()){
@@ -841,7 +833,6 @@ public class GuiMainPanel {
                 jcbChooseMilestone.setEnabled(false);
 
                 setNewProTextHint(E_NEW,tabEditPro);
-                //TODO: call controller.generateId() and set inside labelEngId
 
                 break;
             case E_MODIFY:
@@ -1548,7 +1539,7 @@ public class GuiMainPanel {
     }
 
 
-    //TODO: turn these fill func into 1 with switch
+    //TODO 10: turn these fill func into 1 with switch
     public void fillProjectTable(String[] formedProjectRow) {
         getTbProjModel().addRow(formedProjectRow);
 
@@ -1665,5 +1656,9 @@ public class GuiMainPanel {
 
     public JEditorPane getEdEngPhone() {
         return edEngPhone;
+    }
+
+    public DefaultTableModel getTbGroupModel() {
+        return tbGroupModel;
     }
 }

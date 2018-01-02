@@ -59,7 +59,7 @@ public class TableController implements IController {
 
                 break;
             case GuiMainPanel.AREA_ENTITY:
-                //TODO: ADD A TRANSACTION TO CHECK IF ID EXISTS, IF NOT, ROLLBACK!
+                //TODO 08: ADD A TRANSACTION TO CHECK IF ID EXISTS, IF NOT, ROLLBACK!
                 String areaId = getGui().getAreaIdByName(getGui().getJcbChooseArea().getSelectedItem().toString());
                 if(areaId == null){
                     return;
@@ -90,7 +90,6 @@ public class TableController implements IController {
     }
 
     public void addEntity(int ENTITY) throws SQLException {
-        //TODO: implement all cases of add/modify/remove entities
         PreparedStatement ps;
         ResultSet rs = null;
         switch(ENTITY){
@@ -103,7 +102,6 @@ public class TableController implements IController {
 
                 rs = ps.executeQuery();
 
-                //TODO: FIX MILESTONE HERE, ADD DUE DATE IN TABLES ATTR
                 Project p = new Project(
                         getGui().getEdProDate().getText().toString(),
                         getGui().getEdProDesc().getText().toString(),
@@ -199,7 +197,6 @@ public class TableController implements IController {
     }
 
     private void addProToTable(Project p) {
-        //TODO: GET ALL MISSING PROPERTIES HERE!!
 
         getGui().getTbProjModel().addRow(new Object[] {
                 p.getName().toString(),
@@ -214,7 +211,6 @@ public class TableController implements IController {
     }
 
     private void addAreaToTable(Area a) {
-        //TODO: GET ALL MISSING PROPERTIES HERE!!
         getGui().getTbAreaModel().addRow(new Object[] {
                 a.getName().toString(),
                 a.getSpecialty(),
@@ -256,7 +252,6 @@ public class TableController implements IController {
 
     @Override
     public void loadDb() throws SQLException {
-        //TODO: implememt load db
         PreparedStatement ps = null;
         ResultSet rs = null;
 
@@ -316,7 +311,6 @@ public class TableController implements IController {
             getGui().getJcbChooseEng().addItem(fullName);
             getGui().getJcbGroupEngProName().addItem(fullName);
 
-            //TODO: load all phones!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
     }
 
@@ -373,7 +367,6 @@ public class TableController implements IController {
     }
 
     public void getAvailableAreas() throws SQLException {
-        //TODO: fix this to only show the selected project's specific areas.
         PreparedStatement ps;
         ResultSet rs;
         ps = getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_AREA_NAMES);
@@ -386,7 +379,6 @@ public class TableController implements IController {
     }
 
     public void getProjectAreas() throws SQLException {
-        //TODO: fix this to only show the selected project's specific areas.
         getGui().resetJcbItems(getGui().getJcbGroupArea(),"Area");
 
         PreparedStatement ps;
@@ -471,7 +463,6 @@ public class TableController implements IController {
     public void getEntityDetails(int entity, JComboBox jcbChooseEng) {
         switch (entity){
             case GuiMainPanel.ENGINEER_ENTITY:
-                //TODO: Get daba from db to show on modified gui entity
                 break;
             case GuiMainPanel.PROJECT_ENTITY:
                 break;
@@ -592,6 +583,27 @@ public class TableController implements IController {
         ps.executeUpdate();
 
 
+
+    }
+
+    public void getProjectEngs() throws SQLException {
+        String proId = getGui().getProjectIdByName(getGui().getJcbGroupPro().getSelectedItem().toString());
+        String areaId = getGui().getAreaIdByName(getGui().getJcbGroupArea().getSelectedItem().toString());
+
+
+        System.out.println("pro id: " +proId + ", area id: " + areaId);
+
+        //TODO 01: fix query here
+        PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_GET_ENG_BY_PROJ_ID_AND_AREA_ID);
+        ps.setString(1,areaId);
+        ps.setString(2,proId);
+        ResultSet rs = ps.executeQuery();
+
+        while(rs.next()){
+            getGui().getTbGroupModel().addRow(new Object[] {
+                    rs.getString(1),rs.getString(2)
+            });
+        }
 
     }
 }
