@@ -13,6 +13,13 @@ public class QueryHolder {
                     "tools)" +
                     "VALUES (?,?,?,?,?,?);";
 
+    public static final String QUERY_ADD_PROJECT_TO_DEV_STEP =
+            "INSERT INTO project_dev_steps(" +
+                    "project_id," +
+                    "dev_step_id," +
+                    "dev_tools) " +
+                    "VALUES(?,?,?);";
+
     //TODO 08: add transaction here to check if area name exists already? if so . rollback.
     public static final String QUERY_NEW_AREA =
             "INSERT INTO areas(" +
@@ -20,6 +27,7 @@ public class QueryHolder {
                     "name," +
                     "specialty) " +
                     "VALUES (?,?,?);";
+
 
     public static final String QUERY_NEW_ENGINEER =
             "INSERT INTO engineers(" +
@@ -230,4 +238,5 @@ public class QueryHolder {
     public static final String QUERY_GET_PHONES_BY_ENG_ID =
             "select phone from phones where eng_id=?";
 
+    public static final String DAA_STEP = "e60d69a1";
 }

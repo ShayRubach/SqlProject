@@ -123,7 +123,15 @@ public class TableController implements IController {
                     pstmt.get(pstmt.size()-1).setString(5,p.getCustomers().toString());
                     pstmt.get(pstmt.size()-1).setString(6,p.getDevTools().toString());
 
-                    pstmt.add(connection.prepareStatement(QueryHolder.QUERY_NEW_MILESTONE));
+                    //pstmt.add(connection.prepareStatement(QueryHolder.QUERY_NEW_MILESTONE));
+
+                    pstmt.add(connection.prepareStatement(QueryHolder.QUERY_ADD_PROJECT_TO_DEV_STEP));
+                    pstmt.get(pstmt.size()-1).setString(1,p.getId().toString());
+                    pstmt.get(pstmt.size()-1).setString(2,QueryHolder.DAA_STEP);
+                    pstmt.get(pstmt.size()-1).setString(3,p.getDevTools().toString());
+
+
+
 
                     //execute all statements
                     for (PreparedStatement pst : pstmt) pst.executeUpdate();

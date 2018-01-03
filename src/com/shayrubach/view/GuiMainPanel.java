@@ -322,6 +322,9 @@ public class GuiMainPanel {
         jcbChooseStep.addItem("Design and Architecture");
         jcbChooseStep.addItem("Development and Implementation");
         jcbChooseStep.addItem("Deliver Final Product");
+        jcbChooseStep.addItem("Maintenance");
+        jcbChooseStep.addItem("QA & Automation");
+
         jcbNewArea.addItem("-- choose Area --");
         jcbNewArea.addItem(" ");
 
