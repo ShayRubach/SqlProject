@@ -371,7 +371,7 @@ public class GuiMainPanel {
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
         final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted"};
         final String[] tbDevStepsColumns = {"State","Projects","Tools"};
-        final String[] tbGroupColumns = {"Engineer Name"};
+        final String[] tbGroupColumns = {"First Name","Last Name","ID"};
         final String[] tbGroupEngProColumns  = {"Project","Rate"};
         final String[] tbGroupEngPhonesColumns   = {"Phone No."};
 

@@ -203,17 +203,20 @@ public class QueryHolder {
     @CorrelatedSubquery
     @NestedQuery
     public static final String QUERY_GET_ENG_BY_PROJ_ID_AND_AREA_ID =
-            "SELECT engineers.first_name,engineers.last_name " +
+            "SELECT engineers.first_name,engineers.last_name,engineers.eng_id " +
+                    "FROM engineers " +
+                    "WHERE engineers.eng_id IN  " +
+                    "(SELECT engineers.eng_id " +
                     "FROM engineers " +
                     "WHERE engineers.eng_id IN " +
-                        "(SELECT engineer_areas.eng_id " +
-                        " FROM engineer_areas " +
-                        " WHERE area_id='?' " +
-                        " AND area_id IN " +
-                            "(SELECT area_id " +
-                            "FROM project_areas " +
-                            "WHERE project_id='?'))";
-
+                    "(SELECT projects_to_engineers.eng_id " +
+                    "FROM projects_to_engineers " +
+                    "WHERE projects_to_engineers.project_id=?) " +
+                    "AND engineers.eng_id IN " +
+                    "(SELECT engineer_areas.eng_id " +
+                    "FROM engineer_areas " +
+                    "WHERE engineer_areas.area_id=?))";
+    
     @TableCreation
     public static final String TABLE_CREATE_PHONES =
             "CREATE TABLE IF NOT EXISTS  phones( " +

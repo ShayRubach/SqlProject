@@ -587,21 +587,36 @@ public class TableController implements IController {
     }
 
     public void getProjectEngs() throws SQLException {
+        PreparedStatement ps1,ps2;
+        ResultSet rs1,rs2;
         String proId = getGui().getProjectIdByName(getGui().getJcbGroupPro().getSelectedItem().toString());
         String areaId = getGui().getAreaIdByName(getGui().getJcbGroupArea().getSelectedItem().toString());
 
 
-        System.out.println("pro id: " +proId + ", area id: " + areaId);
+
+
+
+
+
+
+
+
+
+
+        //System.out.println("pro id: " +proId + ", area id: " + areaId);
 
         //TODO 01: fix query here
         PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_GET_ENG_BY_PROJ_ID_AND_AREA_ID);
-        ps.setString(1,areaId);
-        ps.setString(2,proId);
+        ps.setString(1,proId);
+        ps.setString(2,areaId);
         ResultSet rs = ps.executeQuery();
 
+        getGui().getTbGroupModel().setNumRows(0);
         while(rs.next()){
             getGui().getTbGroupModel().addRow(new Object[] {
-                    rs.getString(1),rs.getString(2)
+                    rs.getString(1),
+                    rs.getString(2),
+                    rs.getString(3),
             });
         }
 
