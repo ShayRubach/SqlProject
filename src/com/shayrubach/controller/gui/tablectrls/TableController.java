@@ -592,20 +592,6 @@ public class TableController implements IController {
         String proId = getGui().getProjectIdByName(getGui().getJcbGroupPro().getSelectedItem().toString());
         String areaId = getGui().getAreaIdByName(getGui().getJcbGroupArea().getSelectedItem().toString());
 
-
-
-
-
-
-
-
-
-
-
-
-        //System.out.println("pro id: " +proId + ", area id: " + areaId);
-
-        //TODO 01: fix query here
         PreparedStatement ps = connection.prepareStatement(QueryHolder.QUERY_GET_ENG_BY_PROJ_ID_AND_AREA_ID);
         ps.setString(1,proId);
         ps.setString(2,areaId);

@@ -216,7 +216,7 @@ public class QueryHolder {
                     "(SELECT engineer_areas.eng_id " +
                     "FROM engineer_areas " +
                     "WHERE engineer_areas.area_id=?))";
-    
+
     @TableCreation
     public static final String TABLE_CREATE_PHONES =
             "CREATE TABLE IF NOT EXISTS  phones( " +

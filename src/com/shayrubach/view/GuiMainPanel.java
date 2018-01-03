@@ -228,12 +228,12 @@ public class GuiMainPanel {
             jcbGroupArea.setEnabled(false);
             if(jcbGroupPro.getSelectedIndex() < 2) return;
             jcbGroupArea.setEnabled(true);
+            getTbGroupModel().setNumRows(0);
 
         });
 
         jcbGroupArea.addActionListener(e -> {
             if(jcbGroupPro.getSelectedIndex() < 2) return;
-            //TODO 01: Show all engineers in project!
             try {
                 getControllers().get(0).getProjectEngs();
             } catch (SQLException e1) {
@@ -365,6 +365,7 @@ public class GuiMainPanel {
     }
 
     private void initTables() {
+
         final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID","Rate"};
         final String[] tbEngColumns = {"First Name","Last Name","Birth","Age","Address","ID","Area"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
@@ -479,7 +480,14 @@ public class GuiMainPanel {
                 case 7:
                     PreparedStatement ps = null;
                     ResultSet rs = null;
+                    getTbGroupModel().setNumRows(0);
+                    getTbGroupEngPhonesModel().setNumRows(0);
+                    getTbGroupEngProModel().setNumRows(0);
+
                     resetJcbItems(jcbGroupEngProName,"Engineer");
+                    jcbGroupPro.setSelectedIndex(0);
+                    jcbGroupArea.setSelectedIndex(0);
+
 
                     try {
                         getControllers().get(0).loadDbEngineers(ps,rs);
