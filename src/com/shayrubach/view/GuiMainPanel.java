@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.IntStream;
 
 public class GuiMainPanel {
 
@@ -19,6 +18,9 @@ public class GuiMainPanel {
     private static final int E_MODIFY   = 1 ;
     private static final int E_REMOVE   = -1 ;
     private static final int E_NEW      = 2;
+    public static final int MONTHLY_REVENUE = 1;
+    public static final int TOTAL_REVENUE   = 2;
+
 
     public static final int PROJECT_ENTITY = 0;
     public static final int AREA_ENTITY = 1;
@@ -101,9 +103,9 @@ public class GuiMainPanel {
     private JEditorPane edProMsDueDate;
     private JEditorPane edProCust;
     private JComboBox jcbChooseProArea;
-    private JPanel tabUpcomingMilestones;
+    private JPanel tabMilestones;
     private JPanel tabDevSteps;
-    private JTable tableUpcomingMilestones;
+    private JTable tableMilestones;
     private JTable tableDevSteps;
     private JButton applyAreaButton;
     private JComboBox jcbProjNewArea;
@@ -130,6 +132,8 @@ public class GuiMainPanel {
     private JTable tableGroupEngPro;
     private JTable tableGroupEngPhones;
     private JRadioButton addNewMilestoneRadioButton;
+    private JRadioButton showAllMilestonesRadioButton;
+    private JRadioButton showThisMonthSRadioButton;
 
 
     private DefaultTableModel tbProjModel;
@@ -155,6 +159,7 @@ public class GuiMainPanel {
         initCBoxes();
         initEditFields();
         initTabs();
+        initMilestones();
     }
 
     private void initJsps() {
@@ -165,7 +170,7 @@ public class GuiMainPanel {
         tableTopProj.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tableTopEng.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tableDevSteps.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        tableUpcomingMilestones.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tableMilestones.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tableMonitor.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 
 
@@ -243,8 +248,6 @@ public class GuiMainPanel {
 
         });
 
-
-
         jcbGroupEngProName.addActionListener(e -> {
             if(jcbGroupEngProName.getSelectedIndex() < 2){
                 return;
@@ -289,10 +292,45 @@ public class GuiMainPanel {
                 e1.printStackTrace();
             }
 
-
         });
     }
 
+    private void initMilestones(){
+        showThisMonthSRadioButton.addActionListener(e -> {
+            ResultSet rs;
+            showAllMilestonesRadioButton.setSelected(false);
+
+            try {
+                getControllers().get(0).loadDbMilestones(null,null,2);
+                rs = controllers.get(0).calculateRevenue(MONTHLY_REVENUE);
+                while (rs.next()) {
+                    labelTotalRevenue.setText(labelTotalRevenue.getText().substring(0,14));
+                    labelTotalRevenue.setText(labelTotalRevenue.getText() + " " + rs.getString(1) + "$") ;
+                }
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        });
+
+        showAllMilestonesRadioButton.addActionListener(e -> {
+            ResultSet rs;
+            showThisMonthSRadioButton.setSelected(false);
+            try {
+                getControllers().get(0).loadDbMilestones(null,null,1);
+                rs = controllers.get(0).calculateRevenue(TOTAL_REVENUE);
+                while (rs.next()) {
+                    labelTotalRevenue.setText(labelTotalRevenue.getText().substring(0,14));
+                    labelTotalRevenue.setText(labelTotalRevenue.getText() + " " + rs.getString(1) + "$");
+                }
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        });
+
+
+    }
 
     private void initAreaCB() {
         initAreaCBText();
@@ -408,7 +446,7 @@ public class GuiMainPanel {
         final String[] tbEngColumns = {"First Name","Last Name","Birth","Age","Address","ID","Area"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
-        final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted"};
+        final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted","Project"};
         final String[] tbDevStepsColumns = {"State","Projects","Tools"};
         final String[] tbGroupColumns = {"First Name","Last Name","ID"};
         final String[] tbGroupEngProColumns  = {"Project","Rate"};
@@ -420,7 +458,7 @@ public class GuiMainPanel {
         tableTopProj.setBackground(new Color(255,255,255));
         tableTopEng.setBackground(new Color(255,255,255));
         tableMonitor.setBackground(new Color(255,255,255));
-        tableUpcomingMilestones.setBackground(new Color(255,255,255));
+        tableMilestones.setBackground(new Color(255,255,255));
         tableDevSteps.setBackground(new Color(255,255,255));
         tableGroupsPro.setBackground(new Color(255,255,255));
         tableGroupEngPro.setBackground(new Color(255,255,255));
@@ -448,7 +486,7 @@ public class GuiMainPanel {
 
         tableTopProj.setModel(tbTopProjModel);
         tableTopEng.setModel(tbTopEngModel);
-        tableUpcomingMilestones.setModel(tbMilestoneModel);
+        tableMilestones.setModel(tbMilestoneModel);
         tableDevSteps.setModel(tbDevStepsModel);
         tableGroupsPro.setModel(tbGroupModel);
         tableGroupEngPro.setModel(tbGroupEngProModel);
@@ -480,9 +518,9 @@ public class GuiMainPanel {
                 case 4:
 
                     break;
-                //upcoming milestones
+                //milestones
                 case 5:
-
+                    showAllMilestonesRadioButton.setSelected(true);
                     break;
                 //dev steps
                 case 6:
@@ -737,8 +775,11 @@ public class GuiMainPanel {
             addNewMilestoneRadioButton.setSelected(false);
 
             jcbChooseProject.setEnabled(true);
+            jcbChooseProject.setSelectedIndex(0);
+
             enableProFields(E_MODIFY);
             edProRate.setEnabled(false);
+
 
         });
 
@@ -819,7 +860,6 @@ public class GuiMainPanel {
         });
 
         applyProButton.addActionListener(e -> {
-
             try {
                 if(newProjectRadioButton.isSelected()){
                     controllers.get(0).addEntity(PROJECT_ENTITY);
@@ -829,6 +869,9 @@ public class GuiMainPanel {
                 }
                 if(removeProjectRadioButton.isSelected() && jcbChooseProject.getSelectedIndex() > 1){
                     controllers.get(0).removeEntity(PROJECT_ENTITY);
+                }
+                if(addNewMilestoneRadioButton.isSelected()){
+                   controllers.get(0).addMilestoneToProject();
                 }
             } catch (SQLException e1) {
                 e1.printStackTrace();
@@ -865,7 +908,7 @@ public class GuiMainPanel {
         }
     }
 
-    private void cleanEdFields(JPanel tab) {
+    public void cleanEdFields(JPanel tab) {
         for (Component ep : tab.getComponents()) {
             if (ep instanceof JEditorPane) {
                 JEditorPane newEp = (JEditorPane) ep;
@@ -909,14 +952,10 @@ public class GuiMainPanel {
                         public void mouseExited(MouseEvent e) {}
                     });
 
-//                    edProRate.setText("0");
-//                    edProName.setText("Project_X");
-//                    edProDesc.setText("this project is bound to investigate the X letter");
                     edProDate.setText("24.10.2017");
                     edProCust.setText("James Dean,Google");
                     edProTools.setText("Github,VisualStudio,VMWare,JIRA");
-//                    edProMilestone.setText("finish the design in 14 days from kick off");
-//                    edProMoney.setText("12000");
+
                 }
             }
         }
@@ -1395,163 +1434,123 @@ public class GuiMainPanel {
     public JPanel getTabEditArea() {
         return tabEditArea;
     }
-
     public void setTabEditArea(JPanel tabEditArea) {
         this.tabEditArea = tabEditArea;
     }
-
     public JPanel getTabEditEng() {
         return tabEditEng;
     }
-
     public void setTabEditEng(JPanel tabEditEng) {
         this.tabEditEng = tabEditEng;
     }
-
     public JRadioButton getModifyEngineerRadioButton() {
         return modifyEngineerRadioButton;
     }
-
     public void setModifyEngineerRadioButton(JRadioButton modifyEngineerRadioButton) {
         this.modifyEngineerRadioButton = modifyEngineerRadioButton;
     }
-
     public JButton getAddEngPhoneBtn() {
         return addEngPhoneBtn;
     }
-
     public void setAddEngPhoneBtn(JButton addEngPhoneBtn) {
         this.addEngPhoneBtn = addEngPhoneBtn;
     }
-
     public JRadioButton getNewAreaRadioButton() {
         return newAreaRadioButton;
     }
-
     public void setNewAreaRadioButton(JRadioButton newAreaRadioButton) {
         this.newAreaRadioButton = newAreaRadioButton;
     }
-
     public JLabel getLabelAreaId() {
         return LabelAreaId;
     }
-
     public void setLabelAreaId(JLabel labelAreaId) {
         LabelAreaId = labelAreaId;
     }
-
     public JLabel getLabelProId() {
         return labelProId;
     }
-
     public void setLabelProId(JLabel labelProId) {
         this.labelProId = labelProId;
     }
-
     public JLabel getLabelEngId() {
         return labelEngId;
     }
-
     public void setLabelEngId(JLabel labelEngId) {
         this.labelEngId = labelEngId;
     }
-
     public JEditorPane getEdEngDate() {
         return edEngDate;
     }
-
     public void setEdEngDate(JEditorPane edEngDate) {
         this.edEngDate = edEngDate;
     }
-
     public JEditorPane getEdEngAge() {
         return edEngAge;
     }
-
     public void setEdEngAge(JEditorPane edEngAge) {
         this.edEngAge = edEngAge;
     }
-
     public JButton getApplyProButton() {
         return applyProButton;
     }
-
     public void setApplyProButton(JButton applyProButton) {
         this.applyProButton = applyProButton;
     }
-
     public void setControllers(ArrayList<TableController> controllers) {
         this.controllers = controllers;
     }
-
     public DefaultTableModel getTbProjModel() {
         return tbProjModel;
     }
-
     public void setTbProjModel(DefaultTableModel tbProjModel) {
         this.tbProjModel = tbProjModel;
     }
-
     public DefaultTableModel getTbEngModel() {
         return tbEngModel;
     }
-
     public void setTbEngModel(DefaultTableModel tbEngModel) {
         this.tbEngModel = tbEngModel;
     }
-
     public DefaultTableModel getTbAreaModel() {
         return tbAreaModel;
     }
-
     public void setTbAreaModel(DefaultTableModel tbAreaModel) {
         this.tbAreaModel = tbAreaModel;
     }
-
     public DefaultTableModel getTbTopProjModel() {
         return tbTopProjModel;
     }
-
     public void setTbTopProjModel(DefaultTableModel tbTopProjModel) {
         this.tbTopProjModel = tbTopProjModel;
     }
-
     public DefaultTableModel getTbTopEngModel() {
         return tbTopEngModel;
     }
-
     public void setTbTopEngModel(DefaultTableModel tbTopEngModel) {
         this.tbTopEngModel = tbTopEngModel;
     }
-
     public DefaultTableModel getTbMonitorModel() {
         return tbMonitorModel;
     }
-
     public void setTbMonitorModel(DefaultTableModel tbMonitorModel) {
         this.tbMonitorModel = tbMonitorModel;
     }
-
     public JEditorPane getEdProMsDueDate() {
         return edProMsDueDate;
     }
-
     public void setEdProMsDueDate(JEditorPane edProMsDueDate) {
         this.edProMsDueDate = edProMsDueDate;
     }
-
     public JEditorPane getEdProCust() {
         return edProCust;
     }
-
     public void setEdProCust(JEditorPane edProCust) {
         this.edProCust = edProCust;
     }
-
     public JComboBox getJcbChooseProArea() {
         return jcbChooseProArea;
     }
-
     public void setJcbChooseProArea(JComboBox jcbChooseProArea) {
         this.jcbChooseProArea = jcbChooseProArea;
     }
@@ -1565,11 +1564,9 @@ public class GuiMainPanel {
         getTbProjModel().addRow(formedProjectRow);
 
     }
-
     public void fillAreaTable(String[] formedAreaRow) {
         getTbAreaModel().addRow(formedAreaRow);
     }
-
     public void fillEngTable(Object[] formedRow){
         getTbEngModel().addRow(formedRow);
     }
@@ -1577,7 +1574,6 @@ public class GuiMainPanel {
     public JComboBox getJcbNewArea() {
         return jcbNewArea;
     }
-
     public void updateBoxes() {
         //update project boxes
         for (int i = 0; i < tableProjects.getRowCount(); i++) {
@@ -1591,27 +1587,21 @@ public class GuiMainPanel {
 
 
     }
-
     public JPanel getTabGroups() {
         return tabGroups;
     }
-
     public JTable getTableGroupsPro() {
         return tableGroupsPro;
     }
-
     public JComboBox getJcbGroupPro() {
         return jcbGroupPro;
     }
-
     public JComboBox getJcbGroupArea() {
         return jcbGroupArea;
     }
-
     public JComboBox getJcbEngSelectArea() {
         return jcbEngSelectArea;
     }
-
     public String getAreaIdByName(String s) {
         int ID_COLUMN_INDEX = 2;
         int NAME_COLUMN_INDEX = 0;
@@ -1624,8 +1614,6 @@ public class GuiMainPanel {
         }
         return null;
     }
-
-
     public String getProjectIdByName(String name){
 
         int ID_COLUMN_INDEX =5;
@@ -1639,19 +1627,15 @@ public class GuiMainPanel {
         }
         return null;
     }
-
     public JComboBox getJcbGroupEngProName() {
         return jcbGroupEngProName;
     }
-
     public JTable getTableGroupEngPro() {
         return tableGroupEngPro;
     }
-
     public JTable getTableGroupEngPhones() {
         return tableGroupEngPhones;
     }
-
     public void setLabelCurrDate(String date) {
         StringBuilder sb = new StringBuilder(date);
         String dateDup = date;
@@ -1664,31 +1648,35 @@ public class GuiMainPanel {
 
         this.labelCurrDate.setText("Date: " + date);
     }
-
+    public DefaultTableModel getTbMilestoneModel() {
+        return tbMilestoneModel;
+    }
+    public DefaultTableModel getTbDevStepsModel() {
+        return tbDevStepsModel;
+    }
     public JComboBox getJcbEngJoinProj() {
         return jcbEngJoinProj;
     }
-
     public JComboBox getJcbEngRateProj(){
         return jcbEngRateProj;
     }
     public JComboBox getJcbEngRateValue(){
         return jcbEngRateValue;
     }
-
     public DefaultTableModel getTbGroupEngProModel() {
         return tbGroupEngProModel;
     }
-
     public DefaultTableModel getTbGroupEngPhonesModel() {
         return tbGroupEngPhonesModel;
     }
-
     public JEditorPane getEdEngPhone() {
         return edEngPhone;
     }
-
+    public JLabel getLabelCurrDate() {
+        return labelCurrDate;
+    }
     public DefaultTableModel getTbGroupModel() {
         return tbGroupModel;
     }
+
 }

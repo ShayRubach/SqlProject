@@ -28,7 +28,6 @@ public class QueryHolder {
                     "specialty) " +
                     "VALUES (?,?,?);";
 
-
     public static final String QUERY_NEW_ENGINEER =
             "INSERT INTO engineers(" +
                     "eng_id," +
@@ -39,7 +38,7 @@ public class QueryHolder {
                     "birth)" +
                     "VALUES (?,?,?,?,?,?);";
 
-    public static final String QUERY_NEW_MILESTONE =
+    public static final String QUERY_ADD_MILESTONE_TO_PROJECT =
             "INSERT INTO milestones (" +
                     "project_id," +
                     "milestone," +
@@ -52,6 +51,26 @@ public class QueryHolder {
             "FROM projects " +
             "WHERE name=?;";
 
+
+    public static final String QUERY_GET_MONTHLY_MILESTONES =
+            "SELECT milestones.milestone," +
+                    "milestones.due_date AS date," +
+                    "milestones.money_granted AS money," +
+                    "projects.name " +
+            "FROM milestones " +
+            "JOIN projects ON milestones.project_id=projects.project_id " +
+            "WHERE milestones.due_date BETWEEN ? AND ? " +
+            "ORDER BY date";
+
+    public static final String QUERY_GET_ALL_MILESTONES =
+            "SELECT milestones.milestone," +
+                    "milestones.due_date AS date," +
+                    "milestones.money_granted AS money," +
+                    "projects.name " +
+                    "FROM milestones " +
+                    "JOIN projects ON milestones.project_id=projects.project_id " +
+                    "ORDER BY date";
+
     public static final String QUERY_GET_ALL_PROJECT_NAMES =
             "SELECT name FROM projects;";
 
@@ -62,6 +81,17 @@ public class QueryHolder {
 
     public static final String QUERY_MODIFY_PROJECT =
             "";
+
+
+    public static final String SUM_MONTHLY_REVENUES =
+            "SELECT SUM(money_granted) " +
+                    "FROM milestones " +
+                    "WHERE milestones.due_date BETWEEN ? AND ? " +
+                    "ORDER BY milestones.due_date";
+
+    public static final String SUM_TOTAL_REVENUES =
+            "SELECT SUM(money_granted) FROM milestones";
+
 
     public static final String QUERY_REMOVE_PROJECT =
             "DELETE FROM projects " +

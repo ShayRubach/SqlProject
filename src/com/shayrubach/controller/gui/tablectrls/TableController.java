@@ -296,23 +296,48 @@ public class TableController implements IController {
         loadDbProjects(ps,rs);
         loadDbAreas(ps,rs);
         loadDbEngineers(ps,rs);
-        loadDbMilestones(ps,rs);
+        loadDbMilestones(ps,rs,1);
         loadDbDevSteps(ps,rs);
-
-
-        //pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_AREAS_BY_PROJECT));
-        //pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_MILESTONE_BY_PROJECT));
-        //pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_DEV_TOOLS_BY_PROJECT));
-
-//        pss.add(getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_ENGINEERS));
-
 
     }
 
     public void loadDbDevSteps(PreparedStatement ps, ResultSet rs) throws SQLException  {
     }
 
-    public void loadDbMilestones(PreparedStatement ps, ResultSet rs) throws SQLException  {
+    public void loadDbMilestones(PreparedStatement ps, ResultSet rs, int revenueType) throws SQLException  {
+
+        StringBuilder firstDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
+        StringBuilder lastDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
+
+        firstDayOfTheMonth.replace(0,1,"1");
+        lastDayOfTheMonth.replace(0,1,"30");
+//        firstDayOfTheMonth = new StringBuilder(firstDayOfTheMonth.toString().replace("/","."));
+//        lastDayOfTheMonth = new StringBuilder(firstDayOfTheMonth.toString().replace("/","."));
+
+        getGui().getTbMilestoneModel().setNumRows(0);
+
+        if(revenueType == 1){   //total revenues
+            ps = connection.prepareStatement((QueryHolder.QUERY_GET_ALL_MILESTONES));
+        }
+        if(revenueType == 2){   //monthly revenues
+            ps = connection.prepareStatement(QueryHolder.QUERY_GET_MONTHLY_MILESTONES);
+            ps.setString(1,firstDayOfTheMonth.toString());
+            ps.setString(2,lastDayOfTheMonth.toString());
+        }
+        rs = ps.executeQuery();
+
+        while(rs.next()){
+            String[] formattedRow = {
+                    rs.getString(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+            };
+
+            getGui().getTbMilestoneModel().addRow(formattedRow);
+        }
+
+
     }
 
     public void loadDbEngineers(PreparedStatement ps, ResultSet rs) throws SQLException {
@@ -679,5 +704,41 @@ public class TableController implements IController {
         ps = connection.prepareStatement(QueryHolder.QUERY_GET_ENG_DATA);
         ps.setString(1,engineerId);
         return  ps.executeQuery();
+    }
+
+    public void addMilestoneToProject() throws SQLException {
+        String projId = getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString());
+        PreparedStatement ps2 = null,ps = connection.prepareStatement(QueryHolder.QUERY_ADD_MILESTONE_TO_PROJECT);
+        ResultSet rs2 = null;
+
+        ps.setString(1,projId);
+        ps.setString(2,getGui().getEdProMilestone().getText());
+        ps.setString(3,getGui().getEdProMsDueDate().getText());
+        ps.setString(4,getGui().getEdProMoney().getText());
+        ps.executeUpdate();
+
+        loadDbMilestones(ps2,rs2,2);
+
+    }
+
+    public ResultSet calculateRevenue(int revenueType) throws SQLException {
+        PreparedStatement ps = null;
+        StringBuilder firstDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
+        StringBuilder lastDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
+
+        firstDayOfTheMonth.replace(0,1,"1");
+        lastDayOfTheMonth.replace(0,1,"30");
+
+        switch (revenueType){
+            case 1:     //monthly
+                ps = connection.prepareStatement(QueryHolder.SUM_MONTHLY_REVENUES);
+                ps.setString(1,firstDayOfTheMonth.toString());
+                ps.setString(2,lastDayOfTheMonth.toString());
+                break;
+            case 2:     //total
+                ps = connection.prepareStatement(QueryHolder.SUM_TOTAL_REVENUES);
+                break;
+        }
+        return ps.executeQuery();
     }
 }
