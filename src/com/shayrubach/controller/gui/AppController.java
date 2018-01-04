@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class AppController implements IController {
-    public String date;
+    public static String date;
     private GuiMainPanel gui;
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
@@ -37,6 +37,10 @@ public class AppController implements IController {
         LocalDate localDate = LocalDate.now();
         date = dtf.format(localDate);
         getGui().setLabelCurrDate(date);
+    }
+
+    public static String getDate() {
+        return date;
     }
 
     private void setUpDb() throws SQLException {

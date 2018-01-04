@@ -129,6 +129,7 @@ public class GuiMainPanel {
     private JComboBox jcbGroupEngProName;
     private JTable tableGroupEngPro;
     private JTable tableGroupEngPhones;
+    private JRadioButton addNewMilestoneRadioButton;
 
 
     private DefaultTableModel tbProjModel;
@@ -793,38 +794,43 @@ public class GuiMainPanel {
             }
         });
 
-        addNewAreaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    controllers.get(0).addNewAreaToProject();
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
+        addNewAreaButton.addActionListener(e -> {
+            try {
+                controllers.get(0).addNewAreaToProject();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
             }
         });
 
+        addNewMilestoneRadioButton.addActionListener(e -> {
+            if(addNewMilestoneRadioButton.isSelected()){
+                edProMilestone.setText("milestone description");
+                edProMsDueDate.setText(labelCurrDate.getText().substring(6).replace('/','.'));
+                edProMoney.setText("24500");
 
-        applyProButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                try {
-                    if(newProjectRadioButton.isSelected()){
-                        controllers.get(0).addEntity(PROJECT_ENTITY);
-                    }
-                    if(modifyProjectRadioButton.isSelected()){
-                        //TODO: add project_modify
-                    }
-                    if(removeProjectRadioButton.isSelected() && jcbChooseProject.getSelectedIndex() > 1){
-                        controllers.get(0).removeEntity(PROJECT_ENTITY);
-                    }
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
-                }
-
-
+                edProMilestone.setEnabled(true);
+                edProMsDueDate.setEnabled(true);
+                edProMoney.setEnabled(true);
             }
+        });
+
+        applyProButton.addActionListener(e -> {
+
+            try {
+                if(newProjectRadioButton.isSelected()){
+                    controllers.get(0).addEntity(PROJECT_ENTITY);
+                }
+                if(modifyProjectRadioButton.isSelected()){
+                    //TODO: add project_modify
+                }
+                if(removeProjectRadioButton.isSelected() && jcbChooseProject.getSelectedIndex() > 1){
+                    controllers.get(0).removeEntity(PROJECT_ENTITY);
+                }
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+
+
         });
 
     }
@@ -1643,6 +1649,15 @@ public class GuiMainPanel {
     }
 
     public void setLabelCurrDate(String date) {
+        StringBuilder sb = new StringBuilder(date);
+        String dateDup = date;
+        if(date.charAt(3) =='0'){
+            date = date.substring(0,3) + dateDup.substring(4,10);
+        }
+        if(date.charAt(0) == '0'){
+            date = date.substring(1);
+        }
+
         this.labelCurrDate.setText("Date: " + date);
     }
 
