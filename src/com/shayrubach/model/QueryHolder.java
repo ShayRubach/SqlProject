@@ -233,7 +233,27 @@ public class QueryHolder {
                     "FOREIGN KEY (eng_id) REFERENCES engineers(eng_id) ON DELETE CASCADE,"+
                     "PRIMARY KEY(eng_id,phone))";
 
+    public static final String QUERY_GET_PROJECT_DEV_STEP =
+            "SELECT name " +
+                    "FROM development_steps " +
+                    "WHERE dev_step_id IN " +
+                    "(SELECT dev_step_id " +
+                    "FROM project_dev_steps " +
+                    "WHERE project_id=?); ";
 
+    public static final String QUERY_MODIFY_ENG =
+            "UPDATE engineers " +
+                    "SET " +
+                    "first_name=?," +
+                    "last_name=?," +
+                    "address=?," +
+                    "birth=? " +
+                    "WHERE eng_id=?";
+    public static final String QUERY_GET_PROJECT_DATA =
+            "SELECT * FROM projects WHERE project_id=?";
+
+    public static final String QUERY_GET_ENG_DATA =
+            "SELECT * FROM engineers WHERE eng_id=?";
 
     public static final String QUERY_GET_PHONES_BY_ENG_ID =
             "select phone from phones where eng_id=?";

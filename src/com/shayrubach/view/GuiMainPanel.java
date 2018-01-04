@@ -263,18 +263,33 @@ public class GuiMainPanel {
 
 
         jcbChooseEng.addActionListener(e -> {
-            if(rateProjectRadioButton.isSelected()){
-                resetJcbItems(jcbEngRateProj,"Project to rate");
-                try {
+            try {
+
+                if (rateProjectRadioButton.isSelected()) {
+                    resetJcbItems(jcbEngRateProj, "Project to rate");
+
                     getControllers().get(0).getEngProject();
-                    int i =1;
-                    while (i<=10){
+                    int i = 1;
+                    while (i <= 10) {
                         jcbEngRateValue.addItem(String.valueOf(i++));
                     }
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
+                }
+
+                if(modifyEngineerRadioButton.isSelected()){
+                    ResultSet rs = getControllers().get(0).getEngData();
+                    while(rs.next()){
+                        edEngFname.setText(rs.getString(3));
+                        edEngLname.setText(rs.getString(4));
+                        edEngDate.setText(rs.getString(6));
+                        edEngAddress.setText(rs.getString(5));
+                    }
                 }
             }
+            catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+
+
         });
     }
 
@@ -286,15 +301,34 @@ public class GuiMainPanel {
     private void initProCB() {
         initProCBText();
 
-        jcbChooseProject.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //if a specific project was chosen
-                if (jcbChooseProject.getSelectedIndex() > 1) {
-                    jcbChooseMilestone.setEnabled(true);
-                }
+        jcbChooseProject.addActionListener(e -> {
+            //if a specific project was chosen
+            if (jcbChooseProject.getSelectedIndex() > 1) {
+                jcbChooseMilestone.setEnabled(false);
+                try {
+                    if (addNewMilestoneRadioButton.isSelected()) {
+                        getControllers().get(0).getProjectDevStep();
+                    }
 
+                    if(modifyProjectRadioButton.isSelected()){
+                        ResultSet rs = getControllers().get(0).getProjectData();
+                        while (rs.next()) {
+                            edProName.setText(rs.getString(3));
+                            edProDesc.setText(rs.getString(4));
+                            edProTools.setText(rs.getString(6));
+                            edProCust.setText(rs.getString(5));
+                            edProDate.setText(rs.getString(2));
+                        }
+                    }
+
+                }
+                 catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
             }
+
+
+
         });
 
         jcbChooseMilestone.addActionListener(new ActionListener() {
@@ -517,41 +551,35 @@ public class GuiMainPanel {
             jcbEngSelectArea.setEnabled(false);
             //TODO 05: CHECK IF THE ENG AREA MATCHES THE PROJECTS AREA!!!!!!!!!!
 
+            try {
+                if (modifyEngineerRadioButton.isSelected()) {
+                    getControllers().get(0).modifyEntity(ENGINEER_ENTITY);
+                    cleanEdFields(tabEditEng);
 
-            if(newEngineerRadioButton.isSelected()){
-                try {
+                }
+
+                if (newEngineerRadioButton.isSelected()) {
                     getControllers().get(0).addEntity(ENGINEER_ENTITY);
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
                 }
-            }
 
-            if(addProjectRadioButton.isSelected()){
-                // .... add project
-                try {
+                if (addProjectRadioButton.isSelected()) {
+                    // .... add project
                     getControllers().get(0).addNewEngineerToProject();
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
                 }
-            }
 
-            if(addPhoneNoRadioButton.isSelected()){
-                try {
+                if (addPhoneNoRadioButton.isSelected()) {
                     getControllers().get(0).addNewPhoneNoToEng();
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
                 }
-            }
 
-            if(removeEngineerRadioButton.isSelected()){
-                try {
+                if (removeEngineerRadioButton.isSelected()) {
                     getControllers().get(0).removeEntity(ENGINEER_ENTITY);
-                } catch (SQLException e1) {
-                    e1.printStackTrace();
                 }
-            }
 
-            unselectEngRadioButtons();
+                unselectEngRadioButtons();
+            }
+             catch (SQLException e1) {
+                e1.printStackTrace();
+            }
         });
 
         rateButtonEng.addActionListener(e -> {
@@ -727,36 +755,32 @@ public class GuiMainPanel {
     private void setEditPro() {
 
 
-        modifyProjectRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setComponentStates(E_RESET,tabEditPro);
-                modifyProjectRadioButton.setSelected(true);
-                newProjectRadioButton.setSelected(false);
-                removeProjectRadioButton.setSelected(false);
+        modifyProjectRadioButton.addActionListener(e -> {
+            setComponentStates(E_RESET,tabEditPro);
+            modifyProjectRadioButton.setSelected(true);
+            newProjectRadioButton.setSelected(false);
+            removeProjectRadioButton.setSelected(false);
+            addNewMilestoneRadioButton.setSelected(false);
 
-                jcbChooseProject.setEnabled(true);
-                enableProFields(E_MODIFY);
-                edProRate.setEnabled(false);
+            jcbChooseProject.setEnabled(true);
+            enableProFields(E_MODIFY);
+            edProRate.setEnabled(false);
 
-            }
         });
 
-        newProjectRadioButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setComponentStates(E_RESET,tabEditPro);
-                newProjectRadioButton.setSelected(true);
-                modifyProjectRadioButton.setSelected(false);
-                removeProjectRadioButton.setSelected(false);
+        newProjectRadioButton.addActionListener(e -> {
+            setComponentStates(E_RESET,tabEditPro);
+            newProjectRadioButton.setSelected(true);
+            modifyProjectRadioButton.setSelected(false);
+            removeProjectRadioButton.setSelected(false);
+            addNewMilestoneRadioButton.setSelected(false);
 
-                jcbChooseProject.setEnabled(false);
-                jcbChooseProArea.setEnabled(true);
+            jcbChooseProject.setEnabled(false);
+            jcbChooseProArea.setEnabled(true);
 
-                enableProFields(E_NEW);
-                edProRate.setEnabled(false);
+            enableProFields(E_NEW);
+            edProRate.setEnabled(false);
 
-            }
         });
 
         removeProjectRadioButton.addActionListener(new ActionListener() {
@@ -767,6 +791,7 @@ public class GuiMainPanel {
                 removeProjectRadioButton.setSelected(true);
                 modifyProjectRadioButton.setSelected(false);
                 newProjectRadioButton.setSelected(false);
+                addNewMilestoneRadioButton.setSelected(false);
 
                 jcbChooseProject.setEnabled(true);
                 enableProFields(E_REMOVE);
@@ -808,9 +833,14 @@ public class GuiMainPanel {
                 edProMsDueDate.setText(labelCurrDate.getText().substring(6).replace('/','.'));
                 edProMoney.setText("24500");
 
+                jcbChooseProject.setEnabled(true);
                 edProMilestone.setEnabled(true);
                 edProMsDueDate.setEnabled(true);
                 edProMoney.setEnabled(true);
+
+                newProjectRadioButton.setSelected(false);
+                modifyProjectRadioButton.setSelected(false);
+                removeProjectRadioButton.setSelected(false);
             }
         });
 

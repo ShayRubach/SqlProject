@@ -198,6 +198,36 @@ public class TableController implements IController {
         }
     }
 
+    public void modifyEntity(int ENTITY) throws SQLException {
+        PreparedStatement ps ;
+        ResultSet rs = null;
+        switch(ENTITY) {
+            case GuiMainPanel.PROJECT_ENTITY:
+
+                break;
+
+            case GuiMainPanel.ENGINEER_ENTITY:
+                String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                        getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                        getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+                );
+                ps = connection.prepareStatement(QueryHolder.QUERY_MODIFY_ENG);
+                ps.setString(1,getGui().getEdEngFname().getText());
+                ps.setString(2,getGui().getEdEngLname().getText());
+                ps.setString(3,getGui().getEdEngAddress().getText());
+                ps.setString(4,getGui().getEdEngDate().getText());
+                ps.setString(5,engineerId);
+                ps.executeUpdate();
+
+                getGui().getModifyEngineerRadioButton().setSelected(false);
+                loadDbEngineers(ps,rs);
+
+                break;
+        }
+    }
+
+
+
     private String formatOutAge(String birthDate) {
         int currYear = 2018;
         int birthYear = Integer.parseInt(birthDate.substring(birthDate.lastIndexOf(".")+1));
@@ -614,5 +644,40 @@ public class TableController implements IController {
             });
         }
 
+    }
+
+    public void getProjectDevStep() throws SQLException {
+        PreparedStatement ps;
+        ResultSet rs;
+        String proId = getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString());
+        ps = connection.prepareStatement(QueryHolder.QUERY_GET_PROJECT_DEV_STEP);
+        ps.setString(1,proId);
+        rs = ps.executeQuery();
+
+        while(rs.next()){
+            getGui().getJcbChooseStep().setSelectedItem(rs.getString(1));
+        }
+
+    }
+
+    public ResultSet getProjectData() throws SQLException {
+        PreparedStatement ps;
+        String proId = getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString());
+
+        ps = connection.prepareStatement(QueryHolder.QUERY_GET_PROJECT_DATA);
+        ps.setString(1,proId);
+        return ps.executeQuery();
+    }
+
+    public ResultSet getEngData() throws SQLException {
+        String engineerId = getGui().getJcbChooseEng().getSelectedItem().toString().substring(
+                getGui().getJcbChooseEng().getSelectedItem().toString().lastIndexOf(":")+2,
+                getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
+        );
+
+        PreparedStatement ps;
+        ps = connection.prepareStatement(QueryHolder.QUERY_GET_ENG_DATA);
+        ps.setString(1,engineerId);
+        return  ps.executeQuery();
     }
 }
