@@ -455,32 +455,6 @@ public class GuiMainPanel {
         tableGroupEngPhones.setModel(tbGroupEngPhonesModel);
 
 
-        /*
-        tableEng.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                if(!e.getValueIsAdjusting()){
-                    JComboBox cb = new JComboBox();
-
-                    System.out.println("row pressed");
-                    //get projects,rate and phones.
-
-                    cb.addActionListener(e1 -> {
-                        if(cb.getSelectedIndex() > 2){
-                            System.out.println("BOOM");
-                        }
-                    });
-
-                    getTableEng().getColumn("Projects").setCellEditor(new DefaultCellEditor(cb));
-                    resetJcbItems(cb,"");
-                    cb.addItem(tableEng.getValueAt(tableEng.getSelectedRow(), 0).toString());
-
-                }
-
-            }
-        });
-        */
-
     }
 
     private void applyFixedColumnsWidth(JTable table,int size) {
