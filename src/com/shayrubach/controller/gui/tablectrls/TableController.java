@@ -306,13 +306,11 @@ public class TableController implements IController {
 
     public void loadDbMilestones(PreparedStatement ps, ResultSet rs, int revenueType) throws SQLException  {
 
-        StringBuilder firstDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
-        StringBuilder lastDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
+        String month = getGui().getLabelCurrDate().getText().substring(
+                getGui().getLabelCurrDate().getText().indexOf("/")+1
+                ,getGui().getLabelCurrDate().getText().lastIndexOf("/"));
 
-        firstDayOfTheMonth.replace(0,1,"1");
-        lastDayOfTheMonth.replace(0,1,"30");
-//        firstDayOfTheMonth = new StringBuilder(firstDayOfTheMonth.toString().replace("/","."));
-//        lastDayOfTheMonth = new StringBuilder(firstDayOfTheMonth.toString().replace("/","."));
+        System.out.println(month);
 
         getGui().getTbMilestoneModel().setNumRows(0);
 
@@ -321,8 +319,7 @@ public class TableController implements IController {
         }
         if(revenueType == 2){   //monthly revenues
             ps = connection.prepareStatement(QueryHolder.QUERY_GET_MONTHLY_MILESTONES);
-            ps.setString(1,firstDayOfTheMonth.toString());
-            ps.setString(2,lastDayOfTheMonth.toString());
+            ps.setString(1,month);
         }
         rs = ps.executeQuery();
 

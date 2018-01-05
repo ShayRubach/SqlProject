@@ -59,8 +59,18 @@ public class QueryHolder {
                     "projects.name " +
             "FROM milestones " +
             "JOIN projects ON milestones.project_id=projects.project_id " +
-            "WHERE milestones.due_date BETWEEN ? AND ? " +
+            "WHERE SUBSTRING(due_date,4,2)=? " +
             "ORDER BY date";
+//
+//    public static final String QUERY_GET_MONTHLY_MILESTONES =
+//            "SELECT milestones.milestone," +
+//                    "milestones.due_date AS date," +
+//                    "milestones.money_granted AS money," +
+//                    "projects.name " +
+//            "FROM milestones " +
+//            "JOIN projects ON milestones.project_id=projects.project_id " +
+//            "WHERE milestones.due_date BETWEEN ? AND ? " +
+//            "ORDER BY date";
 
     public static final String QUERY_GET_ALL_MILESTONES =
             "SELECT milestones.milestone," +
