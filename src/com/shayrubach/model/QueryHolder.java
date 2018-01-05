@@ -210,6 +210,15 @@ public class QueryHolder {
                     "ORDER BY cnt DESC " +
                     "LIMIT 3";
 
+    public static final String QUERY_GET_TOP_PROJECTS =
+            "SELECT avg(projects_to_engineers.rate) AS avg," +
+                    "projects.name " +
+            "FROM projects_to_engineers " +
+            "JOIN projects ON projects.project_id=projects_to_engineers.project_id " +
+            "GROUP BY projects_to_engineers.project_id " +
+            "ORDER BY avg DESC " +
+            "LIMIT 3";
+
     @NestedQuery
     @CorrelatedSubquery
     public static final String QUERY_GET_AREAS_OF_PROJET_BY_NAME =

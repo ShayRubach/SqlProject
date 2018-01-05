@@ -331,6 +331,11 @@ public class TableController implements IController {
 
             getGui().getTbMilestoneModel().addRow(formattedRow);
         }
+        rs = calculateRevenue(2);   //total revenue
+        while (rs.next()) {
+            getGui().getLabelTotalRevenue().setText(getGui().getLabelTotalRevenue().getText().substring(0,14));
+            getGui().getLabelTotalRevenue().setText(getGui().getLabelTotalRevenue().getText() + " " + rs.getString(1) + "$");
+        }
 
 
     }
@@ -448,6 +453,20 @@ public class TableController implements IController {
                     rs2.getString(1)
             });
         }
+
+        ps2 = connection.prepareStatement(QueryHolder.QUERY_GET_TOP_PROJECTS);
+        rs2 = ps2.executeQuery();
+
+        getGui().getTbTopProjModel().setNumRows(0);
+        while(rs2.next()){
+
+            getGui().getTbTopProjModel().addRow(new Object[] {
+                    rs2.getString(2),
+                    rs2.getString(1)
+            });
+        }
+
+
 
     }
 

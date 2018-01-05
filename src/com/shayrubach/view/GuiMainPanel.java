@@ -504,6 +504,8 @@ public class GuiMainPanel {
         tableMilestones.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
         tableGroupEngPro.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
         tableGroupEngPro.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+        tableTopProj.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
+
     }
 
     private void applyFixedColumnsWidth(JTable table,int size) {
@@ -519,46 +521,50 @@ public class GuiMainPanel {
         setEditListeners();
 
         tabbedPane.addChangeListener(e -> {
-            switch(tabbedPane.getSelectedIndex()){
+            try {
+                switch (tabbedPane.getSelectedIndex()) {
 
-                //top projects
-                case 3:
-
-
-                    break;
-
-                //top eng
-                case 4:
-
-                    break;
-                //milestones
-                case 5:
-                    showAllMilestonesRadioButton.setSelected(true);
-                    break;
-                //dev steps
-                case 6:
-
-                    break;
-                //groups
-                case 7:
-                    PreparedStatement ps = null;
-                    ResultSet rs = null;
-                    getTbGroupModel().setNumRows(0);
-                    getTbGroupEngPhonesModel().setNumRows(0);
-                    getTbGroupEngProModel().setNumRows(0);
-
-                    resetJcbItems(jcbGroupEngProName,"Engineer");
-                    jcbGroupPro.setSelectedIndex(0);
-                    jcbGroupArea.setSelectedIndex(0);
+                    //top projects
+                    case 3:
 
 
-                    try {
-                        getControllers().get(0).loadDbEngineers(ps,rs);
-                    } catch (SQLException e1) {
-                        e1.printStackTrace();
-                    }
-                    break;
+                        break;
 
+                    //top eng
+                    case 4:
+
+                        break;
+                    //milestones
+                    case 5:
+                        getControllers().get(0).loadDbMilestones(null,null,1);
+                        showAllMilestonesRadioButton.setSelected(true);
+                        showThisMonthSRadioButton.setSelected(false);
+
+                        break;
+                    //dev steps
+                    case 6:
+
+                        break;
+                    //groups
+                    case 7:
+                        PreparedStatement ps = null;
+                        ResultSet rs = null;
+                        getTbGroupModel().setNumRows(0);
+                        getTbGroupEngPhonesModel().setNumRows(0);
+                        getTbGroupEngProModel().setNumRows(0);
+
+                        resetJcbItems(jcbGroupEngProName, "Engineer");
+                        jcbGroupPro.setSelectedIndex(0);
+                        jcbGroupArea.setSelectedIndex(0);
+
+                        break;
+
+                }
+                getControllers().get(0).loadDbProjects(null, null);
+                getControllers().get(0).loadDbEngineers(null, null);
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
             }
 
         });
@@ -1692,5 +1698,7 @@ public class GuiMainPanel {
     public DefaultTableModel getTbGroupModel() {
         return tbGroupModel;
     }
-
+    public JLabel getLabelTotalRevenue() {
+        return labelTotalRevenue;
+    }
 }
