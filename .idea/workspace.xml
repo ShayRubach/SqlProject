@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf11ac99-19ee-48fd-8535-1a551c253f0b" name="Default" comment="before devision of edit tables">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/model/QueryHolder.class" afterPath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/model/QueryHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="304" column="42" lean-forward="false" selection-start-line="304" selection-start-column="42" selection-end-line="304" selection-end-column="42" />
+            <state relative-caret-position="487">
+              <caret line="504" column="53" lean-forward="false" selection-start-line="504" selection-start-column="53" selection-end-line="504" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -59,8 +63,8 @@
       <file leaf-file-name="TableController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="320" column="81" lean-forward="true" selection-start-line="320" selection-start-column="81" selection-end-line="320" selection-end-column="81" />
+            <state relative-caret-position="127">
+              <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+            <state relative-caret-position="221">
+              <caret line="201" column="54" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -90,27 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>model</find>
-      <find>tbMilestoneModel</find>
-      <find>addMil</find>
-      <find>modifyProjectRadio</find>
-      <find>modifyProjectRadioButton.add</find>
-      <find>loadDbMil</find>
-      <find>foramt</find>
-      <find>format</find>
-      <find>QUERY_GET_ALL_MILESTONES</find>
-      <find>MILES</find>
-      <find>initTables</find>
-      <find>CurrDate</find>
-      <find>setLabelC</find>
-      <find>LabelCu</find>
-      <find>editEng</find>
-      <find>case 7</find>
-      <find>init</find>
-      <find>initEdi</find>
-      <find>calcu</find>
-      <find>firstDa</find>
-      <find>calculateRevenue</find>
       <find>applyB</find>
       <find>applyProButton.add</find>
       <find>loadDb</find>
@@ -120,6 +103,27 @@
       <find>case 5:</find>
       <find>calcul</find>
       <find>loadDbM</find>
+      <find>REVENUE</find>
+      <find>month =</find>
+      <find>month</find>
+      <find>SUM_MONTHLY_REVENUES</find>
+      <find>QUERY_GET_ALL_PROJECTS</find>
+      <find>join</find>
+      <find>ALL_PRO</find>
+      <find>GET_ALL_PRO</find>
+      <find>GET_ALL_PROJECTS</find>
+      <find>RATE</find>
+      <find>rateBu</find>
+      <find>case</find>
+      <find>AVG</find>
+      <find>QUERY_GET_PROJ_AVG_RATE</find>
+      <find>case</find>
+      <find>loadDbPro</find>
+      <find>applyButt</find>
+      <find>applyButtonEng.add</find>
+      <find>System.out.</find>
+      <find>System.out.println</find>
+      <find>initTables</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/view</dir>
@@ -159,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
       </list>
     </option>
   </component>
@@ -208,7 +212,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,9 +299,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -801,28 +805,28 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="304" column="42" lean-forward="false" selection-start-line="304" selection-start-column="42" selection-end-line="304" selection-end-column="42" />
+        <state relative-caret-position="221">
+          <caret line="201" column="54" lean-forward="false" selection-start-line="201" selection-start-column="31" selection-end-line="201" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="320" column="81" lean-forward="true" selection-start-line="320" selection-start-column="81" selection-end-line="320" selection-end-column="81" />
+        <state relative-caret-position="127">
+          <caret line="175" column="0" lean-forward="false" selection-start-line="175" selection-start-column="0" selection-end-line="175" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+        <state relative-caret-position="487">
+          <caret line="504" column="53" lean-forward="false" selection-start-line="504" selection-start-column="53" selection-end-line="504" selection-end-column="53" />
           <folding />
         </state>
       </provider>

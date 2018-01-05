@@ -3,6 +3,7 @@ package com.shayrubach.view;
 
 import com.shayrubach.controller.gui.tablectrls.TableController;
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
@@ -449,8 +450,11 @@ public class GuiMainPanel {
         final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted","Project"};
         final String[] tbDevStepsColumns = {"State","Projects","Tools"};
         final String[] tbGroupColumns = {"First Name","Last Name","ID"};
+        final String[] tbTopProjectsColumns = {"Project","Rate"};
+        final String[] tbTopEngineersColumns = {"ID","First Name","Last Name", "Number of Projects"};
         final String[] tbGroupEngProColumns  = {"Project","Rate"};
         final String[] tbGroupEngPhonesColumns   = {"Phone No."};
+
 
         tableProjects.setBackground(new Color(255,255,255));
         tableEng.setBackground(new Color(255,255,255));
@@ -469,8 +473,8 @@ public class GuiMainPanel {
         tbProjModel = new DefaultTableModel(null,tbProjColumns);
         tbEngModel = new DefaultTableModel(null,tbEngColumns);
         tbAreaModel = new DefaultTableModel(null,tbAreaColumns);
-        tbTopProjModel = new DefaultTableModel(null,tbProjColumns);
-        tbTopEngModel = new DefaultTableModel(null,tbEngColumns);
+        tbTopProjModel = new DefaultTableModel(null,tbTopProjectsColumns );
+        tbTopEngModel = new DefaultTableModel(null, tbTopEngineersColumns);
         tbMonitorModel = new DefaultTableModel(null,tbMonitorColumns);
         tbMilestoneModel = new DefaultTableModel(null,tbMilestonesColumns);
         tbDevStepsModel = new DefaultTableModel(null,tbDevStepsColumns);
@@ -492,7 +496,14 @@ public class GuiMainPanel {
         tableGroupEngPro.setModel(tbGroupEngProModel);
         tableGroupEngPhones.setModel(tbGroupEngPhonesModel);
 
-
+        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment( JLabel.CENTER );
+        tableTopEng.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
+        tableEng.getColumnModel().getColumn(3).setCellRenderer(centerRenderer);
+        tableProjects.getColumnModel().getColumn(6).setCellRenderer(centerRenderer);
+        tableMilestones.getColumnModel().getColumn(2).setCellRenderer(centerRenderer);
+        tableGroupEngPro.getColumnModel().getColumn(0).setCellRenderer(centerRenderer);
+        tableGroupEngPro.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
     }
 
     private void applyFixedColumnsWidth(JTable table,int size) {
@@ -513,7 +524,9 @@ public class GuiMainPanel {
                 //top projects
                 case 3:
 
+
                     break;
+
                 //top eng
                 case 4:
 
@@ -567,7 +580,6 @@ public class GuiMainPanel {
                 if (modifyEngineerRadioButton.isSelected()) {
                     getControllers().get(0).modifyEntity(ENGINEER_ENTITY);
                     cleanEdFields(tabEditEng);
-
                 }
 
                 if (newEngineerRadioButton.isSelected()) {
@@ -587,6 +599,8 @@ public class GuiMainPanel {
                     getControllers().get(0).removeEntity(ENGINEER_ENTITY);
                 }
 
+                getControllers().get(0).loadDbEngineers(null,null);
+                getControllers().get(0).loadDbProjects(null,null);
                 unselectEngRadioButtons();
             }
              catch (SQLException e1) {

@@ -59,18 +59,9 @@ public class QueryHolder {
                     "projects.name " +
             "FROM milestones " +
             "JOIN projects ON milestones.project_id=projects.project_id " +
-            "WHERE SUBSTRING(due_date,4,2)=? " +
+            "WHERE SUBSTRING(due_date,4,2)=? OR " +
+            "SUBSTRING(milestones.due_date,4,2)=CONCAT('0',?)" +
             "ORDER BY date";
-//
-//    public static final String QUERY_GET_MONTHLY_MILESTONES =
-//            "SELECT milestones.milestone," +
-//                    "milestones.due_date AS date," +
-//                    "milestones.money_granted AS money," +
-//                    "projects.name " +
-//            "FROM milestones " +
-//            "JOIN projects ON milestones.project_id=projects.project_id " +
-//            "WHERE milestones.due_date BETWEEN ? AND ? " +
-//            "ORDER BY date";
 
     public static final String QUERY_GET_ALL_MILESTONES =
             "SELECT milestones.milestone," +
@@ -80,6 +71,11 @@ public class QueryHolder {
                     "FROM milestones " +
                     "JOIN projects ON milestones.project_id=projects.project_id " +
                     "ORDER BY date";
+
+    public static final String QUERY_GET_PROJECT_RATE =
+            "SELECT AVG(rate) " +
+            "FROM projects_to_engineers " +
+            "WHERE project_id=?";
 
     public static final String QUERY_GET_ALL_PROJECT_NAMES =
             "SELECT name FROM projects;";
@@ -96,11 +92,14 @@ public class QueryHolder {
     public static final String SUM_MONTHLY_REVENUES =
             "SELECT SUM(money_granted) " +
                     "FROM milestones " +
-                    "WHERE milestones.due_date BETWEEN ? AND ? " +
+                    "WHERE SUBSTRING(due_date,4,2)=? OR " +
+                    "SUBSTRING(milestones.due_date,4,2)=CONCAT('0',?)" +
                     "ORDER BY milestones.due_date";
 
     public static final String SUM_TOTAL_REVENUES =
-            "SELECT SUM(money_granted) FROM milestones";
+            "SELECT SUM(money_granted) " +
+                    "FROM milestones " +
+                    "ORDER BY due_date";
 
 
     public static final String QUERY_REMOVE_PROJECT =
@@ -109,6 +108,8 @@ public class QueryHolder {
 
     public static final String QUERY_GET_ALL_PROJECTS =
             "SELECT * FROM projects;";
+
+
 
     public static final String QUERY_GET_ALL_AREAS =
             "SELECT * FROM areas;";
@@ -193,6 +194,21 @@ public class QueryHolder {
                     "WHERE eng_id=? " +
                     "AND projects_to_engineers.project_id=projects.project_id";
 
+    public static final String QUERY_GET_PROJ_AVG_RATE =
+            "SELECT AVG(projects_to_engineers.rate) " +
+                    "FROM projects_to_engineers " +
+                    "WHERE projects_to_engineers.project_id=? ";
+
+    public static final String QUERY_GET_TOP_ENGINEERS =
+            "SELECT COUNT(project_id) as cnt," +
+                    "projects_to_engineers.eng_id," +
+                    "engineers.first_name," +
+                    "engineers.last_name " +
+                    "FROM projects_to_engineers " +
+                    "JOIN engineers ON engineers.eng_id = projects_to_engineers.eng_id " +
+                    "GROUP BY projects_to_engineers.eng_id " +
+                    "ORDER BY cnt DESC " +
+                    "LIMIT 3";
 
     @NestedQuery
     @CorrelatedSubquery

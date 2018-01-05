@@ -77,7 +77,7 @@ public class TableController implements IController {
                         getGui().getJcbChooseEng().getSelectedItem().toString().length()-1
                 );
 
-                System.out.println(engineerId);
+
                 ps = connection.prepareStatement(QueryHolder.QUERY_REMOVE_ENGINEER);
                 ps.setString(1,engineerId);
                 ps.executeUpdate();
@@ -174,8 +174,6 @@ public class TableController implements IController {
                         getGui().getEdEngDate().getText(),
                         getGui().getJcbEngSelectArea().getSelectedItem().toString());
 
-
-                System.out.println(formatOutAge(eng.getBirthDate()));
 
                 ps = getConnection().prepareStatement(QueryHolder.QUERY_NEW_ENGINEER);
                 ps.setString(1,eng.getId());    //id
@@ -310,8 +308,6 @@ public class TableController implements IController {
                 getGui().getLabelCurrDate().getText().indexOf("/")+1
                 ,getGui().getLabelCurrDate().getText().lastIndexOf("/"));
 
-        System.out.println(month);
-
         getGui().getTbMilestoneModel().setNumRows(0);
 
         if(revenueType == 1){   //total revenues
@@ -320,6 +316,8 @@ public class TableController implements IController {
         if(revenueType == 2){   //monthly revenues
             ps = connection.prepareStatement(QueryHolder.QUERY_GET_MONTHLY_MILESTONES);
             ps.setString(1,month);
+            ps.setString(2,month);
+
         }
         rs = ps.executeQuery();
 
@@ -398,6 +396,7 @@ public class TableController implements IController {
     }
 
     public void loadDbProjects(PreparedStatement ps, ResultSet rs) throws SQLException {
+
         ps = this.getConnection().prepareStatement(QueryHolder.QUERY_GET_ALL_PROJECTS);
         rs = ps.executeQuery();
 
@@ -409,6 +408,13 @@ public class TableController implements IController {
         getGui().getTbProjModel().setNumRows(0);
 
         while(rs.next()){
+            PreparedStatement ps2;
+            ResultSet rs2;
+
+            ps2 = getConnection().prepareStatement(QueryHolder.QUERY_GET_PROJ_AVG_RATE);
+            ps2.setString(1,rs.getString(1));
+            rs2 = ps2.executeQuery();
+            rs2.next();
 
             String[] formedProjectRow = {
                     rs.getString(3),    //name
@@ -416,7 +422,8 @@ public class TableController implements IController {
                     rs.getString(5),    //customers
                     rs.getString(6),    //dev tools
                     rs.getString(2),    //date started
-                    rs.getString(1)     //id
+                    rs.getString(1),     //id
+                    rs2.getString(1)    //rate
             };
 
             getGui().fillProjectTable(formedProjectRow);
@@ -424,6 +431,24 @@ public class TableController implements IController {
             getGui().getJcbEngJoinProj().addItem(rs.getString(3));
             getGui().getJcbGroupPro().addItem(rs.getString(3));
         }
+
+
+        PreparedStatement ps2;
+        ResultSet rs2 = null;
+        ps2 = connection.prepareStatement(QueryHolder.QUERY_GET_TOP_ENGINEERS);
+        rs2 = ps2.executeQuery();
+
+        getGui().getTbTopEngModel().setNumRows(0);
+        while(rs2.next()){
+
+            getGui().getTbTopEngModel().addRow(new Object[] {
+                    rs2.getString(2),
+                    rs2.getString(3),
+                    rs2.getString(4),
+                    rs2.getString(1)
+            });
+        }
+
     }
 
     public void getAvailableAreas() throws SQLException {
@@ -627,6 +652,7 @@ public class TableController implements IController {
         ps.setString(3,engineerId);
         ps.executeUpdate();
 
+        loadDbProjects(null,null);
     }
 
     public void addNewPhoneNoToEng() throws SQLException {
@@ -720,17 +746,16 @@ public class TableController implements IController {
 
     public ResultSet calculateRevenue(int revenueType) throws SQLException {
         PreparedStatement ps = null;
-        StringBuilder firstDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
-        StringBuilder lastDayOfTheMonth = new StringBuilder(getGui().getLabelCurrDate().getText().substring(6));
+        String month = getGui().getLabelCurrDate().getText().substring(
+                getGui().getLabelCurrDate().getText().indexOf("/")+1
+                ,getGui().getLabelCurrDate().getText().lastIndexOf("/"));
 
-        firstDayOfTheMonth.replace(0,1,"1");
-        lastDayOfTheMonth.replace(0,1,"30");
 
         switch (revenueType){
             case 1:     //monthly
                 ps = connection.prepareStatement(QueryHolder.SUM_MONTHLY_REVENUES);
-                ps.setString(1,firstDayOfTheMonth.toString());
-                ps.setString(2,lastDayOfTheMonth.toString());
+                ps.setString(1,month);
+                ps.setString(2,month);
                 break;
             case 2:     //total
                 ps = connection.prepareStatement(QueryHolder.SUM_TOTAL_REVENUES);
