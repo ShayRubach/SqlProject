@@ -247,19 +247,17 @@ public class QueryHolder {
 
     @SQLTrigger
     @NestedQuery
-    public static final String TRIGGER_BEFORE_DELETE_PROJECT =
-            "DELIMITER $$ " +
-            "CREATE TRIGGER before_delete_projects " +
-                    "BEFORE DELETE ON projects " +
-                    "FOR EACH ROW " +
+    public static final String TRIGGER_AFTER_UPDATE_PROJECT =
+                "CREATE TRIGGER after_update_projects " +
+                "BEFORE UPDATE ON projects " +
+                "FOR EACH ROW " +
                     "BEGIN " +
-                        "DELETE FROM " +
-                            "project_areas," +
-                            "projects_to_engineers," +
-                            "project_dev_steps " +
-                        "WHERE project_id=old.project_id " +
-                    "END $$ " +
-                    "DELIMITER ;";
+                        "IF char_length(NEW.date_started) > 10 THEN " +
+                            "SET NEW.date_started='1.1.2000'; " +
+                        "ELSEIF char_length(NEW.date_started) < 8 THEN " +
+                            "SET NEW.date_started='1.1.2000'; " +
+                        "END IF; " +
+                    "END;  ";
 
     @BadLogic
     @NestedQuery

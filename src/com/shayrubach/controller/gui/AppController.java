@@ -131,7 +131,7 @@ public class AppController implements IController {
                         "PRIMARY KEY(project_id,dev_step_id))");
 
         //add triggers:
-        //queries.add(QueryHolder.TRIGGER_BEFORE_DELETE_PROJECT);
+        queries.add(QueryHolder.TRIGGER_AFTER_UPDATE_PROJECT);
 
 
         try {
@@ -142,7 +142,11 @@ public class AppController implements IController {
             //execute all queries
             for (PreparedStatement ps : statements)
                 ps.executeUpdate();
-        }catch(Exception e){
+        }
+        catch (SQLException sqlE){
+            System.out.println("Trigger Already Exists.");
+        }
+        catch(Exception e){
             e.printStackTrace();
         }
     }

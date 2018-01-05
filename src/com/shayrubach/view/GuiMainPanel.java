@@ -905,7 +905,7 @@ public class GuiMainPanel {
             } catch (SQLException e1) {
                 e1.printStackTrace();
             }
-
+            cleanEdFields(getTabEditPro());
 
         });
 
