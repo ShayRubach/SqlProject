@@ -19,7 +19,8 @@ public class AppController implements IController {
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
     public String DRIVER = "com.mysql.jdbc.Driver" ;
-    public String URL = "jdbc:mysql://localhost:3306/softwarecompany?allowMultiQueries=true&createDatabaseIfNotExist=true" ;
+    //public String URL = "jdbc:mysql://localhost:3306/softwarecompany?allowMultiQueries=true&createDatabaseIfNotExist=true" ;
+    public String URL = "jdbc:mysql://localhost:3306/softwarecompany?createDatabaseIfNotExist=true" ;
     public Connection connection = null;
 
     public AppController(GuiMainPanel gui) throws SQLException {
@@ -155,6 +156,7 @@ public class AppController implements IController {
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL,"root","");
+            //connection.setAutoCommit(false);
         }
         catch (Exception e){
             System.out.println(e);

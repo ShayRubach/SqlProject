@@ -137,6 +137,7 @@ public class QueryHolder {
                     "(project_id,area_id) " +
                     "VALUES(?,?);";
 
+    //TODO: ADD SOME TRIGGER..................
 
     public static final String QUERY_NEW_ENG_PROJ =
             "INSERT IGNORE INTO projects_to_engineers " +
@@ -148,6 +149,15 @@ public class QueryHolder {
             "WHERE project_id IN " +
                 "(SELECT project_id FROM projects_to_engineers " +
                 "WHERE eng_id=?);";
+
+    public static final String QUERY_GET_PROJECTS_BY_DEV_STEP=
+            "SELECT projects.name,projects.tools " +
+                    "FROM projects " +
+                    "WHERE projects.project_id IN " +
+                    "(SELECT project_dev_steps.project_id " +
+                    "FROM project_dev_steps " +
+                    "WHERE project_dev_steps.dev_step_id=?)";
+
 
     public static final String QUERY_GET_PROJ_ID_AND_RATE =
             "SELECT project_id,rate " +

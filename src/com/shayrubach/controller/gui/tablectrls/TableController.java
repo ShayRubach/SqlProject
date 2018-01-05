@@ -203,6 +203,7 @@ public class TableController implements IController {
             case GuiMainPanel.PROJECT_ENTITY:
 
                 updateDevelopmentStep();
+
                 ps = connection.prepareStatement(QueryHolder.QUERY_MODIFY_PROJECT);
                 ps.setString(1,getGui().getEdProDate().getText());
                 ps.setString(2,getGui().getEdProName().getText());
@@ -345,7 +346,8 @@ public class TableController implements IController {
     }
 
     public String fetchIdFromDevStep(String string) {
-        return string.substring(string.indexOf("(")+1,string.length()-1);
+
+        return string.substring(string.indexOf("(")+1,string.indexOf(")"));
     }
 
     public void loadDbMilestones(PreparedStatement ps, ResultSet rs, int revenueType) throws SQLException  {
@@ -830,5 +832,22 @@ public class TableController implements IController {
                 break;
         }
         return ps.executeQuery();
+    }
+
+    public void getProjectByDevStep() throws SQLException {
+        PreparedStatement ps;
+        ResultSet rs;
+
+        ps = connection.prepareStatement(QueryHolder.QUERY_GET_PROJECTS_BY_DEV_STEP);
+        ps.setString(1,fetchIdFromDevStep(getGui().getJcbDevStepToShow().toString()));
+        rs = ps.executeQuery();
+
+        getGui().getTbDevStepsModel().setNumRows(0);
+        while(rs.next()){
+            getGui().getTbDevStepsModel().addRow(new Object[] {
+                    rs.getString(1),
+                    rs.getString(2)
+            });
+        }
     }
 }

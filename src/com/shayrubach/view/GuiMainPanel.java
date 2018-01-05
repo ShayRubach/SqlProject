@@ -213,6 +213,20 @@ public class GuiMainPanel {
         initAreaCB();
         initEngCB();
         initGroupCB();
+        initDevStepCB();
+    }
+
+    private void initDevStepCB() {
+        jcbDevStepToShow.addActionListener(e -> {
+            try {
+                if (jcbDevStepToShow.getSelectedIndex() > 1) {
+                    getControllers().get(0).getProjectByDevStep();
+                }
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+            }
+        });
     }
 
     public void resetJcbItems(JComboBox cb, String entity){
@@ -392,14 +406,6 @@ public class GuiMainPanel {
 
         jcbChooseProArea = jcbChooseArea;
 
-//        jcbChooseStep.addItem("-- choose Development Step --");
-//        jcbChooseStep.addItem(" ");
-//        jcbChooseStep.addItem("Design and Architecture");
-//        jcbChooseStep.addItem("Development and Implementation");
-//        jcbChooseStep.addItem("Deliver Final Product");
-//        jcbChooseStep.addItem("Maintenance");
-//        jcbChooseStep.addItem("QA & Automation");
-
         jcbNewArea.addItem("-- choose Area --");
         jcbNewArea.addItem(" ");
 
@@ -449,7 +455,7 @@ public class GuiMainPanel {
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
         final String[] tbMilestonesColumns = {"Milestone","Date","Money Granted","Project"};
-        final String[] tbDevStepsColumns = {"State","Projects","Tools"};
+        final String[] tbDevStepsColumns = {"Projects","Tools"};
         final String[] tbGroupColumns = {"First Name","Last Name","ID"};
         final String[] tbTopProjectsColumns = {"Project","Rate"};
         final String[] tbTopEngineersColumns = {"ID","First Name","Last Name", "Number of Projects"};
@@ -544,6 +550,7 @@ public class GuiMainPanel {
                         break;
                     //dev steps
                     case 6:
+                        getTbDevStepsModel().setNumRows(0);
                         getControllers().get(0).loadDbDevSteps(null,null);
                         break;
                     //groups
