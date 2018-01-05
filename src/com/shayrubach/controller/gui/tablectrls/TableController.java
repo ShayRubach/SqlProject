@@ -202,6 +202,18 @@ public class TableController implements IController {
         switch(ENTITY) {
             case GuiMainPanel.PROJECT_ENTITY:
 
+                updateDevelopmentStep();
+                ps = connection.prepareStatement(QueryHolder.QUERY_MODIFY_PROJECT);
+                ps.setString(1,getGui().getEdProDate().getText());
+                ps.setString(2,getGui().getEdProName().getText());
+                ps.setString(3,getGui().getEdProDesc().getText());
+                ps.setString(4,getGui().getEdProCust().getText());
+                ps.setString(5,getGui().getEdProTools().getText());
+                ps.setString(6,getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString()));
+                ps.executeUpdate();
+
+                getGui().getModifyProjectRadioButton().setSelected(false);
+                loadDbProjects(null,null);
                 break;
 
             case GuiMainPanel.ENGINEER_ENTITY:
@@ -224,6 +236,22 @@ public class TableController implements IController {
         }
     }
 
+    private void updateDevelopmentStep() throws SQLException {
+        PreparedStatement ps;
+
+//        System.out.println(getGui().getJcbChooseStep().getSelectedItem().toString());
+//        System.out.println(getGui().getJcbChooseProject().getSelectedItem().toString());
+//        System.out.println(fetchIdFromDevStep(getGui().getJcbChooseStep().getSelectedItem().toString()));
+//        System.out.println(getGui().getEdProTools().getText());
+//        System.out.println(getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString()));
+
+        ps = connection.prepareStatement(QueryHolder.QUERY_UPDATE_PROJECT_STEP);
+        ps.setString(1,fetchIdFromDevStep(getGui().getJcbChooseStep().getSelectedItem().toString()));
+        ps.setString(2,getGui().getEdProTools().getText());
+        ps.setString(3,getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString()));
+
+        ps.executeUpdate();
+    }
 
 
     private String formatOutAge(String birthDate) {
@@ -300,6 +328,24 @@ public class TableController implements IController {
     }
 
     public void loadDbDevSteps(PreparedStatement ps, ResultSet rs) throws SQLException  {
+        //TODO: load dev steps
+        ps = connection.prepareStatement(QueryHolder.QUERY_GET_ALL_DEV_STEPS);
+        rs = ps.executeQuery();
+
+        getGui().resetJcbItems(getGui().getJcbDevStepToShow(),"Development Step");
+        getGui().resetJcbItems(getGui().getJcbChooseStep(),"Development Step");
+
+
+        while(rs.next()){
+            String formattedStr = rs.getString(2) + " (" + rs.getString(1)+")";
+            getGui().getJcbDevStepToShow().addItem(formattedStr);
+            getGui().getJcbChooseStep().addItem(formattedStr);
+        }
+
+    }
+
+    public String fetchIdFromDevStep(String string) {
+        return string.substring(string.indexOf("(")+1,string.length()-1);
     }
 
     public void loadDbMilestones(PreparedStatement ps, ResultSet rs, int revenueType) throws SQLException  {
@@ -375,6 +421,7 @@ public class TableController implements IController {
             getGui().getJcbGroupEngProName().addItem(fullName);
 
         }
+        loadDbDevSteps(null,null);
     }
 
     private void loadDbAreas(PreparedStatement ps, ResultSet rs) throws SQLException  {
@@ -465,6 +512,8 @@ public class TableController implements IController {
                     rs2.getString(1)
             });
         }
+
+
 
 
 

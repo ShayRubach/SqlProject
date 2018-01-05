@@ -19,7 +19,7 @@ public class AppController implements IController {
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
     public String DRIVER = "com.mysql.jdbc.Driver" ;
-    public String URL = "jdbc:mysql://localhost:3306/softwarecompany?createDatabaseIfNotExist=true" ;
+    public String URL = "jdbc:mysql://localhost:3306/softwarecompany?allowMultiQueries=true&createDatabaseIfNotExist=true" ;
     public Connection connection = null;
 
     public AppController(GuiMainPanel gui) throws SQLException {
@@ -103,9 +103,9 @@ public class AppController implements IController {
 
         queries.add(
                 "CREATE TABLE IF NOT EXISTS  milestones( " +
+                        "due_date       VARCHAR(32)," +
                         "project_id     VARCHAR(32)," +
                         "milestone      VARCHAR(128)," +
-                        "due_date       VARCHAR(32)," +
                         "money_granted  VARCHAR(32)," +
                         "FOREIGN KEY(project_id) REFERENCES projects(project_id) ON DELETE CASCADE,"+
                         "PRIMARY KEY(project_id,milestone))" );
@@ -165,11 +165,6 @@ public class AppController implements IController {
     /* init all controllers with their appropriate table and mention its name */
     private void initControllers() {
         controllers.add(new TableController(gui.getTableProjects(),"PROJECTS"));
-        //controllers.add(new ACtrl(gui.getTableAreas(),"ARES"));
-        //controllers.add(new ECtrl(gui.getTableEng(),"ENGINEERS"));
-        //controllers.add(new TableController(gui.getTableMonitor(),"MONITOR"));
-        //controllers.add(new TableController(gui.getTableTopProj(),"TOP_PROJECTS"));
-        //controllers.add(new TableController(gui.getTableTopEng(),"TOP_ENGINEERS"));
 
         for(TableController tc : controllers){
             tc.setGui(gui);

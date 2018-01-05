@@ -135,6 +135,7 @@ public class GuiMainPanel {
     private JRadioButton addNewMilestoneRadioButton;
     private JRadioButton showAllMilestonesRadioButton;
     private JRadioButton showThisMonthSRadioButton;
+    private JComboBox jcbDevStepToShow;
 
 
     private DefaultTableModel tbProjModel;
@@ -391,13 +392,13 @@ public class GuiMainPanel {
 
         jcbChooseProArea = jcbChooseArea;
 
-        jcbChooseStep.addItem("-- choose Development Step --");
-        jcbChooseStep.addItem(" ");
-        jcbChooseStep.addItem("Design and Architecture");
-        jcbChooseStep.addItem("Development and Implementation");
-        jcbChooseStep.addItem("Deliver Final Product");
-        jcbChooseStep.addItem("Maintenance");
-        jcbChooseStep.addItem("QA & Automation");
+//        jcbChooseStep.addItem("-- choose Development Step --");
+//        jcbChooseStep.addItem(" ");
+//        jcbChooseStep.addItem("Design and Architecture");
+//        jcbChooseStep.addItem("Development and Implementation");
+//        jcbChooseStep.addItem("Deliver Final Product");
+//        jcbChooseStep.addItem("Maintenance");
+//        jcbChooseStep.addItem("QA & Automation");
 
         jcbNewArea.addItem("-- choose Area --");
         jcbNewArea.addItem(" ");
@@ -443,7 +444,7 @@ public class GuiMainPanel {
 
     private void initTables() {
 
-        final String[] tbProjColumns = {"Name","Description","Customers","Development Tools","Date Started","ID","Rate"};
+        final String[] tbProjColumns = {"Name","Description","Customers","Tools","Date Started","ID","Rate"};
         final String[] tbEngColumns = {"First Name","Last Name","Birth","Age","Address","ID","Area"};
         final String[] tbAreaColumns = {"Name","Specialty","ID"};
         final String[] tbMonitorColumns = {"Description","TimeStamp"};
@@ -543,7 +544,7 @@ public class GuiMainPanel {
                         break;
                     //dev steps
                     case 6:
-
+                        getControllers().get(0).loadDbDevSteps(null,null);
                         break;
                     //groups
                     case 7:
@@ -796,6 +797,7 @@ public class GuiMainPanel {
 
             jcbChooseProject.setEnabled(true);
             jcbChooseProject.setSelectedIndex(0);
+            jcbChooseStep.setEnabled(true);
 
             enableProFields(E_MODIFY);
             edProRate.setEnabled(false);
@@ -885,7 +887,7 @@ public class GuiMainPanel {
                     controllers.get(0).addEntity(PROJECT_ENTITY);
                 }
                 if(modifyProjectRadioButton.isSelected()){
-                    //TODO: add project_modify
+                    controllers.get(0).modifyEntity(PROJECT_ENTITY);
                 }
                 if(removeProjectRadioButton.isSelected() && jcbChooseProject.getSelectedIndex() > 1){
                     controllers.get(0).removeEntity(PROJECT_ENTITY);
@@ -1668,6 +1670,7 @@ public class GuiMainPanel {
 
         this.labelCurrDate.setText("Date: " + date);
     }
+
     public DefaultTableModel getTbMilestoneModel() {
         return tbMilestoneModel;
     }
@@ -1700,5 +1703,8 @@ public class GuiMainPanel {
     }
     public JLabel getLabelTotalRevenue() {
         return labelTotalRevenue;
+    }
+    public JComboBox getJcbDevStepToShow() {
+        return jcbDevStepToShow;
     }
 }

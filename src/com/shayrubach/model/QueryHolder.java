@@ -86,7 +86,14 @@ public class QueryHolder {
                     "VALUES(?,?);";
 
     public static final String QUERY_MODIFY_PROJECT =
-            "";
+            "UPDATE projects " +
+            "SET " +
+                "date_started=?, " +
+                "name=?, " +
+                "description=?, " +
+                "customers=?, " +
+                "tools=? " +
+            "WHERE project_id=?";
 
 
     public static final String SUM_MONTHLY_REVENUES =
@@ -219,6 +226,7 @@ public class QueryHolder {
             "ORDER BY avg DESC " +
             "LIMIT 3";
 
+
     @NestedQuery
     @CorrelatedSubquery
     public static final String QUERY_GET_AREAS_OF_PROJET_BY_NAME =
@@ -314,6 +322,33 @@ public class QueryHolder {
                     "address=?," +
                     "birth=? " +
                     "WHERE eng_id=?";
+
+//    public static final String QUERY_UPDATE_PROJECT_STEP =
+//            "SET @ds_id = (SELECT dev_step_id FROM development_steps WHERE name='Development and Implementation);" +
+//            "SET @p_id = (SELECT project_id FROM projects WHERE name='Project XVV');"+
+//            "UPDATE " +
+//            "project_dev_steps AS pds " +
+//            "SET" +
+//                "pds.dev_step_id = @ds_id," +
+//                "pds.dev_tools = ?" +
+//            "WHERE " +
+//                "pds.project_id= @p_id";
+//
+
+
+    public static final String QUERY_GET_ALL_DEV_STEPS =
+            "SELECT * FROM development_steps";
+
+    public static final String QUERY_UPDATE_PROJECT_STEP =
+            "UPDATE " +
+            "project_dev_steps AS pds " +
+            "SET " +
+                "pds.dev_step_id = ?," +
+                "pds.dev_tools = ? " +
+            "WHERE " +
+                "pds.project_id = ?;";
+
+
     public static final String QUERY_GET_PROJECT_DATA =
             "SELECT * FROM projects WHERE project_id=?";
 
