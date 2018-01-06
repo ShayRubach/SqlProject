@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf11ac99-19ee-48fd-8535-1a551c253f0b" name="Default" comment="before devision of edit tables">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SoftwareCompanyMySqlProject/com/shayrubach/controller/gui/tablectrls/TableController.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" afterPath="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
     </list>
@@ -43,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GuiMainPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="902" column="62" lean-forward="true" selection-start-line="902" selection-start-column="62" selection-end-line="902" selection-end-column="62" />
+            <state relative-caret-position="182">
+              <caret line="883" column="47" lean-forward="false" selection-start-line="883" selection-start-column="47" selection-end-line="883" selection-end-column="47" />
               <folding>
                 <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#initJsps#0;class#GuiMainPanel#0" expanded="false" />
@@ -68,12 +69,10 @@
                 <element signature="method#initMilestones#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="e#10803#11424#0" expanded="false" />
                 <element signature="e#11483#12097#0" expanded="false" />
-                <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="e#12274#13327#0" expanded="false" />
-                <element signature="class#13380:13671" expanded="false" />
-                <element signature="method#actionPerformed#0;class#13380:13671" expanded="false" />
+                <element signature="class#13767:14058" expanded="false" />
+                <element signature="method#actionPerformed#0;class#13767:14058" expanded="false" />
                 <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="e#13823#13875#0" expanded="false" />
+                <element signature="e#14210#14262#0" expanded="false" />
                 <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
@@ -81,42 +80,38 @@
                 <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#applyFixedColumnsWidth#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#initTabs#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="e#19398#21034#0" expanded="false" />
+                <element signature="e#19785#21421#0" expanded="false" />
                 <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="e#21230#22517#0" expanded="false" />
-                <element signature="e#22561#22870#0" expanded="false" />
-                <element signature="class#22929:23833" expanded="false" />
-                <element signature="method#actionPerformed#0;class#22929:23833" expanded="false" />
-                <element signature="class#23890:24806" expanded="false" />
-                <element signature="method#actionPerformed#0;class#23890:24806" expanded="false" />
-                <element signature="class#24866:25487" expanded="false" />
-                <element signature="method#actionPerformed#0;class#24866:25487" expanded="false" />
-                <element signature="e#25539#25996#0" expanded="false" />
-                <element signature="e#26050#26466#0" expanded="false" />
-                <element signature="e#26511#26638#0" expanded="false" />
-                <element signature="e#26690#26924#0" expanded="false" />
+                <element signature="e#21617#22904#0" expanded="false" />
+                <element signature="e#22948#23257#0" expanded="false" />
+                <element signature="class#23316:24220" expanded="false" />
+                <element signature="method#actionPerformed#0;class#23316:24220" expanded="false" />
+                <element signature="class#24277:25193" expanded="false" />
+                <element signature="method#actionPerformed#0;class#24277:25193" expanded="false" />
+                <element signature="class#25253:25874" expanded="false" />
+                <element signature="method#actionPerformed#0;class#25253:25874" expanded="false" />
+                <element signature="e#25926#26383#0" expanded="false" />
+                <element signature="e#26437#26853#0" expanded="false" />
+                <element signature="e#26898#27025#0" expanded="false" />
+                <element signature="e#27077#27311#0" expanded="false" />
                 <element signature="method#unselectEngRadioButtons#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="class#27274:27738" expanded="false" />
-                <element signature="method#actionPerformed#0;class#27274:27738" expanded="false" />
-                <element signature="class#27794:28165" expanded="false" />
-                <element signature="method#actionPerformed#0;class#27794:28165" expanded="false" />
-                <element signature="class#28215:28761" expanded="false" />
-                <element signature="method#actionPerformed#0;class#28215:28761" expanded="false" />
-                <element signature="e#28856#29375#0" expanded="false" />
-                <element signature="e#29427#29896#0" expanded="false" />
-                <element signature="class#29955:30517" expanded="false" />
-                <element signature="method#actionPerformed#0;class#29955:30517" expanded="false" />
-                <element signature="class#30573:31158" expanded="false" />
-                <element signature="method#actionPerformed#0;class#30573:31158" expanded="false" />
-                <element signature="e#31205#31389#0" expanded="false" />
-                <element signature="e#31446#32114#0" expanded="false" />
+                <element signature="class#27661:28125" expanded="false" />
+                <element signature="method#actionPerformed#0;class#27661:28125" expanded="false" />
+                <element signature="class#28181:28552" expanded="false" />
+                <element signature="method#actionPerformed#0;class#28181:28552" expanded="false" />
+                <element signature="class#28602:29148" expanded="false" />
+                <element signature="method#actionPerformed#0;class#28602:29148" expanded="false" />
+                <element signature="e#29854#30323#0" expanded="false" />
+                <element signature="class#31234:31819" expanded="false" />
+                <element signature="method#actionPerformed#0;class#31234:31819" expanded="false" />
+                <element signature="e#32156#32879#0" expanded="false" />
                 <element signature="method#enableProFields#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#cleanEdFields#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#enableEdFields#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="class#34525:35149" expanded="false" />
+                <element signature="class#35345:35969" expanded="false" />
                 <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
@@ -126,7 +121,7 @@
                 <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#fillProjectTable#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#updateBoxes#0;class#GuiMainPanel#0" expanded="false" />
-                <element signature="e#50903#50922#0" expanded="false" />
+                <element signature="e#51723#51742#0" expanded="false" />
                 <element signature="method#getAreaIdByName#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#getProjectIdByName#0;class#GuiMainPanel#0" expanded="false" />
                 <element signature="method#setLabelCurrDate#0;class#GuiMainPanel#0" expanded="false" />
@@ -135,11 +130,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TableController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TableController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="204" column="16" lean-forward="false" selection-start-line="204" selection-start-column="16" selection-end-line="204" selection-end-column="16" />
+            <state relative-caret-position="300">
+              <caret line="775" column="0" lean-forward="true" selection-start-line="775" selection-start-column="0" selection-end-line="775" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,8 +145,8 @@
       <file leaf-file-name="QueryHolder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="249" column="59" lean-forward="false" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="59" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,17 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updateDev</find>
-      <find>create</find>
-      <find>getJcb</find>
-      <find>format</find>
-      <find>fetch</find>
-      <find>loadDbPro</find>
-      <find>jcbChooseStep.add</find>
-      <find>loadDbD</find>
-      <find>System.O</find>
-      <find>updateDevelopmentStep</find>
-      <find>QUERY_MODIFY_PROJECT</find>
       <find>setUp</find>
       <find>modify_proj</find>
       <find>addNewEn</find>
@@ -199,6 +183,17 @@
       <find>CREATE TA</find>
       <find>applyPro</find>
       <find>updateD</find>
+      <find>newMiles</find>
+      <find>addNewMilestoneRadioButton.add</find>
+      <find>jcbChooseProject.addActionListener</find>
+      <find>modifyProjectRadioButton</find>
+      <find>jcbChoosePro</find>
+      <find>modifyProjectRadioButton.add</find>
+      <find>removeProjectRadioButton.add</find>
+      <find>jcbChooseProject.add</find>
+      <find>applyProButton.add</find>
+      <find>ChooseProject</find>
+      <find>addNewAreaButton.add</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/view</dir>
@@ -237,9 +232,9 @@
         <option value="$PROJECT_DIR$/src/com/shayrubach/main.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/model/entities/Engineer.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.form" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
-        <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java" />
+        <option value="$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java" />
         <option value="$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java" />
       </list>
     </option>
@@ -611,12 +606,10 @@
             <element signature="method#initMilestones#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="e#10803#11424#0" expanded="false" />
             <element signature="e#11483#12097#0" expanded="false" />
-            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#12274#13327#0" expanded="false" />
-            <element signature="class#13380:13671" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13380:13671" expanded="false" />
+            <element signature="class#13767:14058" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13767:14058" expanded="false" />
             <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#13823#13875#0" expanded="false" />
+            <element signature="e#14210#14262#0" expanded="false" />
             <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
@@ -624,42 +617,38 @@
             <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#applyFixedColumnsWidth#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initTabs#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#19398#21034#0" expanded="false" />
+            <element signature="e#19785#21421#0" expanded="false" />
             <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#21230#22517#0" expanded="false" />
-            <element signature="e#22561#22870#0" expanded="false" />
-            <element signature="class#22929:23833" expanded="false" />
-            <element signature="method#actionPerformed#0;class#22929:23833" expanded="false" />
-            <element signature="class#23890:24806" expanded="false" />
-            <element signature="method#actionPerformed#0;class#23890:24806" expanded="false" />
-            <element signature="class#24866:25487" expanded="false" />
-            <element signature="method#actionPerformed#0;class#24866:25487" expanded="false" />
-            <element signature="e#25539#25996#0" expanded="false" />
-            <element signature="e#26050#26466#0" expanded="false" />
-            <element signature="e#26511#26638#0" expanded="false" />
-            <element signature="e#26690#26924#0" expanded="false" />
+            <element signature="e#21617#22904#0" expanded="false" />
+            <element signature="e#22948#23257#0" expanded="false" />
+            <element signature="class#23316:24220" expanded="false" />
+            <element signature="method#actionPerformed#0;class#23316:24220" expanded="false" />
+            <element signature="class#24277:25193" expanded="false" />
+            <element signature="method#actionPerformed#0;class#24277:25193" expanded="false" />
+            <element signature="class#25253:25874" expanded="false" />
+            <element signature="method#actionPerformed#0;class#25253:25874" expanded="false" />
+            <element signature="e#25926#26383#0" expanded="false" />
+            <element signature="e#26437#26853#0" expanded="false" />
+            <element signature="e#26898#27025#0" expanded="false" />
+            <element signature="e#27077#27311#0" expanded="false" />
             <element signature="method#unselectEngRadioButtons#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#27274:27738" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27274:27738" expanded="false" />
-            <element signature="class#27794:28165" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27794:28165" expanded="false" />
-            <element signature="class#28215:28761" expanded="false" />
-            <element signature="method#actionPerformed#0;class#28215:28761" expanded="false" />
-            <element signature="e#28856#29375#0" expanded="false" />
-            <element signature="e#29427#29896#0" expanded="false" />
-            <element signature="class#29955:30517" expanded="false" />
-            <element signature="method#actionPerformed#0;class#29955:30517" expanded="false" />
-            <element signature="class#30573:31158" expanded="false" />
-            <element signature="method#actionPerformed#0;class#30573:31158" expanded="false" />
-            <element signature="e#31205#31389#0" expanded="false" />
-            <element signature="e#31446#32114#0" expanded="false" />
+            <element signature="class#27661:28125" expanded="false" />
+            <element signature="method#actionPerformed#0;class#27661:28125" expanded="false" />
+            <element signature="class#28181:28552" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28181:28552" expanded="false" />
+            <element signature="class#28602:29148" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28602:29148" expanded="false" />
+            <element signature="e#29854#30323#0" expanded="false" />
+            <element signature="class#31234:31819" expanded="false" />
+            <element signature="method#actionPerformed#0;class#31234:31819" expanded="false" />
+            <element signature="e#32156#32879#0" expanded="false" />
             <element signature="method#enableProFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#cleanEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#enableEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#34525:35149" expanded="false" />
+            <element signature="class#35345:35969" expanded="false" />
             <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
@@ -669,7 +658,7 @@
             <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#fillProjectTable#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#updateBoxes#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#50903#50922#0" expanded="false" />
+            <element signature="e#51723#51742#0" expanded="false" />
             <element signature="method#getAreaIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#getProjectIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setLabelCurrDate#0;class#GuiMainPanel#0" expanded="false" />
@@ -732,12 +721,10 @@
             <element signature="method#initMilestones#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="e#10803#11424#0" expanded="false" />
             <element signature="e#11483#12097#0" expanded="false" />
-            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#12274#13327#0" expanded="false" />
-            <element signature="class#13380:13671" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13380:13671" expanded="false" />
+            <element signature="class#13767:14058" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13767:14058" expanded="false" />
             <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#13823#13875#0" expanded="false" />
+            <element signature="e#14210#14262#0" expanded="false" />
             <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
@@ -745,42 +732,38 @@
             <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#applyFixedColumnsWidth#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initTabs#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#19398#21034#0" expanded="false" />
+            <element signature="e#19785#21421#0" expanded="false" />
             <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#21230#22517#0" expanded="false" />
-            <element signature="e#22561#22870#0" expanded="false" />
-            <element signature="class#22929:23833" expanded="false" />
-            <element signature="method#actionPerformed#0;class#22929:23833" expanded="false" />
-            <element signature="class#23890:24806" expanded="false" />
-            <element signature="method#actionPerformed#0;class#23890:24806" expanded="false" />
-            <element signature="class#24866:25487" expanded="false" />
-            <element signature="method#actionPerformed#0;class#24866:25487" expanded="false" />
-            <element signature="e#25539#25996#0" expanded="false" />
-            <element signature="e#26050#26466#0" expanded="false" />
-            <element signature="e#26511#26638#0" expanded="false" />
-            <element signature="e#26690#26924#0" expanded="false" />
+            <element signature="e#21617#22904#0" expanded="false" />
+            <element signature="e#22948#23257#0" expanded="false" />
+            <element signature="class#23316:24220" expanded="false" />
+            <element signature="method#actionPerformed#0;class#23316:24220" expanded="false" />
+            <element signature="class#24277:25193" expanded="false" />
+            <element signature="method#actionPerformed#0;class#24277:25193" expanded="false" />
+            <element signature="class#25253:25874" expanded="false" />
+            <element signature="method#actionPerformed#0;class#25253:25874" expanded="false" />
+            <element signature="e#25926#26383#0" expanded="false" />
+            <element signature="e#26437#26853#0" expanded="false" />
+            <element signature="e#26898#27025#0" expanded="false" />
+            <element signature="e#27077#27311#0" expanded="false" />
             <element signature="method#unselectEngRadioButtons#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#27274:27738" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27274:27738" expanded="false" />
-            <element signature="class#27794:28165" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27794:28165" expanded="false" />
-            <element signature="class#28215:28761" expanded="false" />
-            <element signature="method#actionPerformed#0;class#28215:28761" expanded="false" />
-            <element signature="e#28856#29375#0" expanded="false" />
-            <element signature="e#29427#29896#0" expanded="false" />
-            <element signature="class#29955:30517" expanded="false" />
-            <element signature="method#actionPerformed#0;class#29955:30517" expanded="false" />
-            <element signature="class#30573:31158" expanded="false" />
-            <element signature="method#actionPerformed#0;class#30573:31158" expanded="false" />
-            <element signature="e#31205#31389#0" expanded="false" />
-            <element signature="e#31446#32114#0" expanded="false" />
+            <element signature="class#27661:28125" expanded="false" />
+            <element signature="method#actionPerformed#0;class#27661:28125" expanded="false" />
+            <element signature="class#28181:28552" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28181:28552" expanded="false" />
+            <element signature="class#28602:29148" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28602:29148" expanded="false" />
+            <element signature="e#29854#30323#0" expanded="false" />
+            <element signature="class#31234:31819" expanded="false" />
+            <element signature="method#actionPerformed#0;class#31234:31819" expanded="false" />
+            <element signature="e#32156#32879#0" expanded="false" />
             <element signature="method#enableProFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#cleanEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#enableEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#34525:35149" expanded="false" />
+            <element signature="class#35345:35969" expanded="false" />
             <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
@@ -790,7 +773,7 @@
             <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#fillProjectTable#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#updateBoxes#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#50903#50922#0" expanded="false" />
+            <element signature="e#51723#51742#0" expanded="false" />
             <element signature="method#getAreaIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#getProjectIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setLabelCurrDate#0;class#GuiMainPanel#0" expanded="false" />
@@ -845,12 +828,10 @@
             <element signature="method#initMilestones#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="e#10803#11424#0" expanded="false" />
             <element signature="e#11483#12097#0" expanded="false" />
-            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#12274#13327#0" expanded="false" />
-            <element signature="class#13380:13671" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13380:13671" expanded="false" />
+            <element signature="class#13767:14058" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13767:14058" expanded="false" />
             <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#13823#13875#0" expanded="false" />
+            <element signature="e#14210#14262#0" expanded="false" />
             <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
@@ -858,42 +839,38 @@
             <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#applyFixedColumnsWidth#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initTabs#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#19398#21034#0" expanded="false" />
+            <element signature="e#19785#21421#0" expanded="false" />
             <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#21230#22517#0" expanded="false" />
-            <element signature="e#22561#22870#0" expanded="false" />
-            <element signature="class#22929:23833" expanded="false" />
-            <element signature="method#actionPerformed#0;class#22929:23833" expanded="false" />
-            <element signature="class#23890:24806" expanded="false" />
-            <element signature="method#actionPerformed#0;class#23890:24806" expanded="false" />
-            <element signature="class#24866:25487" expanded="false" />
-            <element signature="method#actionPerformed#0;class#24866:25487" expanded="false" />
-            <element signature="e#25539#25996#0" expanded="false" />
-            <element signature="e#26050#26466#0" expanded="false" />
-            <element signature="e#26511#26638#0" expanded="false" />
-            <element signature="e#26690#26924#0" expanded="false" />
+            <element signature="e#21617#22904#0" expanded="false" />
+            <element signature="e#22948#23257#0" expanded="false" />
+            <element signature="class#23316:24220" expanded="false" />
+            <element signature="method#actionPerformed#0;class#23316:24220" expanded="false" />
+            <element signature="class#24277:25193" expanded="false" />
+            <element signature="method#actionPerformed#0;class#24277:25193" expanded="false" />
+            <element signature="class#25253:25874" expanded="false" />
+            <element signature="method#actionPerformed#0;class#25253:25874" expanded="false" />
+            <element signature="e#25926#26383#0" expanded="false" />
+            <element signature="e#26437#26853#0" expanded="false" />
+            <element signature="e#26898#27025#0" expanded="false" />
+            <element signature="e#27077#27311#0" expanded="false" />
             <element signature="method#unselectEngRadioButtons#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#27274:27738" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27274:27738" expanded="false" />
-            <element signature="class#27794:28165" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27794:28165" expanded="false" />
-            <element signature="class#28215:28761" expanded="false" />
-            <element signature="method#actionPerformed#0;class#28215:28761" expanded="false" />
-            <element signature="e#28856#29375#0" expanded="false" />
-            <element signature="e#29427#29896#0" expanded="false" />
-            <element signature="class#29955:30517" expanded="false" />
-            <element signature="method#actionPerformed#0;class#29955:30517" expanded="false" />
-            <element signature="class#30573:31158" expanded="false" />
-            <element signature="method#actionPerformed#0;class#30573:31158" expanded="false" />
-            <element signature="e#31205#31389#0" expanded="false" />
-            <element signature="e#31446#32114#0" expanded="false" />
+            <element signature="class#27661:28125" expanded="false" />
+            <element signature="method#actionPerformed#0;class#27661:28125" expanded="false" />
+            <element signature="class#28181:28552" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28181:28552" expanded="false" />
+            <element signature="class#28602:29148" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28602:29148" expanded="false" />
+            <element signature="e#29854#30323#0" expanded="false" />
+            <element signature="class#31234:31819" expanded="false" />
+            <element signature="method#actionPerformed#0;class#31234:31819" expanded="false" />
+            <element signature="e#32156#32879#0" expanded="false" />
             <element signature="method#enableProFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#cleanEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#enableEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#34525:35149" expanded="false" />
+            <element signature="class#35345:35969" expanded="false" />
             <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
@@ -903,7 +880,7 @@
             <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#fillProjectTable#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#updateBoxes#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#50903#50922#0" expanded="false" />
+            <element signature="e#51723#51742#0" expanded="false" />
             <element signature="method#getAreaIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#getProjectIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setLabelCurrDate#0;class#GuiMainPanel#0" expanded="false" />
@@ -1114,14 +1091,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="249" column="59" lean-forward="false" selection-start-line="249" selection-start-column="31" selection-end-line="249" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -1130,10 +1099,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/model/QueryHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="775" column="0" lean-forward="true" selection-start-line="775" selection-start-column="0" selection-end-line="775" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/shayrubach/view/GuiMainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="902" column="62" lean-forward="true" selection-start-line="902" selection-start-column="62" selection-end-line="902" selection-end-column="62" />
+        <state relative-caret-position="182">
+          <caret line="883" column="47" lean-forward="false" selection-start-line="883" selection-start-column="47" selection-end-line="883" selection-end-column="47" />
           <folding>
             <element signature="method#GuiMainPanel#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initJsps#0;class#GuiMainPanel#0" expanded="false" />
@@ -1154,12 +1141,10 @@
             <element signature="method#initMilestones#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="e#10803#11424#0" expanded="false" />
             <element signature="e#11483#12097#0" expanded="false" />
-            <element signature="method#initProCB#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#12274#13327#0" expanded="false" />
-            <element signature="class#13380:13671" expanded="false" />
-            <element signature="method#actionPerformed#0;class#13380:13671" expanded="false" />
+            <element signature="class#13767:14058" expanded="false" />
+            <element signature="method#actionPerformed#0;class#13767:14058" expanded="false" />
             <element signature="method#initProCBText#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#13823#13875#0" expanded="false" />
+            <element signature="e#14210#14262#0" expanded="false" />
             <element signature="method#initEngCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initAreaCBText#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initMainFrame#0;class#GuiMainPanel#0" expanded="false" />
@@ -1167,42 +1152,38 @@
             <element signature="method#initTables#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#applyFixedColumnsWidth#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#initTabs#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#19398#21034#0" expanded="false" />
+            <element signature="e#19785#21421#0" expanded="false" />
             <element signature="method#setEditListeners#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditEng#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#21230#22517#0" expanded="false" />
-            <element signature="e#22561#22870#0" expanded="false" />
-            <element signature="class#22929:23833" expanded="false" />
-            <element signature="method#actionPerformed#0;class#22929:23833" expanded="false" />
-            <element signature="class#23890:24806" expanded="false" />
-            <element signature="method#actionPerformed#0;class#23890:24806" expanded="false" />
-            <element signature="class#24866:25487" expanded="false" />
-            <element signature="method#actionPerformed#0;class#24866:25487" expanded="false" />
-            <element signature="e#25539#25996#0" expanded="false" />
-            <element signature="e#26050#26466#0" expanded="false" />
-            <element signature="e#26511#26638#0" expanded="false" />
-            <element signature="e#26690#26924#0" expanded="false" />
+            <element signature="e#21617#22904#0" expanded="false" />
+            <element signature="e#22948#23257#0" expanded="false" />
+            <element signature="class#23316:24220" expanded="false" />
+            <element signature="method#actionPerformed#0;class#23316:24220" expanded="false" />
+            <element signature="class#24277:25193" expanded="false" />
+            <element signature="method#actionPerformed#0;class#24277:25193" expanded="false" />
+            <element signature="class#25253:25874" expanded="false" />
+            <element signature="method#actionPerformed#0;class#25253:25874" expanded="false" />
+            <element signature="e#25926#26383#0" expanded="false" />
+            <element signature="e#26437#26853#0" expanded="false" />
+            <element signature="e#26898#27025#0" expanded="false" />
+            <element signature="e#27077#27311#0" expanded="false" />
             <element signature="method#unselectEngRadioButtons#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setEditArea#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#27274:27738" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27274:27738" expanded="false" />
-            <element signature="class#27794:28165" expanded="false" />
-            <element signature="method#actionPerformed#0;class#27794:28165" expanded="false" />
-            <element signature="class#28215:28761" expanded="false" />
-            <element signature="method#actionPerformed#0;class#28215:28761" expanded="false" />
-            <element signature="e#28856#29375#0" expanded="false" />
-            <element signature="e#29427#29896#0" expanded="false" />
-            <element signature="class#29955:30517" expanded="false" />
-            <element signature="method#actionPerformed#0;class#29955:30517" expanded="false" />
-            <element signature="class#30573:31158" expanded="false" />
-            <element signature="method#actionPerformed#0;class#30573:31158" expanded="false" />
-            <element signature="e#31205#31389#0" expanded="false" />
-            <element signature="e#31446#32114#0" expanded="false" />
+            <element signature="class#27661:28125" expanded="false" />
+            <element signature="method#actionPerformed#0;class#27661:28125" expanded="false" />
+            <element signature="class#28181:28552" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28181:28552" expanded="false" />
+            <element signature="class#28602:29148" expanded="false" />
+            <element signature="method#actionPerformed#0;class#28602:29148" expanded="false" />
+            <element signature="e#29854#30323#0" expanded="false" />
+            <element signature="class#31234:31819" expanded="false" />
+            <element signature="method#actionPerformed#0;class#31234:31819" expanded="false" />
+            <element signature="e#32156#32879#0" expanded="false" />
             <element signature="method#enableProFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#cleanEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#enableEdFields#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProTextHint#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="class#34525:35149" expanded="false" />
+            <element signature="class#35345:35969" expanded="false" />
             <element signature="method#setModifyProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setNewProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setRemoveProjectRadioButton#0;class#GuiMainPanel#0" expanded="false" />
@@ -1212,20 +1193,10 @@
             <element signature="method#setModifyEngineerRadioButton#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#fillProjectTable#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#updateBoxes#0;class#GuiMainPanel#0" expanded="false" />
-            <element signature="e#50903#50922#0" expanded="false" />
+            <element signature="e#51723#51742#0" expanded="false" />
             <element signature="method#getAreaIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#getProjectIdByName#0;class#GuiMainPanel#0" expanded="false" />
             <element signature="method#setLabelCurrDate#0;class#GuiMainPanel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/shayrubach/controller/gui/tablectrls/TableController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="204" column="16" lean-forward="false" selection-start-line="204" selection-start-column="16" selection-end-line="204" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

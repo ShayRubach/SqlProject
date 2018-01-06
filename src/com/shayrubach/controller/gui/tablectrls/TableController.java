@@ -202,7 +202,9 @@ public class TableController implements IController {
         switch(ENTITY) {
             case GuiMainPanel.PROJECT_ENTITY:
 
-                updateDevelopmentStep();
+                if(getGui().getJcbChooseStep().getSelectedIndex() > 2){
+                    updateDevelopmentStep();
+                }
 
                 ps = connection.prepareStatement(QueryHolder.QUERY_MODIFY_PROJECT);
                 ps.setString(1,getGui().getEdProDate().getText());
@@ -773,7 +775,19 @@ public class TableController implements IController {
         rs = ps.executeQuery();
 
         while(rs.next()){
-            getGui().getJcbChooseStep().setSelectedItem(rs.getString(1));
+            String step = null;
+            String realStep = null;
+            for(int i=0; i < getGui().getJcbChooseStep().getItemCount();++i){
+                step = getGui().getJcbChooseStep().getItemAt(i).toString();
+
+                System.out.println(step.toString());
+                System.out.println(rs.getString(1));
+                if(step.toString().contains(rs.getString(1))){
+                    realStep = step.toString();
+                    break;
+                }
+            }
+            getGui().getJcbChooseStep().setSelectedItem(realStep);
         }
 
     }

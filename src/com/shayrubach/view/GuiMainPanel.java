@@ -360,11 +360,20 @@ public class GuiMainPanel {
             if (jcbChooseProject.getSelectedIndex() > 1) {
                 jcbChooseMilestone.setEnabled(false);
                 try {
-                    if (addNewMilestoneRadioButton.isSelected()) {
+                    if(removeProjectRadioButton.isSelected()){
+                        jcbChooseStep.setEnabled(false);
+                    }
+                    if(addNewMilestoneRadioButton.isSelected()) {
+
+                        jcbChooseStep.setEnabled(false);
                         getControllers().get(0).getProjectDevStep();
+
                     }
 
                     if(modifyProjectRadioButton.isSelected()){
+                        jcbChooseMilestone.setEnabled(false);
+                        jcbChooseStep.setEnabled(true);
+                        getControllers().get(0).getProjectDevStep();
                         ResultSet rs = getControllers().get(0).getProjectData();
                         while (rs.next()) {
                             edProName.setText(rs.getString(3));
@@ -796,6 +805,7 @@ public class GuiMainPanel {
 
 
         modifyProjectRadioButton.addActionListener(e -> {
+            cleanEdFields(tabEditPro);
             setComponentStates(E_RESET,tabEditPro);
             modifyProjectRadioButton.setSelected(true);
             newProjectRadioButton.setSelected(false);
@@ -804,7 +814,7 @@ public class GuiMainPanel {
 
             jcbChooseProject.setEnabled(true);
             jcbChooseProject.setSelectedIndex(0);
-            jcbChooseStep.setEnabled(true);
+            jcbChooseStep.setEnabled(false);
 
             enableProFields(E_MODIFY);
             edProRate.setEnabled(false);
@@ -832,6 +842,7 @@ public class GuiMainPanel {
             public void actionPerformed(ActionEvent e) {
 
                 setComponentStates(E_RESET,tabEditPro);
+                cleanEdFields(tabEditPro);
                 removeProjectRadioButton.setSelected(true);
                 modifyProjectRadioButton.setSelected(false);
                 newProjectRadioButton.setSelected(false);
@@ -841,6 +852,11 @@ public class GuiMainPanel {
                 enableProFields(E_REMOVE);
                 edProRate.setEnabled(false);
 
+                try {
+                    getControllers().get(0).getProjectDevStep();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
 
             }
         });
@@ -865,6 +881,7 @@ public class GuiMainPanel {
 
         addNewAreaButton.addActionListener(e -> {
             try {
+                jcbChooseStep.setEnabled(false);
                 controllers.get(0).addNewAreaToProject();
             } catch (SQLException e1) {
                 e1.printStackTrace();
@@ -878,6 +895,8 @@ public class GuiMainPanel {
                 edProMoney.setText("24500");
 
                 jcbChooseProject.setEnabled(true);
+                jcbChooseMilestone.setEnabled(false);
+
                 edProMilestone.setEnabled(true);
                 edProMsDueDate.setEnabled(true);
                 edProMoney.setEnabled(true);
@@ -895,6 +914,7 @@ public class GuiMainPanel {
                 }
                 if(modifyProjectRadioButton.isSelected()){
                     controllers.get(0).modifyEntity(PROJECT_ENTITY);
+                    jcbChooseStep.setSelectedIndex(0);
                 }
                 if(removeProjectRadioButton.isSelected() && jcbChooseProject.getSelectedIndex() > 1){
                     controllers.get(0).removeEntity(PROJECT_ENTITY);

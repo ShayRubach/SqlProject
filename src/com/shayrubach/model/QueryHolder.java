@@ -72,11 +72,6 @@ public class QueryHolder {
                     "JOIN projects ON milestones.project_id=projects.project_id " +
                     "ORDER BY date";
 
-    public static final String QUERY_GET_PROJECT_RATE =
-            "SELECT AVG(rate) " +
-            "FROM projects_to_engineers " +
-            "WHERE project_id=?";
-
     public static final String QUERY_GET_ALL_PROJECT_NAMES =
             "SELECT name FROM projects;";
 
@@ -116,8 +111,6 @@ public class QueryHolder {
     public static final String QUERY_GET_ALL_PROJECTS =
             "SELECT * FROM projects;";
 
-
-
     public static final String QUERY_GET_ALL_AREAS =
             "SELECT * FROM areas;";
 
@@ -136,8 +129,6 @@ public class QueryHolder {
             "INSERT IGNORE INTO project_areas " +
                     "(project_id,area_id) " +
                     "VALUES(?,?);";
-
-    //TODO: ADD SOME TRIGGER..................
 
     public static final String QUERY_NEW_ENG_PROJ =
             "INSERT IGNORE INTO projects_to_engineers " +
@@ -158,12 +149,6 @@ public class QueryHolder {
                     "FROM project_dev_steps " +
                     "WHERE project_dev_steps.dev_step_id=?)";
 
-
-    public static final String QUERY_GET_PROJ_ID_AND_RATE =
-            "SELECT project_id,rate " +
-                    "FROM projects_to_engineers " +
-                    "WHERE eng_id=?";
-
     public static final String QUERY_ADD_AREA_TO_ENG =
             "INSERT IGNORE INTO engineer_areas " +
                     "(eng_id,area_id) " +
@@ -176,20 +161,6 @@ public class QueryHolder {
     public static final String QUERY_REMOVE_AREA =
             "DELETE FROM areas " +
                     "WHERE area_id=?;";
-
-    public static final String GET_PROJET_RATE =
-            "SELECT rate FROM projects_to_engineers " +
-                    "WHERE project_id=?" +
-                    "AND eng_id=?;";
-
-    public static final String GET_PROJECT_ID =
-            "SELECT project_id FROM projects " +
-                    "WHERE name=?;";
-
-    public static final String QUERY_GET_PROJ_NAME_BY_ID =
-            "SELECT name " +
-                    "FROM projects " +
-                    "WHERE project_id=?;";
 
     @NestedQuery
     @CorrelatedSubquery
@@ -216,6 +187,7 @@ public class QueryHolder {
                     "FROM projects_to_engineers " +
                     "WHERE projects_to_engineers.project_id=? ";
 
+    @CorrelatedSubquery
     public static final String QUERY_GET_TOP_ENGINEERS =
             "SELECT COUNT(project_id) as cnt," +
                     "projects_to_engineers.eng_id," +
@@ -259,17 +231,6 @@ public class QueryHolder {
                         "END IF; " +
                     "END;  ";
 
-    @BadLogic
-    @NestedQuery
-    public static final String QUERY_GET_AVAILABLE_AREAS_BY_PROJECT_NAME =
-            "SELECT area_id,project_id FROM areas,projects WHERE project_id=? AND name NOT IN (SELECT  ";
-
-    @NestedQuery
-    public static final String QUERY_GET_MILESTONE_BY_PROJECT =
-            "SELECT milestone FROM milestones "+
-                    "WHERE IN   (SELECT project_id "+
-                    "FROM projects "+
-                    "WHERE project_id=?);";
 
     @CorrelatedSubquery
     @NestedQuery
@@ -330,19 +291,6 @@ public class QueryHolder {
                     "address=?," +
                     "birth=? " +
                     "WHERE eng_id=?";
-
-//    public static final String QUERY_UPDATE_PROJECT_STEP =
-//            "SET @ds_id = (SELECT dev_step_id FROM development_steps WHERE name='Development and Implementation);" +
-//            "SET @p_id = (SELECT project_id FROM projects WHERE name='Project XVV');"+
-//            "UPDATE " +
-//            "project_dev_steps AS pds " +
-//            "SET" +
-//                "pds.dev_step_id = @ds_id," +
-//                "pds.dev_tools = ?" +
-//            "WHERE " +
-//                "pds.project_id= @p_id";
-//
-
 
     public static final String QUERY_GET_ALL_DEV_STEPS =
             "SELECT * FROM development_steps";
