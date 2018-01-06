@@ -144,7 +144,6 @@ public class TableController implements IController {
                 getGui().getJcbGroupPro().addItem(p.getName().toString());
                 getGui().getJcbEngJoinProj().addItem(p.getName().toString());
 
-                //addProToTable(p);
                 loadDbProjects(ps,rs);
 
 
@@ -157,7 +156,6 @@ public class TableController implements IController {
                 ps.setString(3,a.getSpecialty());
                 ps.executeUpdate();
 
-                //addAreaToTable(a);
                 getGui().getEdAreaName().setText("");
                 getGui().getEdAreaSpec().setText("");
 
@@ -242,12 +240,6 @@ public class TableController implements IController {
     private void updateDevelopmentStep() throws SQLException {
         PreparedStatement ps;
 
-//        System.out.println(getGui().getJcbChooseStep().getSelectedItem().toString());
-//        System.out.println(getGui().getJcbChooseProject().getSelectedItem().toString());
-//        System.out.println(fetchIdFromDevStep(getGui().getJcbChooseStep().getSelectedItem().toString()));
-//        System.out.println(getGui().getEdProTools().getText());
-//        System.out.println(getGui().getProjectIdByName(getGui().getJcbChooseProject().getSelectedItem().toString()));
-
         ps = connection.prepareStatement(QueryHolder.QUERY_UPDATE_PROJECT_STEP);
         ps.setString(1,fetchIdFromDevStep(getGui().getJcbChooseStep().getSelectedItem().toString()));
         ps.setString(2,getGui().getEdProTools().getText());
@@ -263,28 +255,6 @@ public class TableController implements IController {
         return String.valueOf(currYear-birthYear);
     }
 
-    private void addProToTable(Project p) {
-
-        getGui().getTbProjModel().addRow(new Object[] {
-                p.getName().toString(),
-                p.getDescription(),
-                p.getCustomers(),
-                p.getDevTools(),
-                p.getDateStarted(),
-                p.getId(),
-                " "
-        });
-
-    }
-
-    private void addAreaToTable(Area a) {
-        getGui().getTbAreaModel().addRow(new Object[] {
-                a.getName().toString(),
-                a.getSpecialty(),
-                a.getId()
-        });
-
-    }
     public GuiMainPanel getGui() {
         return gui;
     }

@@ -44,10 +44,6 @@ public class GuiMainPanel {
     private JTable      tableTopEng     = null;
     private JTable      tableMonitor;
 
-    private JButton     buttonEditAreas = null;
-    private JButton     buttonEditEng   = null;
-    private JButton     buttonEditProject= null;
-
     private JScrollPane tabMonitor      = null;
     private JScrollPane jspProj         = null;
     private JScrollPane jspArea         = null;
@@ -137,7 +133,6 @@ public class GuiMainPanel {
     private JRadioButton showThisMonthSRadioButton;
     private JComboBox jcbDevStepToShow;
 
-
     private DefaultTableModel tbProjModel;
     private DefaultTableModel tbEngModel;
     private DefaultTableModel tbAreaModel;
@@ -150,10 +145,7 @@ public class GuiMainPanel {
     private DefaultTableModel tbGroupEngProModel;
     private DefaultTableModel tbGroupEngPhonesModel;
 
-
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
-
-
     public GuiMainPanel() {
         initMainFrame();
         initTables();
@@ -163,7 +155,6 @@ public class GuiMainPanel {
         initTabs();
         initMilestones();
     }
-
     private void initJsps() {
         //jspProj = new JScrollPane(tableProjects, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         tableProjects.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -177,12 +168,10 @@ public class GuiMainPanel {
 
 
     }
-
     private void initEditFields() {
         setComponentStates(E_RESET,null);
 //        setComponentStates(E_MODIFY,tabEditPro);
     }
-
     private void setComponentStates(int ACTION, JPanel panel) {
         switch (ACTION){
             case E_RESET:
@@ -207,7 +196,6 @@ public class GuiMainPanel {
 
         }
     }
-
     private void initCBoxes() {
         initProCB();
         initAreaCB();
@@ -215,7 +203,6 @@ public class GuiMainPanel {
         initGroupCB();
         initDevStepCB();
     }
-
     private void initDevStepCB() {
         jcbDevStepToShow.addActionListener(e -> {
             try {
@@ -228,15 +215,11 @@ public class GuiMainPanel {
             }
         });
     }
-
     public void resetJcbItems(JComboBox cb, String entity){
         cb.removeAllItems();
         cb.addItem("-- Select "+entity+ " --");
         cb.addItem("");
     }
-
-
-
     private void initGroupCB() {
         jcbGroupEngProName.setEnabled(true);
         jcbGroupPro.setEnabled(true);
@@ -276,7 +259,6 @@ public class GuiMainPanel {
             }
         });
     }
-
     private void initEngCB() {
         initEngCBText();
 
@@ -310,7 +292,6 @@ public class GuiMainPanel {
 
         });
     }
-
     private void initMilestones(){
         showThisMonthSRadioButton.addActionListener(e -> {
             ResultSet rs;
@@ -347,11 +328,9 @@ public class GuiMainPanel {
 
 
     }
-
     private void initAreaCB() {
         initAreaCBText();
     }
-
     private void initProCB() {
         initProCBText();
 
@@ -406,7 +385,6 @@ public class GuiMainPanel {
         });
 
     }
-
     private void initProCBText() {
         jcbChooseProject.addItem("-- choose Project --");
         jcbChooseProject.addItem("  ");
@@ -424,18 +402,15 @@ public class GuiMainPanel {
         jcbChooseMilestone.addItem(" ");
         jcbChooseMilestone.addItem(" ");
     }
-
     public void initEngCBText() {
         jcbChooseEng.addItem("-- choose Engineer --");
         jcbChooseEng.addItem(" ");
 
     }
-
     public void initAreaCBText() {
         jcbChooseArea.addItem("-- choose Area --");
         jcbChooseArea.addItem("  ");
     }
-
     private void initMainFrame() {
         mainFrame = new JFrame("MySQL Database Project - by Shay Rubach (c) ");
         mainFrame.setSize(new Dimension(Toolkit.getDefaultToolkit().getScreenSize()));
@@ -445,18 +420,6 @@ public class GuiMainPanel {
         mainFrame.setVisible(true);
 
     }
-
-    private void changeTheme() {
-        try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-        SwingUtilities.updateComponentTreeUI(mainFrame);
-    }
-
     private void initTables() {
 
         final String[] tbProjColumns = {"Name","Description","Customers","Tools","Date Started","ID","Rate"};
@@ -523,16 +486,6 @@ public class GuiMainPanel {
         tableTopProj.getColumnModel().getColumn(1).setCellRenderer(centerRenderer);
 
     }
-
-    private void applyFixedColumnsWidth(JTable table,int size) {
-        int i = 0;
-        while (i < table.getColumnModel().getColumnCount()){
-            table.getColumnModel().getColumn(i).setMaxWidth(size);
-            table.getColumnModel().getColumn(i).setPreferredWidth(size);
-        }
-
-    }
-
     private void initTabs() {
         setEditListeners();
 
@@ -586,13 +539,11 @@ public class GuiMainPanel {
 
         });
     }
-
     private void setEditListeners() {
         setEditPro();
         setEditArea();
         setEditEng();
     }
-
     private void setEditEng() {
 
         applyButtonEng.addActionListener(e -> {
@@ -747,7 +698,6 @@ public class GuiMainPanel {
             edEngPhone.setEnabled(true);
         });
     }
-
     private void unselectEngRadioButtons() {
         for(Component c : tabEditEng.getComponents()){
             if(c instanceof JRadioButton)
@@ -755,7 +705,6 @@ public class GuiMainPanel {
         }
 
     }
-
     private void setEditArea() {
         applyAreaButton.setEnabled(true);
 
@@ -800,7 +749,6 @@ public class GuiMainPanel {
             }
         });
     }
-
     private void setEditPro() {
 
 
@@ -890,8 +838,9 @@ public class GuiMainPanel {
 
         addNewMilestoneRadioButton.addActionListener(e -> {
             if(addNewMilestoneRadioButton.isSelected()){
-                edProMilestone.setText("milestone description");
-                edProMsDueDate.setText(labelCurrDate.getText().substring(6).replace('/','.'));
+                edProMilestone.setText("Milestone short description");
+                //edProMsDueDate.setText(labelCurrDate.getText().substring(6).replace('/','.'));
+                edProMsDueDate.setText("04.02.1999");
                 edProMoney.setText("24500");
 
                 jcbChooseProject.setEnabled(true);
@@ -930,7 +879,6 @@ public class GuiMainPanel {
         });
 
     }
-
     public void enableProFields(int MODE){
 
         //turn all fields on
@@ -956,7 +904,6 @@ public class GuiMainPanel {
                 break;
         }
     }
-
     public void cleanEdFields(JPanel tab) {
         for (Component ep : tab.getComponents()) {
             if (ep instanceof JEditorPane) {
@@ -965,7 +912,6 @@ public class GuiMainPanel {
             }
         }
     }
-
     private void enableEdFields(JPanel tab) {
         for (Component ep : tab.getComponents()) {
             if (ep instanceof JEditorPane) {
@@ -976,9 +922,6 @@ public class GuiMainPanel {
             }
         }
     }
-
-
-
     private void setNewProTextHint(int MODE,JPanel tab) {
         for(Component ep : tab.getComponents()) {
 
@@ -1009,605 +952,101 @@ public class GuiMainPanel {
             }
         }
     }
-
     // getters & setters
 
     public ArrayList<TableController> getControllers() {
         return controllers;
     }
-
     public JPanel getPanelMain() {
         return panelMain;
     }
-
-    public void setPanelMain(JPanel panelMain) {
-        this.panelMain = panelMain;
-    }
-
-    public JTabbedPane getTabbedPane() {
-        return tabbedPane;
-    }
-
-    public void setTabbedPane(JTabbedPane tabbedPane) {
-        this.tabbedPane = tabbedPane;
-    }
-
-    public JPanel getTabProjects() {
-        return tabProjects;
-    }
-
-    public void setTabProjects(JPanel tabProjects) {
-        this.tabProjects = tabProjects;
-    }
-
-    public JPanel getTabAreas() {
-        return tabAreas;
-    }
-
-    public void setTabAreas(JPanel tabAreas) {
-        this.tabAreas = tabAreas;
-    }
-
-    public JPanel getTabEng() {
-        return tabEng;
-    }
-
-    public void setTabEng(JPanel tabEng) {
-        this.tabEng = tabEng;
-    }
-
-    public JPanel getTabTopProjects() {
-        return tabTopProjects;
-    }
-
-    public void setTabTopProjects(JPanel tabTopProjects) {
-        this.tabTopProjects = tabTopProjects;
-    }
-
-    public JPanel getTabTopEng() {
-        return tabTopEng;
-    }
-
-    public void setTabTopEng(JPanel tabTopEng) {
-        this.tabTopEng = tabTopEng;
-    }
-
     public JTable getTableProjects() {
         return tableProjects;
     }
-
-    public void setTableProjects(JTable tableProjects) {
-        this.tableProjects = tableProjects;
-    }
-
     public JTable getTableAreas() {
         return tableAreas;
     }
-
-    public void setTableAreas(JTable tableAreas) {
-        this.tableAreas = tableAreas;
-    }
-
-    public JTable getTableEng() {
-        return tableEng;
-    }
-
-    public void setTableEng(JTable tableEng) {
-        this.tableEng = tableEng;
-    }
-
-    public JTable getTableTopProj() {
-        return tableTopProj;
-    }
-
-    public void setTableTopProj(JTable tableTopProj) {
-        this.tableTopProj = tableTopProj;
-    }
-
-    public JTable getTableTopEng() {
-        return tableTopEng;
-    }
-
-    public void setTableTopEng(JTable tableTopEng) {
-        this.tableTopEng = tableTopEng;
-    }
-
-    public JTable getTableMonitor() {
-        return tableMonitor;
-    }
-
-    public void setTableMonitor(JTable tableMonitor) {
-        this.tableMonitor = tableMonitor;
-    }
-
-    public JFrame getMainFrame() {
-        return mainFrame;
-    }
-
-    public void setMainFrame(JFrame mainFrame) {
-        this.mainFrame = mainFrame;
-    }
-
-    public JButton getButtonEditAreas() {
-        return buttonEditAreas;
-    }
-
-    public void setButtonEditAreas(JButton buttonEditAreas) {
-        this.buttonEditAreas = buttonEditAreas;
-    }
-
-    public JButton getButtonEditEng() {
-        return buttonEditEng;
-    }
-
-    public void setButtonEditEng(JButton buttonEditEng) {
-        this.buttonEditEng = buttonEditEng;
-    }
-
-    public JButton getButtonEditProject() {
-        return buttonEditProject;
-    }
-
-    public void setButtonEditProject(JButton buttonEditProject) {
-        this.buttonEditProject = buttonEditProject;
-    }
-
-    public JScrollPane getTabMonitor() {
-        return tabMonitor;
-    }
-
-    public void setTabMonitor(JScrollPane tabMonitor) {
-        this.tabMonitor = tabMonitor;
-    }
-
-    public JScrollPane getJspProj() {
-        return jspProj;
-    }
-
-    public void setJspProj(JScrollPane jspProj) {
-        this.jspProj = jspProj;
-    }
-
-    public JScrollPane getJspArea() {
-        return jspArea;
-    }
-
-    public void setJspArea(JScrollPane jspArea) {
-        this.jspArea = jspArea;
-    }
-
-    public JScrollPane getJspEng() {
-        return jspEng;
-    }
-
-    public void setJspEng(JScrollPane jspEng) {
-        this.jspEng = jspEng;
-    }
-
-    public JScrollPane getJspTopProj() {
-        return jspTopProj;
-    }
-
-    public void setJspTopProj(JScrollPane jspTopProj) {
-        this.jspTopProj = jspTopProj;
-    }
-
-    public JScrollPane getJspTopEng() {
-        return jspTopEng;
-    }
-
-    public void setJspTopEng(JScrollPane jspTopEng) {
-        this.jspTopEng = jspTopEng;
-    }
-
-    public JScrollPane getJspMonitor() {
-        return jspMonitor;
-    }
-
-    public void setJspMonitor(JScrollPane jspMonitor) {
-        this.jspMonitor = jspMonitor;
-    }
-
-    public JComboBox getCbChooseEntityType() {
-        return cbChooseEntityType;
-    }
-
-    public void setCbChooseEntityType(JComboBox cbChooseEntityType) {
-        this.cbChooseEntityType = cbChooseEntityType;
-    }
-
     public JEditorPane getEdProMilestone() {
         return edProMilestone;
     }
-
-    public void setEdProMilestone(JEditorPane edProMilestone) {
-        this.edProMilestone = edProMilestone;
-    }
-
     public JComboBox getJcbChooseProject() {
         return jcbChooseProject;
     }
-
-    public void setJcbChooseProject(JComboBox jcbChooseProject) {
-        this.jcbChooseProject = jcbChooseProject;
-    }
-
     public JComboBox getJcbChooseArea() {
         return jcbChooseArea;
     }
-
-    public void setJcbChooseArea(JComboBox jcbChooseArea) {
-        this.jcbChooseArea = jcbChooseArea;
-    }
-
     public JComboBox getJcbChooseEng() {
         return jcbChooseEng;
     }
-
-    public void setJcbChooseEng(JComboBox jcbChooseEng) {
-        this.jcbChooseEng = jcbChooseEng;
-    }
-
     public JComboBox getJcbChooseStep() {
         return jcbChooseStep;
     }
-
-    public void setJcbChooseStep(JComboBox jcbChooseStep) {
-        this.jcbChooseStep = jcbChooseStep;
-    }
-
-    public JComboBox getJcbChooseEngPro() {
-        return jcbChooseEngPro;
-    }
-
-    public void setJcbChooseEngPro(JComboBox jcbChooseEngPro) {
-        this.jcbChooseEngPro = jcbChooseEngPro;
-    }
-
-    public JEditorPane getEdProRate() {
-        return edProRate;
-    }
-
-    public void setEdProRate(JEditorPane edProRate) {
-        this.edProRate = edProRate;
-    }
-
     public JEditorPane getEdProDesc() {
         return edProDesc;
     }
-
-    public void setEdProDesc(JEditorPane edProDesc) {
-        this.edProDesc = edProDesc;
-    }
-
     public JEditorPane getEdProName() {
         return edProName;
     }
-
-    public void setEdProName(JEditorPane edProName) {
-        this.edProName = edProName;
-    }
-
     public JEditorPane getEdProTools() {
         return edProTools;
     }
-
-    public void setEdProTools(JEditorPane edProTools) {
-        this.edProTools = edProTools;
-    }
-
     public JEditorPane getEdProDate() {
         return edProDate;
     }
-
-    public void setEdProDate(JEditorPane edProDate) {
-        this.edProDate = edProDate;
-    }
-
-    public JEditorPane getEditorPane10() {
-        return editorPane10;
-    }
-
-    public void setEditorPane10(JEditorPane editorPane10) {
-        this.editorPane10 = editorPane10;
-    }
-
     public JEditorPane getEdAreaSpec() {
         return edAreaSpec;
     }
-
-    public void setEdAreaSpec(JEditorPane edAreaSpec) {
-        this.edAreaSpec = edAreaSpec;
-    }
-
-    public JEditorPane getEdEngProjects() {
-        return edEngProjects;
-    }
-
-    public void setEdEngProjects(JEditorPane edEngProjects) {
-        this.edEngProjects = edEngProjects;
-    }
-
-    public JEditorPane getEdEngRate() {
-        return edEngRate;
-    }
-
-    public void setEdEngRate(JEditorPane edEngRate) {
-        this.edEngRate = edEngRate;
-    }
-
     public JEditorPane getEdEngAddress() {
         return edEngAddress;
     }
-
-    public void setEdEngAddress(JEditorPane edEngAddress) {
-        this.edEngAddress = edEngAddress;
-    }
-
-    public JEditorPane getEdEngArea() {
-        return edEngArea;
-    }
-
-    public void setEdEngArea(JEditorPane edEngArea) {
-        this.edEngArea = edEngArea;
-    }
-
     public JEditorPane getEdEngFname() {
         return edEngFname;
     }
-
-    public void setEdEngFname(JEditorPane edEngFname) {
-        this.edEngFname = edEngFname;
-    }
-
-    public JEditorPane getEditorPane20() {
-        return editorPane20;
-    }
-
-    public void setEditorPane20(JEditorPane editorPane20) {
-        this.editorPane20 = editorPane20;
-    }
-
-    public JEditorPane getEditorPane21() {
-        return editorPane21;
-    }
-
-    public void setEditorPane21(JEditorPane editorPane21) {
-        this.editorPane21 = editorPane21;
-    }
-
     public JEditorPane getEdAreaName() {
         return edAreaName;
     }
-
-    public void setEdAreaName(JEditorPane edAreaName) {
-        this.edAreaName = edAreaName;
-    }
-
     public JEditorPane getEdEngLname() {
         return edEngLname;
     }
-
-    public void setEdEngLname(JEditorPane edEngLname) {
-        this.edEngLname = edEngLname;
-    }
-
     public JEditorPane getEdProMoney() {
         return edProMoney;
     }
-
-    public void setEdProMoney(JEditorPane edProMoney) {
-        this.edProMoney = edProMoney;
-    }
-
-    public JComboBox getJcbChooseMilestone() {
-        return jcbChooseMilestone;
-    }
-
-    public void setJcbChooseMilestone(JComboBox jcbChooseMilestone) {
-        this.jcbChooseMilestone = jcbChooseMilestone;
-    }
-
-    public JButton getApplyButtonEng() {
-        return applyButtonEng;
-    }
-
-    public void setApplyButtonEng(JButton applyButtonEng) {
-        this.applyButtonEng = applyButtonEng;
-    }
-
-    public JPanel getTabEditAll() {
-        return tabEditAll;
-    }
-
-    public void setTabEditAll(JPanel tabEditAll) {
-        this.tabEditAll = tabEditAll;
-    }
-
     public JRadioButton getModifyProjectRadioButton() {
         return modifyProjectRadioButton;
     }
-
-    public void setModifyProjectRadioButton(JRadioButton modifyProjectRadioButton) {
-        this.modifyProjectRadioButton = modifyProjectRadioButton;
-    }
-
-    public JRadioButton getNewProjectRadioButton() {
-        return newProjectRadioButton;
-    }
-
-    public void setNewProjectRadioButton(JRadioButton newProjectRadioButton) {
-        this.newProjectRadioButton = newProjectRadioButton;
-    }
-
-    public JRadioButton getRemoveProjectRadioButton() {
-        return removeProjectRadioButton;
-    }
-
-    public void setRemoveProjectRadioButton(JRadioButton removeProjectRadioButton) {
-        this.removeProjectRadioButton = removeProjectRadioButton;
-    }
-
-    public JRadioButton getRemoveAreaRadioButton() {
-        return removeAreaRadioButton;
-    }
-
-    public void setRemoveAreaRadioButton(JRadioButton removeAreaRadioButton) {
-        this.removeAreaRadioButton = removeAreaRadioButton;
-    }
-
-    public JRadioButton getNewEngineerRadioButton() {
-        return newEngineerRadioButton;
-    }
-
-    public void setNewEngineerRadioButton(JRadioButton newEngineerRadioButton) {
-        this.newEngineerRadioButton = newEngineerRadioButton;
-    }
-
-    public JRadioButton getRemoveEngineerRadioButton() {
-        return removeEngineerRadioButton;
-    }
-
-    public void setRemoveEngineerRadioButton(JRadioButton removeEngineerRadioButton) {
-        this.removeEngineerRadioButton = removeEngineerRadioButton;
-    }
-
     public JPanel getTabEditPro() {
         return tabEditPro;
-    }
-
-    public void setTabEditPro(JPanel tabEditPro) {
-        this.tabEditPro = tabEditPro;
-    }
-
-    public JPanel getTabEditArea() {
-        return tabEditArea;
-    }
-    public void setTabEditArea(JPanel tabEditArea) {
-        this.tabEditArea = tabEditArea;
-    }
-    public JPanel getTabEditEng() {
-        return tabEditEng;
-    }
-    public void setTabEditEng(JPanel tabEditEng) {
-        this.tabEditEng = tabEditEng;
     }
     public JRadioButton getModifyEngineerRadioButton() {
         return modifyEngineerRadioButton;
     }
-    public void setModifyEngineerRadioButton(JRadioButton modifyEngineerRadioButton) {
-        this.modifyEngineerRadioButton = modifyEngineerRadioButton;
-    }
-    public JButton getAddEngPhoneBtn() {
-        return addEngPhoneBtn;
-    }
-    public void setAddEngPhoneBtn(JButton addEngPhoneBtn) {
-        this.addEngPhoneBtn = addEngPhoneBtn;
-    }
-    public JRadioButton getNewAreaRadioButton() {
-        return newAreaRadioButton;
-    }
-    public void setNewAreaRadioButton(JRadioButton newAreaRadioButton) {
-        this.newAreaRadioButton = newAreaRadioButton;
-    }
-    public JLabel getLabelAreaId() {
-        return LabelAreaId;
-    }
-    public void setLabelAreaId(JLabel labelAreaId) {
-        LabelAreaId = labelAreaId;
-    }
-    public JLabel getLabelProId() {
-        return labelProId;
-    }
-    public void setLabelProId(JLabel labelProId) {
-        this.labelProId = labelProId;
-    }
-    public JLabel getLabelEngId() {
-        return labelEngId;
-    }
-    public void setLabelEngId(JLabel labelEngId) {
-        this.labelEngId = labelEngId;
-    }
     public JEditorPane getEdEngDate() {
         return edEngDate;
-    }
-    public void setEdEngDate(JEditorPane edEngDate) {
-        this.edEngDate = edEngDate;
-    }
-    public JEditorPane getEdEngAge() {
-        return edEngAge;
-    }
-    public void setEdEngAge(JEditorPane edEngAge) {
-        this.edEngAge = edEngAge;
-    }
-    public JButton getApplyProButton() {
-        return applyProButton;
-    }
-    public void setApplyProButton(JButton applyProButton) {
-        this.applyProButton = applyProButton;
-    }
-    public void setControllers(ArrayList<TableController> controllers) {
-        this.controllers = controllers;
     }
     public DefaultTableModel getTbProjModel() {
         return tbProjModel;
     }
-    public void setTbProjModel(DefaultTableModel tbProjModel) {
-        this.tbProjModel = tbProjModel;
-    }
     public DefaultTableModel getTbEngModel() {
         return tbEngModel;
-    }
-    public void setTbEngModel(DefaultTableModel tbEngModel) {
-        this.tbEngModel = tbEngModel;
     }
     public DefaultTableModel getTbAreaModel() {
         return tbAreaModel;
     }
-    public void setTbAreaModel(DefaultTableModel tbAreaModel) {
-        this.tbAreaModel = tbAreaModel;
-    }
     public DefaultTableModel getTbTopProjModel() {
         return tbTopProjModel;
-    }
-    public void setTbTopProjModel(DefaultTableModel tbTopProjModel) {
-        this.tbTopProjModel = tbTopProjModel;
     }
     public DefaultTableModel getTbTopEngModel() {
         return tbTopEngModel;
     }
-    public void setTbTopEngModel(DefaultTableModel tbTopEngModel) {
-        this.tbTopEngModel = tbTopEngModel;
-    }
-    public DefaultTableModel getTbMonitorModel() {
-        return tbMonitorModel;
-    }
-    public void setTbMonitorModel(DefaultTableModel tbMonitorModel) {
-        this.tbMonitorModel = tbMonitorModel;
-    }
     public JEditorPane getEdProMsDueDate() {
         return edProMsDueDate;
-    }
-    public void setEdProMsDueDate(JEditorPane edProMsDueDate) {
-        this.edProMsDueDate = edProMsDueDate;
     }
     public JEditorPane getEdProCust() {
         return edProCust;
     }
-    public void setEdProCust(JEditorPane edProCust) {
-        this.edProCust = edProCust;
-    }
     public JComboBox getJcbChooseProArea() {
         return jcbChooseProArea;
     }
-    public void setJcbChooseProArea(JComboBox jcbChooseProArea) {
-        this.jcbChooseProArea = jcbChooseProArea;
-    }
-    public JButton getApplyAreaButton() {
-        return applyAreaButton;
-    }
-
-
     //TODO 10: turn these fill func into 1 with switch
     public void fillProjectTable(String[] formedProjectRow) {
         getTbProjModel().addRow(formedProjectRow);
@@ -1619,28 +1058,8 @@ public class GuiMainPanel {
     public void fillEngTable(Object[] formedRow){
         getTbEngModel().addRow(formedRow);
     }
-
     public JComboBox getJcbNewArea() {
         return jcbNewArea;
-    }
-    public void updateBoxes() {
-        //update project boxes
-        for (int i = 0; i < tableProjects.getRowCount(); i++) {
-
-        }
-
-        //update area boxes
-        //update eng boxes
-        //update milestone boxes
-        //update phone boxes
-
-
-    }
-    public JPanel getTabGroups() {
-        return tabGroups;
-    }
-    public JTable getTableGroupsPro() {
-        return tableGroupsPro;
     }
     public JComboBox getJcbGroupPro() {
         return jcbGroupPro;
@@ -1679,14 +1098,7 @@ public class GuiMainPanel {
     public JComboBox getJcbGroupEngProName() {
         return jcbGroupEngProName;
     }
-    public JTable getTableGroupEngPro() {
-        return tableGroupEngPro;
-    }
-    public JTable getTableGroupEngPhones() {
-        return tableGroupEngPhones;
-    }
     public void setLabelCurrDate(String date) {
-        StringBuilder sb = new StringBuilder(date);
         String dateDup = date;
         if(date.charAt(3) =='0'){
             date = date.substring(0,3) + dateDup.substring(4,10);
@@ -1697,7 +1109,6 @@ public class GuiMainPanel {
 
         this.labelCurrDate.setText("Date: " + date);
     }
-
     public DefaultTableModel getTbMilestoneModel() {
         return tbMilestoneModel;
     }
@@ -1733,5 +1144,8 @@ public class GuiMainPanel {
     }
     public JComboBox getJcbDevStepToShow() {
         return jcbDevStepToShow;
+    }
+    public JTabbedPane getTabbedPane() {
+        return tabbedPane;
     }
 }
