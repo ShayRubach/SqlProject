@@ -220,7 +220,7 @@ public class QueryHolder {
     @SQLTrigger
     @NestedQuery
     public static final String TRIGGER_AFTER_UPDATE_PROJECT =
-                "CREATE TRIGGER after_update_projects " +
+                "CREATE TRIGGER after_update_projects " +   //before*
                 "BEFORE UPDATE ON projects " +
                 "FOR EACH ROW " +
                     "BEGIN " +

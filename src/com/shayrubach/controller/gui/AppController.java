@@ -19,7 +19,6 @@ public class AppController implements IController {
     private ArrayList<TableController> controllers = new ArrayList<TableController>();
 
     public String DRIVER = "com.mysql.jdbc.Driver" ;
-    //public String URL = "jdbc:mysql://localhost:3306/softwarecompany?allowMultiQueries=true&createDatabaseIfNotExist=true" ;
     public String URL = "jdbc:mysql://localhost:3306/softwarecompany?createDatabaseIfNotExist=true" ;
     public Connection connection = null;
 
